@@ -1,0 +1,123 @@
+{
+  "name": "sql-stress-test",
+  "displayName": "SQL Stress Test",
+  "description": "SQL Server stress testing and monitoring extension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "sqlServerExplorer",
+          "name": "SQL Servers",
+          "when": "true"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "sqlStressTest.addServer",
+        "title": "Add SQL Server"
+      },
+      {
+        "command": "sqlStressTest.removeServer",
+        "title": "Remove Server"
+      },
+      {
+        "command": "sqlStressTest.editServer",
+        "title": "Edit Server"
+      },
+      {
+        "command": "sqlStressTest.testConnection",
+        "title": "Test Connection"
+      },
+      {
+        "command": "sqlStressTest.openPerformanceGraph",
+        "title": "Open Performance Graph"
+      },
+      {
+        "command": "sqlStressTest.openQueryEditor",
+        "title": "Open SQL Query Editor"
+      },
+      {
+        "command": "sqlStressTest.refreshExplorer",
+        "title": "Refresh"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "sqlStressTest.addServer",
+          "when": "view == sqlServerExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "sqlStressTest.refreshExplorer",
+          "when": "view == sqlServerExplorer",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "sqlStressTest.editServer",
+          "when": "view == sqlServerExplorer && viewItem == server",
+          "group": "inline"
+        },
+        {
+          "command": "sqlStressTest.removeServer",
+          "when": "view == sqlServerExplorer && viewItem == server",
+          "group": "inline"
+        },
+        {
+          "command": "sqlStressTest.testConnection",
+          "when": "view == sqlServerExplorer && viewItem == server",
+          "group": "inline"
+        }
+      ]
+    },
+    "statusBar": {
+      "items": [
+        {
+          "id": "sqlStressTest.heartbeat",
+          "alignment": "right",
+          "priority": 100
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vitest/coverage-v8": "^1.1.0",
+    "@vitest/ui": "^1.1.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^8.0.0",
+    "axios": "^1.6.2"
+  }
+}
+

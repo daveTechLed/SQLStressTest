@@ -1,0 +1,37 @@
+# VS Code
+.vscode-test/
+*.code-workspace
+
+# Extension
+extension/node_modules/
+extension/out/
+extension/.vscode-test/
+extension/*.vsix
+
+# Backend
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+backend/**/*.suo
+backend/**/*.cache
+
+# Test results
+**/TestResults/
+**/coverage/
+**/*.trx
+**/*.coverage
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+*.log.*
+
+# Environment
+.env
+.env.local
+

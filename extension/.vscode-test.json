@@ -1,0 +1,9 @@
+{
+  "version": "1.85.0",
+  "platforms": [
+    "win32-x64",
+    "linux-x64",
+    "darwin-x64"
+  ]
+}
+
