@@ -1,5 +1,3 @@
-using System.Text;
-using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
@@ -30,20 +28,14 @@ public class SqlController : ControllerBase
         if (config == null)
         {
             _logger.LogWarning("TestConnection validation failed: Connection configuration is null. Request path: {Path}, Method: {Method}",
-                Request.Path, Request.Method);
+                Request?.Path.ToString(), Request?.Method);
             
             var errorResponse = new TestConnectionResponse 
             { 
                 Success = false, 
                 Error = "Connection configuration is required" 
             };
-            var json = JsonSerializer.Serialize(errorResponse);
-            return new ContentResult 
-            { 
-                Content = json, 
-                ContentType = "application/json",
-                StatusCode = 400 
-            };
+            return BadRequest(errorResponse);
         }
 
         try
@@ -54,13 +46,7 @@ public class SqlController : ControllerBase
                 Success = result, 
                 Error = result ? null : "Connection failed" 
             };
-            var json = JsonSerializer.Serialize(response);
-            return new ContentResult 
-            { 
-                Content = json, 
-                ContentType = "application/json",
-                StatusCode = 200 
-            };
+            return Ok(response);
         }
         catch (Exception ex)
         {
@@ -72,19 +58,27 @@ public class SqlController : ControllerBase
                 Success = false, 
                 Error = ex.Message 
             };
-            var json = JsonSerializer.Serialize(errorResponse);
-            return new ContentResult 
-            { 
-                Content = json, 
-                ContentType = "application/json",
-                StatusCode = 200 
-            };
+            return Ok(errorResponse);
         }
     }
 
     [HttpPost("execute")]
     public async Task<IActionResult> ExecuteQuery([FromBody] QueryRequest request)
     {
+        // Check for null request first (before accessing Request properties that might be null in tests)
+        if (request == null)
+        {
+            _logger.LogWarning("ExecuteQuery validation failed: Request is null. Request path: {Path}, Method: {Method}, Content-Type: {ContentType}, Content-Length: {ContentLength}",
+                Request?.Path.ToString(), Request?.Method, Request?.ContentType, Request?.ContentLength);
+            
+            var errorResponse = new QueryResponse
+            {
+                Success = false,
+                Error = "Request is required"
+            };
+            return BadRequest(errorResponse);
+        }
+
         // Log model binding state and validation errors
         if (!ModelState.IsValid)
         {
@@ -100,10 +94,10 @@ public class SqlController : ControllerBase
             _logger.LogWarning("ExecuteQuery model validation failed. Errors: {Errors}, Error details: {ErrorDetails}, Request path: {Path}, Method: {Method}, Content-Type: {ContentType}, Content-Length: {ContentLength}",
                 modelErrors, 
                 string.Join("; ", errorDetails),
-                Request.Path, 
-                Request.Method,
-                Request.ContentType,
-                Request.ContentLength);
+                Request?.Path.ToString(), 
+                Request?.Method,
+                Request?.ContentType,
+                Request?.ContentLength);
             
             // Return validation errors as 400 Bad Request
             var errorResponse = new QueryResponse
@@ -111,32 +105,7 @@ public class SqlController : ControllerBase
                 Success = false,
                 Error = $"Validation failed: {modelErrors}"
             };
-            var json = JsonSerializer.Serialize(errorResponse);
-            return new ContentResult 
-            { 
-                Content = json, 
-                ContentType = "application/json",
-                StatusCode = 400 
-            };
-        }
-
-        if (request == null)
-        {
-            _logger.LogWarning("ExecuteQuery validation failed: Request is null. Request path: {Path}, Method: {Method}, Content-Type: {ContentType}, Content-Length: {ContentLength}",
-                Request.Path, Request.Method, Request.ContentType, Request.ContentLength);
-            
-            var errorResponse = new QueryResponse
-            {
-                Success = false,
-                Error = "Request is required"
-            };
-            var json = JsonSerializer.Serialize(errorResponse);
-            return new ContentResult 
-            { 
-                Content = json, 
-                ContentType = "application/json",
-                StatusCode = 400 
-            };
+            return BadRequest(errorResponse);
         }
 
         // Log request details for debugging (sanitized - don't log full query if it's very long)
@@ -157,13 +126,7 @@ public class SqlController : ControllerBase
                 Success = false,
                 Error = "ConnectionId is required"
             };
-            var json = JsonSerializer.Serialize(errorResponse);
-            return new ContentResult 
-            { 
-                Content = json, 
-                ContentType = "application/json",
-                StatusCode = 400 
-            };
+            return BadRequest(errorResponse);
         }
 
         if (string.IsNullOrWhiteSpace(request.Query))
@@ -176,13 +139,7 @@ public class SqlController : ControllerBase
                 Success = false,
                 Error = "Query is required"
             };
-            var json = JsonSerializer.Serialize(errorResponse);
-            return new ContentResult 
-            { 
-                Content = json, 
-                ContentType = "application/json",
-                StatusCode = 400 
-            };
+            return BadRequest(errorResponse);
         }
 
         // In a real application, you would retrieve the connection config from storage
@@ -198,13 +155,7 @@ public class SqlController : ControllerBase
             };
 
             var response = await _sqlConnectionService.ExecuteQueryAsync(connectionConfig, request.Query);
-            var json = JsonSerializer.Serialize(response);
-            return new ContentResult 
-            { 
-                Content = json, 
-                ContentType = "application/json",
-                StatusCode = 200 
-            };
+            return Ok(response);
         }
         catch (Exception ex)
         {
@@ -216,13 +167,7 @@ public class SqlController : ControllerBase
                 Success = false,
                 Error = ex.Message
             };
-            var json = JsonSerializer.Serialize(errorResponse);
-            return new ContentResult 
-            { 
-                Content = json, 
-                ContentType = "application/json",
-                StatusCode = 200 
-            };
+            return Ok(errorResponse);
         }
     }
 }

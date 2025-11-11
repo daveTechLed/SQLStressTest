@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
+using SQLStressTest.Service.Models;
 
 namespace SQLStressTest.Service.Hubs;
 
@@ -23,17 +24,39 @@ public class SqlHub : Hub
         {
             await base.OnConnectedAsync();
             
-            var heartbeat = new
+            // Use strongly-typed DTO to enable source-generated serialization (no reflection needed)
+            var heartbeat = new HeartbeatMessage
             {
-                timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
-                status = "connected"
+                Timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
+                Status = "connected"
             };
             
-            _logger.LogInformation("Sending initial heartbeat to connection {ConnectionId}. Timestamp: {Timestamp}", 
+            _logger.LogInformation("Sending initial heartbeat to connection {ConnectionId}. Timestamp: {Timestamp}, HeartbeatType: {Type}, HeartbeatTypeName: {TypeName}", 
                 Context.ConnectionId, 
-                heartbeat.timestamp);
+                heartbeat.Timestamp,
+                heartbeat.GetType(),
+                heartbeat.GetType().FullName);
             
-            await Clients.Caller.SendAsync("Heartbeat", heartbeat);
+            // Log the actual object being sent
+            _logger.LogDebug("Heartbeat object details: Type={Type}, Assembly={Assembly}, IsValueType={IsValueType}, IsPrimitive={IsPrimitive}",
+                heartbeat.GetType(),
+                heartbeat.GetType().Assembly.FullName,
+                heartbeat.GetType().IsValueType,
+                heartbeat.GetType().IsPrimitive);
+            
+            try
+            {
+                await Clients.Caller.SendAsync("Heartbeat", heartbeat);
+                _logger.LogInformation("Heartbeat sent successfully to connection {ConnectionId}", Context.ConnectionId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to send heartbeat to connection {ConnectionId}. Heartbeat type: {Type}, Exception type: {ExceptionType}", 
+                    Context.ConnectionId, 
+                    heartbeat.GetType().FullName,
+                    ex.GetType().FullName);
+                throw;
+            }
             
             _logger.LogInformation("Client connected successfully. ConnectionId: {ConnectionId}", Context.ConnectionId);
         }

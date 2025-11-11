@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using SQLStressTest.Service;
 
 namespace SQLStressTest.Service.IntegrationTests.Fixtures;
@@ -23,19 +25,31 @@ public class WebApplicationFixture : WebApplicationFactory<Program>, IDisposable
             }
             services.AddSingleton<SQLStressTest.Service.Interfaces.ISqlConnectionFactory, MockSqlConnectionFactory>();
             
-            // Configure MVC to use synchronous JSON serialization for TestServer compatibility
-            services.Configure<Microsoft.AspNetCore.Mvc.MvcOptions>(options =>
+            // Configure MVC to work around .NET 9.0 TestServer PipeWriter issue
+            // TestServer's PipeWriter doesn't implement UnflushedBytes, so we need to
+            // ensure synchronous serialization is used by configuring the formatter
+            services.PostConfigure<Microsoft.AspNetCore.Mvc.MvcOptions>(options =>
             {
-                // Find and configure the SystemTextJsonOutputFormatter
-                var jsonFormatter = options.OutputFormatters
-                    .OfType<Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter>()
+                // Replace SystemTextJsonOutputFormatter with one that uses synchronous writing
+                var existingFormatter = options.OutputFormatters
+                    .OfType<SystemTextJsonOutputFormatter>()
                     .FirstOrDefault();
                     
-                if (jsonFormatter != null)
+                if (existingFormatter != null)
                 {
-                    // Ensure synchronous serialization is used
-                    jsonFormatter.SupportedMediaTypes.Clear();
-                    jsonFormatter.SupportedMediaTypes.Add("application/json");
+                    var index = options.OutputFormatters.IndexOf(existingFormatter);
+                    
+                    // Get the JsonSerializerOptions from the existing formatter using reflection
+                    // SystemTextJsonOutputFormatter has a SerializerOptions property
+                    var serializerOptionsProperty = existingFormatter.GetType().GetProperty("SerializerOptions");
+                    var serializerOptions = serializerOptionsProperty?.GetValue(existingFormatter) as System.Text.Json.JsonSerializerOptions
+                        ?? new System.Text.Json.JsonSerializerOptions();
+                    
+                    options.OutputFormatters.RemoveAt(index);
+                    
+                    // Use a custom formatter that uses synchronous serialization for TestServer
+                    var syncFormatter = new TestServerCompatibleJsonOutputFormatter(serializerOptions);
+                    options.OutputFormatters.Insert(0, syncFormatter); // Insert at beginning for priority
                 }
             });
         });

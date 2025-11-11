@@ -28,16 +28,50 @@ for (int i = 0; i < maxDepth; i++)
 var logsDir = Path.Combine(projectRoot, "logs");
 Directory.CreateDirectory(logsDir);
 
+// Generate unique log file name with timestamp for each execution
+// Format: backend-YYYYMMDD-HHMMSS.log (e.g., backend-20251111-162800.log)
+var timestamp = DateTimeOffset.UtcNow.ToString("yyyyMMdd-HHmmss");
+var logFileName = $"backend-{timestamp}.log";
+var logFilePath = Path.Combine(logsDir, logFileName);
+
+// Clean up old log files (keep only last 50 execution logs)
+try
+{
+    var oldLogFiles = Directory.GetFiles(logsDir, "backend-*.log")
+        .OrderByDescending(f => File.GetCreationTime(f))
+        .Skip(50)
+        .ToList();
+    
+    foreach (var oldFile in oldLogFiles)
+    {
+        try
+        {
+            File.Delete(oldFile);
+        }
+        catch
+        {
+            // Ignore errors when deleting old log files
+        }
+    }
+}
+catch
+{
+    // Ignore errors during log cleanup
+}
+
 // Configure Serilog for file logging
+// Each execution gets a fresh log file with timestamp
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File(
-        Path.Combine(logsDir, "backend-.log"),
-        rollingInterval: RollingInterval.Day,
-        retainedFileCountLimit: 31,
-        fileSizeLimitBytes: 10 * 1024 * 1024, // 10MB
+        logFilePath,
+        rollingInterval: RollingInterval.Infinite, // Don't roll within the same file - each execution gets its own file
+        fileSizeLimitBytes: 10 * 1024 * 1024, // 10MB per file
         outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}")
     .CreateLogger();
+
+// Log the log file path for reference
+Log.Information("Logging to file: {LogFile}", logFilePath);
 
 try
 {
@@ -53,58 +87,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add SignalR
-builder.Services.AddSignalR();
-
-// Add CORS with detailed logging
-// Note: CORS origin checks will be logged in middleware after CORS processing
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowVSCodeExtension", policy =>
+// Add SignalR with JSON protocol configured for strongly-typed DTOs
+// NOTE: SignalR's SendAsync accepts params object[], which boxes strongly-typed DTOs as object.
+// When SignalR's JsonHubProtocol.WriteArguments serializes these object[] arguments, it needs
+// reflection to determine the actual type at runtime. With PublishTrimmed=true, .NET 9 disables
+// reflection-based serialization by default, so we must explicitly enable it via TypeInfoResolver.
+builder.Services.AddSignalR()
+    .AddJsonProtocol(options =>
     {
-        policy.SetIsOriginAllowed(origin =>
-        {
-            var isAllowed = false;
-            
-            // Allow null/empty origin (same-origin requests, file://, etc.)
-            if (string.IsNullOrEmpty(origin))
-            {
-                isAllowed = true;
-            }
-            // Allow vscode-webview origins (any subdomain or path)
-            else if (origin?.StartsWith("vscode-webview://", StringComparison.OrdinalIgnoreCase) == true)
-            {
-                isAllowed = true;
-            }
-            // Allow localhost origins (any port, any protocol)
-            else if (origin?.StartsWith("http://localhost", StringComparison.OrdinalIgnoreCase) == true || 
-                     origin?.StartsWith("https://localhost", StringComparison.OrdinalIgnoreCase) == true ||
-                     origin?.StartsWith("http://127.0.0.1", StringComparison.OrdinalIgnoreCase) == true ||
-                     origin?.StartsWith("https://127.0.0.1", StringComparison.OrdinalIgnoreCase) == true)
-            {
-                isAllowed = true;
-            }
-            // Allow file:// protocol (for local development)
-            else if (origin?.StartsWith("file://", StringComparison.OrdinalIgnoreCase) == true)
-            {
-                isAllowed = true;
-            }
-            // In development or testing, be more permissive - allow any origin
-            else if (builder.Environment.IsDevelopment() || 
-                     builder.Environment.EnvironmentName == "Testing")
-            {
-                // Allow any origin in development/testing for easier debugging and testing
-                isAllowed = true;
-            }
-            
-            // Logging will happen in middleware - CORS policy can't easily access logger here
-            return isAllowed;
-        })
-        .AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowCredentials();
+        // Configure JSON options for SignalR
+        options.PayloadSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+        options.PayloadSerializerOptions.WriteIndented = false;
+        
+        // Explicitly enable reflection-based serialization for SignalR
+        // This is required because SignalR's params object[] API requires runtime type resolution
+        options.PayloadSerializerOptions.TypeInfoResolver = new System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver();
     });
-});
+
+// CORS removed - not needed for local development
 
 // Register services with dependency injection (SOLID principles)
 builder.Services.AddSingleton<IConnectionStringBuilder, ConnectionStringBuilder>();
@@ -143,7 +143,7 @@ app.Use(async (context, next) =>
         referer,
         context.Request.Headers["User-Agent"].ToString());
     
-    // Log all headers for debugging (especially for CORS issues)
+    // Log all headers for debugging
     var headerStrings = context.Request.Headers.Select(h => $"{h.Key}: {string.Join(", ", h.Value.ToArray())}").ToArray();
     logger.LogDebug("Request headers: {Headers}", string.Join(", ", headerStrings));
     
@@ -220,56 +220,7 @@ app.Use(async (context, next) =>
         }
     }
     
-    // Log CORS-related headers specifically
-    logger.LogDebug("CORS Headers - Origin: '{Origin}', Access-Control-Request-Method: '{Method}', Access-Control-Request-Headers: '{Headers}'",
-        origin,
-        context.Request.Headers["Access-Control-Request-Method"].ToString(),
-        context.Request.Headers["Access-Control-Request-Headers"].ToString());
-    
-    // Determine if origin would be allowed (for logging purposes)
-    var env = context.RequestServices.GetRequiredService<Microsoft.AspNetCore.Hosting.IWebHostEnvironment>();
-    var originAllowed = string.IsNullOrEmpty(origin) ||
-                        origin?.StartsWith("vscode-webview://", StringComparison.OrdinalIgnoreCase) == true ||
-                        origin?.StartsWith("http://localhost", StringComparison.OrdinalIgnoreCase) == true ||
-                        origin?.StartsWith("https://localhost", StringComparison.OrdinalIgnoreCase) == true ||
-                        origin?.StartsWith("http://127.0.0.1", StringComparison.OrdinalIgnoreCase) == true ||
-                        origin?.StartsWith("https://127.0.0.1", StringComparison.OrdinalIgnoreCase) == true ||
-                        origin?.StartsWith("file://", StringComparison.OrdinalIgnoreCase) == true ||
-                        env.IsDevelopment(); // More permissive in development
-    
-    if (!string.IsNullOrEmpty(origin))
-    {
-        logger.LogInformation("CORS origin check: '{Origin}' -> {Allowed}", origin, originAllowed ? "ALLOWED" : "REJECTED");
-        if (!originAllowed)
-        {
-            logger.LogWarning("CORS REJECTED: Origin '{Origin}' is not in allowed list", origin);
-        }
-    }
-    
     await next();
-    
-    // Log CORS response headers
-    var corsHeaders = new List<string>();
-    if (context.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
-    {
-        corsHeaders.Add($"Access-Control-Allow-Origin: {context.Response.Headers["Access-Control-Allow-Origin"]}");
-    }
-    if (context.Response.Headers.ContainsKey("Access-Control-Allow-Credentials"))
-    {
-        corsHeaders.Add($"Access-Control-Allow-Credentials: {context.Response.Headers["Access-Control-Allow-Credentials"]}");
-    }
-    if (context.Response.Headers.ContainsKey("Access-Control-Allow-Methods"))
-    {
-        corsHeaders.Add($"Access-Control-Allow-Methods: {context.Response.Headers["Access-Control-Allow-Methods"]}");
-    }
-    if (corsHeaders.Any())
-    {
-        logger.LogInformation("CORS Response Headers: {Headers}", string.Join(", ", corsHeaders));
-    }
-    else if (!string.IsNullOrEmpty(origin))
-    {
-        logger.LogWarning("CORS Response Headers: NONE SET for origin '{Origin}' - This may indicate CORS rejection", origin);
-    }
     
     logger.LogInformation("Response: {StatusCode} for {Method} {Path} | Origin: {Origin}",
         context.Response.StatusCode,
@@ -299,11 +250,12 @@ app.Use(async (context, next) =>
     }
 });
 
-app.UseCors("AllowVSCodeExtension");
 app.UseRouting();
-app.UseAuthorization();
+
+// Authorization removed - not needed for local development
 
 app.MapControllers();
+
 app.MapHub<SqlHub>("/sqlhub");
 
 // Start performance data streaming

@@ -102,7 +102,9 @@
     "lint": "eslint src --ext ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "build:backend": "node -e \"require('child_process').execSync(process.platform === 'win32' ? 'powershell -ExecutionPolicy Bypass -File scripts/build-backend.ps1' : 'bash scripts/build-backend.sh', {stdio: 'inherit'})\"",
+    "build:all": "npm run build:backend && npm run compile"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",

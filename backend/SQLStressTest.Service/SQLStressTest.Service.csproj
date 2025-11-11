@@ -4,7 +4,27 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Self-contained deployment settings -->
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>link</TrimMode>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <!-- Reduce executable size -->
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <!-- Runtime identifier will be set per platform during publish -->
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Preserve SignalR types for reflection-based serialization -->
+    <!-- These entries ensure SignalR types are not trimmed, allowing reflection to work -->
+    <TrimmerRootAssembly Include="Microsoft.AspNetCore.SignalR" />
+    <TrimmerRootAssembly Include="Microsoft.AspNetCore.SignalR.Core" />
+    <TrimmerRootAssembly Include="Microsoft.AspNetCore.SignalR.Protocols.Json" />
+    <!-- Also preserve System.Text.Json reflection capabilities -->
+    <TrimmerRootAssembly Include="System.Text.Json" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />

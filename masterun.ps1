@@ -54,14 +54,21 @@ if (-not $SkipBuild) {
             throw "dotnet restore failed"
         }
         
-        Write-Host "Building solution..." -ForegroundColor Yellow
+        Write-Host "Building solution (Release)..." -ForegroundColor Yellow
         dotnet build --no-restore -c Release
         
         if ($LASTEXITCODE -ne 0) {
-            throw "dotnet build failed"
+            throw "dotnet build (Release) failed"
         }
         
-        Write-Host "Backend build successful!" -ForegroundColor Green
+        Write-Host "Building solution (Debug)..." -ForegroundColor Yellow
+        dotnet build --no-restore -c Debug
+        
+        if ($LASTEXITCODE -ne 0) {
+            throw "dotnet build (Debug) failed"
+        }
+        
+        Write-Host "Backend build successful (Release and Debug)!" -ForegroundColor Green
     }
     catch {
         Write-Host "ERROR: Backend build failed: $_" -ForegroundColor Red

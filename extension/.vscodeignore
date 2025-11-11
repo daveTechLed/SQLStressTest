@@ -1,0 +1,37 @@
+# Exclude source files
+src/**
+tsconfig.json
+vitest.config.ts
+vitest.config.js
+vitest.config.js.map
+
+# Exclude test files
+**/*.test.ts
+**/*.test.js
+**/__tests__/**
+
+# Exclude build artifacts (but keep compiled output)
+*.map
+!out/**/*.map
+
+# Exclude development files
+.vscode/**
+.vscode-test/**
+node_modules/**
+*.log
+*.vsix
+
+# Exclude build scripts (not needed in package)
+scripts/**
+
+# Include backend executables (DO NOT exclude these)
+# resources/backend/** is included by default
+
+# Exclude backend source (if accidentally copied)
+backend/**
+
+# Exclude other development files
+.eslintrc.json
+.gitignore
+README.md
+

@@ -1,5 +1,6 @@
 using Moq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using SQLStressTest.Service.Controllers;
 using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
@@ -12,13 +13,15 @@ public class SqlControllerTests : TestBase
 {
     private readonly Mock<ISqlConnectionService> _mockSqlConnectionService;
     private readonly Mock<IConnectionStringBuilder> _mockConnectionStringBuilder;
+    private readonly Mock<ILogger<SqlController>> _mockLogger;
     private readonly SqlController _controller;
 
     public SqlControllerTests()
     {
         _mockSqlConnectionService = new Mock<ISqlConnectionService>();
         _mockConnectionStringBuilder = new Mock<IConnectionStringBuilder>();
-        _controller = new SqlController(_mockSqlConnectionService.Object, _mockConnectionStringBuilder.Object);
+        _mockLogger = new Mock<ILogger<SqlController>>();
+        _controller = new SqlController(_mockSqlConnectionService.Object, _mockConnectionStringBuilder.Object, _mockLogger.Object);
     }
 
     [Fact]
@@ -26,7 +29,7 @@ public class SqlControllerTests : TestBase
     {
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() => 
-            new SqlController(null!, _mockConnectionStringBuilder.Object));
+            new SqlController(null!, _mockConnectionStringBuilder.Object, _mockLogger.Object));
     }
 
     [Fact]
@@ -34,7 +37,15 @@ public class SqlControllerTests : TestBase
     {
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() => 
-            new SqlController(_mockSqlConnectionService.Object, null!));
+            new SqlController(_mockSqlConnectionService.Object, null!, _mockLogger.Object));
+    }
+
+    [Fact]
+    public void Constructor_ThrowsArgumentNullException_WhenLoggerIsNull()
+    {
+        // Act & Assert
+        Assert.Throws<ArgumentNullException>(() => 
+            new SqlController(_mockSqlConnectionService.Object, _mockConnectionStringBuilder.Object, null!));
     }
 
     [Fact]
@@ -44,10 +55,9 @@ public class SqlControllerTests : TestBase
         var result = await _controller.TestConnection(null!);
 
         // Assert
-        var contentResult = Assert.IsType<ContentResult>(result);
-        Assert.Equal(400, contentResult.StatusCode);
-        Assert.Equal("application/json", contentResult.ContentType);
-        var response = System.Text.Json.JsonSerializer.Deserialize<TestConnectionResponse>(contentResult.Content!);
+        var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+        Assert.Equal(400, badRequestResult.StatusCode);
+        var response = Assert.IsType<TestConnectionResponse>(badRequestResult.Value);
         Assert.NotNull(response);
         Assert.False(response!.Success);
         Assert.NotNull(response.Error);
@@ -65,10 +75,9 @@ public class SqlControllerTests : TestBase
         var result = await _controller.TestConnection(config);
 
         // Assert
-        var contentResult = Assert.IsType<ContentResult>(result);
-        Assert.Equal(200, contentResult.StatusCode);
-        Assert.Equal("application/json", contentResult.ContentType);
-        var response = System.Text.Json.JsonSerializer.Deserialize<TestConnectionResponse>(contentResult.Content!);
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(200, okResult.StatusCode);
+        var response = Assert.IsType<TestConnectionResponse>(okResult.Value);
         Assert.NotNull(response);
         Assert.True(response!.Success);
         Assert.Null(response.Error);
@@ -86,10 +95,9 @@ public class SqlControllerTests : TestBase
         var result = await _controller.TestConnection(config);
 
         // Assert
-        var contentResult = Assert.IsType<ContentResult>(result);
-        Assert.Equal(200, contentResult.StatusCode);
-        Assert.Equal("application/json", contentResult.ContentType);
-        var response = System.Text.Json.JsonSerializer.Deserialize<TestConnectionResponse>(contentResult.Content!);
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(200, okResult.StatusCode);
+        var response = Assert.IsType<TestConnectionResponse>(okResult.Value);
         Assert.NotNull(response);
         Assert.False(response!.Success);
         Assert.NotNull(response.Error);
@@ -102,9 +110,9 @@ public class SqlControllerTests : TestBase
         var result = await _controller.ExecuteQuery(null!);
 
         // Assert
-        var contentResult = Assert.IsType<ContentResult>(result);
-        Assert.Equal(400, contentResult.StatusCode);
-        var response = System.Text.Json.JsonSerializer.Deserialize<QueryResponse>(contentResult.Content!);
+        var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+        Assert.Equal(400, badRequestResult.StatusCode);
+        var response = Assert.IsType<QueryResponse>(badRequestResult.Value);
         Assert.NotNull(response);
         Assert.False(response!.Success);
         Assert.NotNull(response.Error);
@@ -124,9 +132,9 @@ public class SqlControllerTests : TestBase
         var result = await _controller.ExecuteQuery(request);
 
         // Assert
-        var contentResult = Assert.IsType<ContentResult>(result);
-        Assert.Equal(400, contentResult.StatusCode);
-        var response = System.Text.Json.JsonSerializer.Deserialize<QueryResponse>(contentResult.Content!);
+        var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+        Assert.Equal(400, badRequestResult.StatusCode);
+        var response = Assert.IsType<QueryResponse>(badRequestResult.Value);
         Assert.NotNull(response);
         Assert.False(response!.Success);
         Assert.NotNull(response.Error);
@@ -146,9 +154,9 @@ public class SqlControllerTests : TestBase
         var result = await _controller.ExecuteQuery(request);
 
         // Assert
-        var contentResult = Assert.IsType<ContentResult>(result);
-        Assert.Equal(400, contentResult.StatusCode);
-        var response = System.Text.Json.JsonSerializer.Deserialize<QueryResponse>(contentResult.Content!);
+        var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+        Assert.Equal(400, badRequestResult.StatusCode);
+        var response = Assert.IsType<QueryResponse>(badRequestResult.Value);
         Assert.NotNull(response);
         Assert.False(response!.Success);
         Assert.NotNull(response.Error);
@@ -179,9 +187,9 @@ public class SqlControllerTests : TestBase
         var result = await _controller.ExecuteQuery(request);
 
         // Assert
-        var contentResult = Assert.IsType<ContentResult>(result);
-        Assert.Equal(200, contentResult.StatusCode);
-        var response = System.Text.Json.JsonSerializer.Deserialize<QueryResponse>(contentResult.Content!);
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(200, okResult.StatusCode);
+        var response = Assert.IsType<QueryResponse>(okResult.Value);
         Assert.NotNull(response);
         Assert.True(response!.Success);
         _mockSqlConnectionService.Verify(x => x.ExecuteQueryAsync(

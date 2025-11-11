@@ -4,6 +4,7 @@ import { PerformanceGraph } from './panes/performanceGraph';
 import { QueryEditor } from './panes/queryEditor';
 import { StatusBar } from './statusBar';
 import { WebSocketClient } from './services/websocketClient';
+import { BackendServiceManager } from './services/backendServiceManager';
 import { Logger } from './services/logger';
 
 let sqlExplorer: SqlServerExplorer;
@@ -11,19 +12,81 @@ let performanceGraph: PerformanceGraph | undefined;
 let queryEditor: QueryEditor | undefined;
 let statusBar: StatusBar;
 let websocketClient: WebSocketClient;
+let backendServiceManager: BackendServiceManager;
 let logger: Logger;
 
-export function activate(context: vscode.ExtensionContext) {
-    // Initialize logger
+export async function activate(context: vscode.ExtensionContext) {
+    // Initialize logger first so all messages are captured
     logger = new Logger('SQL Stress Test - Extension');
     
-    // Initialize services
-    websocketClient = new WebSocketClient(undefined, logger);
-    statusBar = new StatusBar(websocketClient, logger);
+    // Log activation start (this will go to both console and log file)
+    logger.info('Extension activating...');
+    console.log('[SQL Stress Test] Extension activating...');
     
-    // Initialize SQL Server Explorer
-    sqlExplorer = new SqlServerExplorer(context, websocketClient, logger);
-    context.subscriptions.push(sqlExplorer);
+    // Log the log file location
+    const logFilePath = logger.getLogFilePath();
+    if (logFilePath) {
+        logger.info('Log file location', { path: logFilePath });
+        console.log('[SQL Stress Test] Log file:', logFilePath);
+    } else {
+        logger.warn('Log file not initialized - logs will only appear in Output Panel and Console');
+        console.warn('[SQL Stress Test] WARNING: Log file not initialized');
+    }
+    
+    logger.info('Extension activation started');
+    
+    // Initialize backend service manager
+    logger.info('Initializing BackendServiceManager...');
+    console.log('[SQL Stress Test] Creating BackendServiceManager...');
+    backendServiceManager = new BackendServiceManager(context, logger);
+    logger.info('BackendServiceManager initialized');
+    console.log('[SQL Stress Test] BackendServiceManager created');
+    
+    // Start backend service
+    try {
+        logger.info('Starting backend service...');
+        console.log('[SQL Stress Test] Calling backendServiceManager.start()...');
+        const backendInfo = await backendServiceManager.start();
+        logger.info('Backend service started', { url: backendInfo.url, port: backendInfo.port });
+        console.log('[SQL Stress Test] Backend service started successfully', backendInfo);
+        
+        // Initialize services with backend URL
+        websocketClient = new WebSocketClient(backendInfo.url, logger);
+        statusBar = new StatusBar(websocketClient, logger);
+        
+        // Initialize SQL Server Explorer
+        sqlExplorer = new SqlServerExplorer(context, websocketClient, logger);
+        context.subscriptions.push(sqlExplorer);
+    } catch (error: any) {
+        const errorMessage = error?.message || String(error);
+        const errorStack = error?.stack || 'No stack trace';
+        
+        console.error('[SQL Stress Test] ERROR: Failed to start backend service', error);
+        console.error('[SQL Stress Test] Error message:', errorMessage);
+        console.error('[SQL Stress Test] Error stack:', errorStack);
+        
+        logger.error('Failed to start backend service', {
+            message: errorMessage,
+            stack: errorStack,
+            error: error
+        });
+        
+        vscode.window.showErrorMessage(
+            `Failed to start backend service: ${errorMessage}. Please check the logs.`
+        );
+        
+        // Show output channel immediately
+        logger.showOutputChannel();
+        
+        // Fallback: try to connect to default localhost URL if backend is already running
+        logger.info('Attempting to connect to default backend URL as fallback...');
+        console.log('[SQL Stress Test] Attempting fallback connection...');
+        websocketClient = new WebSocketClient(undefined, logger);
+        statusBar = new StatusBar(websocketClient, logger);
+        
+        sqlExplorer = new SqlServerExplorer(context, websocketClient, logger);
+        context.subscriptions.push(sqlExplorer);
+    }
     
     // Register commands
     const commands = [
@@ -49,36 +112,40 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(...commands);
     
     // Connect WebSocket with detailed error handling
-    websocketClient.connect().catch((err: any) => {
-        const errorMessage = err?.message || String(err);
-        const statusCode = err?.statusCode || err?.code || err?.response?.status;
-        
-        logger.error('WebSocket connection failed', {
-            message: errorMessage,
-            statusCode,
-            error: err
+    // Wait a moment for backend to fully start before connecting
+    setTimeout(() => {
+        websocketClient.connect().catch((err: any) => {
+            const errorMessage = err?.message || String(err);
+            const statusCode = err?.statusCode || err?.code || err?.response?.status;
+            
+            logger.error('WebSocket connection failed', {
+                message: errorMessage,
+                statusCode,
+                error: err
+            });
+            
+            if (statusCode === 403) {
+                vscode.window.showErrorMessage(
+                    `WebSocket connection failed with 403 Forbidden. Check backend CORS configuration. Error: ${errorMessage}`
+                );
+            } else {
+                vscode.window.showErrorMessage(`Failed to connect to backend: ${errorMessage}`);
+            }
+            
+            // Show output channel for detailed logs
+            logger.showOutputChannel();
         });
-        
-        if (statusCode === 403) {
-            vscode.window.showErrorMessage(
-                `WebSocket connection failed with 403 Forbidden. Check backend CORS configuration. Error: ${errorMessage}`
-            );
-        } else {
-            vscode.window.showErrorMessage(`Failed to connect to backend: ${errorMessage}`);
-        }
-        
-        // Show output channel for detailed logs
-        logger.showOutputChannel();
-    });
+    }, 2000); // Wait 2 seconds for backend to be ready
     
     // Initialize status bar
     statusBar.initialize();
 }
 
-export function deactivate() {
+export async function deactivate() {
     websocketClient?.disconnect();
     performanceGraph?.dispose();
     queryEditor?.dispose();
     statusBar?.dispose();
+    await backendServiceManager?.dispose();
 }
 

@@ -9,6 +9,7 @@ export interface ILogger {
     warn(message: string, data?: any): void;
     info(message: string, data?: any): void;
     showOutputChannel(): void;
+    getLogFilePath(): string | null;
 }
 
 export class Logger implements ILogger {
@@ -24,14 +25,48 @@ export class Logger implements ILogger {
 
     private initializeLogFile(): void {
         try {
-            const workspaceFolder = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
+            // Try to find project root (where masterun.ps1 or .git exists)
+            // This ensures logs go to the same place as backend logs
             let logsDir: string;
-
-            if (workspaceFolder) {
-                logsDir = path.join(workspaceFolder, 'logs');
+            let projectRoot: string | null = null;
+            
+            // Method 1: Try to find project root from compiled extension location
+            // When running, __dirname will be: extension/out/services/logger.js
+            // Project root is: extension/../ (3 levels up)
+            const extensionOutPath = __dirname; // e.g., /path/to/extension/out/services
+            const possibleProjectRoot = path.resolve(extensionOutPath, '..', '..', '..');
+            
+            // Check if this is the project root
+            if (fs.existsSync(path.join(possibleProjectRoot, 'masterun.ps1')) || 
+                fs.existsSync(path.join(possibleProjectRoot, '.git'))) {
+                projectRoot = possibleProjectRoot;
             } else {
-                // No workspace folder, use temp directory
-                logsDir = path.join(os.tmpdir(), 'sql-stress-test-logs');
+                // Method 2: Walk up from current directory to find project root
+                let currentPath = extensionOutPath;
+                for (let i = 0; i < 6; i++) {
+                    const masterScript = path.join(currentPath, 'masterun.ps1');
+                    const gitFolder = path.join(currentPath, '.git');
+                    if (fs.existsSync(masterScript) || fs.existsSync(gitFolder)) {
+                        projectRoot = currentPath;
+                        break;
+                    }
+                    const parent = path.dirname(currentPath);
+                    if (parent === currentPath) break;
+                    currentPath = parent;
+                }
+            }
+            
+            if (projectRoot) {
+                logsDir = path.join(projectRoot, 'logs');
+            } else {
+                // Fallback to workspace folder
+                const workspaceFolder = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
+                if (workspaceFolder) {
+                    logsDir = path.join(workspaceFolder, 'logs');
+                } else {
+                    // Last resort: use temp directory
+                    logsDir = path.join(os.tmpdir(), 'sql-stress-test-logs');
+                }
             }
 
             // Create logs directory if it doesn't exist
@@ -40,6 +75,9 @@ export class Logger implements ILogger {
             const dateStr = new Date().toISOString().split('T')[0];
             const logFileName = `${this.channelName.toLowerCase().replace(/\s+/g, '-')}-${dateStr}.log`;
             this.logFilePath = path.join(logsDir, logFileName);
+            
+            // Write initial log entry
+            this.writeToFile('INFO', `Logger initialized. Log file: ${this.logFilePath}`);
         } catch (error) {
             // If we can't create logs directory, log to temp directory
             try {
@@ -48,11 +86,19 @@ export class Logger implements ILogger {
                 const dateStr = new Date().toISOString().split('T')[0];
                 const logFileName = `${this.channelName.toLowerCase().replace(/\s+/g, '-')}-${dateStr}.log`;
                 this.logFilePath = path.join(fallbackDir, logFileName);
+                this.writeToFile('WARN', `Using fallback log directory: ${this.logFilePath}`);
             } catch (fallbackError) {
                 console.error('Failed to initialize log file:', fallbackError);
                 this.logFilePath = null;
             }
         }
+    }
+    
+    /**
+     * Get the log file path (for external access)
+     */
+    getLogFilePath(): string | null {
+        return this.logFilePath;
     }
 
     private writeToFile(level: string, message: string, data?: any): void {
@@ -62,11 +108,19 @@ export class Logger implements ILogger {
 
         try {
             const timestamp = new Date().toISOString();
-            const logMessage = `[${timestamp}] [${level}] ${message}${data ? ` | ${JSON.stringify(data)}` : ''}`;
+            const logMessage = `[${timestamp}] [${level}] ${message}${data ? ` | ${JSON.stringify(data, null, 2)}` : ''}`;
             fs.appendFileSync(this.logFilePath, logMessage + '\n', 'utf8');
         } catch (error) {
-            // Silently fail if file write fails
-            console.error(`Failed to write to log file: ${error}`);
+            // Try to log the error, but don't throw
+            try {
+                const errorMsg = `Failed to write to log file: ${error}`;
+                console.error(`[${this.channelName}] ${errorMsg}`);
+                // Try to write to a fallback location
+                const fallbackPath = path.join(require('os').tmpdir(), 'sql-stress-test-log-error.txt');
+                fs.appendFileSync(fallbackPath, `${new Date().toISOString()} ${errorMsg}\n`, 'utf8');
+            } catch {
+                // If even that fails, silently continue
+            }
         }
     }
 
