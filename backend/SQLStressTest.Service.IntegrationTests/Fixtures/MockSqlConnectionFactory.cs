@@ -20,6 +20,8 @@ public class MockSqlConnectionWrapper : ISqlConnectionWrapper
         _connectionString = connectionString;
     }
 
+    public string DataSource => "localhost";
+
     public Task OpenAsync()
     {
         // Simulate connection failure for invalid servers/ports
@@ -64,6 +66,16 @@ public class MockSqlCommandWrapper : ISqlCommandWrapper
     public Task<ISqlDataReaderWrapper> ExecuteReaderAsync()
     {
         return Task.FromResult<ISqlDataReaderWrapper>(new MockSqlDataReaderWrapper(_query));
+    }
+
+    public Task<object?> ExecuteScalarAsync()
+    {
+        // Return mock version string for @@VERSION queries
+        if (_query.Contains("@@VERSION"))
+        {
+            return Task.FromResult<object?>("Microsoft SQL Server 2025");
+        }
+        return Task.FromResult<object?>(null);
     }
 
     public void Dispose()

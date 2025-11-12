@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
+using SQLStressTest.Service.Services;
 
 namespace SQLStressTest.Service.Controllers;
 
@@ -11,15 +12,170 @@ public class SqlController : ControllerBase
     private readonly ISqlConnectionService _sqlConnectionService;
     private readonly IConnectionStringBuilder _connectionStringBuilder;
     private readonly ILogger<SqlController> _logger;
+    private readonly IStorageService? _storageService;
+    private static List<ConnectionConfigDto>? _cachedConnections;
+    private static readonly object _cacheLock = new();
+    private static IStorageService? _staticStorageService;
+    private static ILogger<SqlController>? _staticLogger;
 
     public SqlController(
         ISqlConnectionService sqlConnectionService,
         IConnectionStringBuilder connectionStringBuilder,
-        ILogger<SqlController> logger)
+        ILogger<SqlController> logger,
+        IStorageService? storageService = null)
     {
         _sqlConnectionService = sqlConnectionService ?? throw new ArgumentNullException(nameof(sqlConnectionService));
         _connectionStringBuilder = connectionStringBuilder ?? throw new ArgumentNullException(nameof(connectionStringBuilder));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _storageService = storageService;
+        
+        // Store static references for reload capability from hub
+        _staticStorageService = storageService;
+        _staticLogger = logger;
+        
+        // Load connections on first request (lazy loading)
+        if (_storageService != null && _cachedConnections == null)
+        {
+            _ = Task.Run(async () => await LoadConnectionsAsync());
+        }
+    }
+
+    private async Task LoadConnectionsAsync()
+    {
+        if (_storageService == null) return;
+        
+        try
+        {
+            var response = await _storageService.LoadConnectionsAsync();
+            if (response.Success && response.Data != null)
+            {
+                lock (_cacheLock)
+                {
+                    _cachedConnections = response.Data;
+                }
+                _logger.LogInformation("Loaded {Count} connections from storage", response.Data.Count);
+            }
+            else if (!response.Success)
+            {
+                // Only log as ERROR if it's an unexpected failure
+                // "No SignalR connection available" is expected when no client is connected
+                if (response.Error?.Contains("No SignalR connection available") == true)
+                {
+                    _logger.LogDebug("Cannot load connections: No SignalR connection (expected when no client connected)");
+                }
+                else
+                {
+                    _logger.LogWarning("Failed to load connections from storage. Error: {Error}", response.Error);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error loading connections from storage");
+        }
+    }
+
+    /// <summary>
+    /// Public method to reload connections from storage. Can be called from hub when frontend notifies of a save.
+    /// </summary>
+    public async Task ReloadConnectionsAsync()
+    {
+        await LoadConnectionsAsync();
+    }
+
+    /// <summary>
+    /// Static method to trigger connection reload. Can be called from hub without controller instance.
+    /// </summary>
+    public static async Task ReloadConnectionsStaticAsync()
+    {
+        if (_staticStorageService == null) return;
+        
+        try
+        {
+            _staticLogger?.LogInformation("ReloadConnectionsStaticAsync: Starting reload from storage");
+            var response = await _staticStorageService.LoadConnectionsAsync();
+            if (response.Success && response.Data != null)
+            {
+                lock (_cacheLock)
+                {
+                    _cachedConnections = response.Data;
+                }
+                _staticLogger?.LogInformation("Reloaded {Count} connections from storage (triggered by notification)", response.Data.Count);
+                _staticLogger?.LogInformation("Connection IDs after reload: {Ids}", 
+                    string.Join(", ", response.Data.Select(c => c.Id)));
+            }
+            else if (!response.Success)
+            {
+                if (response.Error?.Contains("No SignalR connection available") == true)
+                {
+                    _staticLogger?.LogDebug("Cannot reload connections: No SignalR connection");
+                }
+                else
+                {
+                    _staticLogger?.LogWarning("Failed to reload connections from storage. Error: {Error}", response.Error);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _staticLogger?.LogError(ex, "Error reloading connections from storage. Exception: {Exception}", ex);
+        }
+    }
+
+    /// <summary>
+    /// Get the cache lock object for thread-safe access to cached connections.
+    /// Used by hub to access cache for verification.
+    /// </summary>
+    public static object GetCacheLock()
+    {
+        return _cacheLock;
+    }
+
+    /// <summary>
+    /// Get the cached connections list (thread-safe access required via GetCacheLock).
+    /// Used by hub to verify connections after save.
+    /// </summary>
+    public static List<ConnectionConfigDto>? GetCachedConnections()
+    {
+        return _cachedConnections;
+    }
+
+    private ConnectionConfig? GetConnectionConfig(string connectionId)
+    {
+        if (_storageService == null)
+        {
+            // Fallback: create minimal config from connection ID
+            return new ConnectionConfig
+            {
+                Id = connectionId,
+                Server = connectionId
+            };
+        }
+
+        lock (_cacheLock)
+        {
+            var connection = _cachedConnections?.FirstOrDefault(c => c.Id == connectionId);
+            if (connection != null)
+            {
+                return new ConnectionConfig
+                {
+                    Id = connection.Id,
+                    Name = connection.Name,
+                    Server = connection.Server,
+                    Database = connection.Database,
+                    Username = connection.Username,
+                    Password = connection.Password,
+                    IntegratedSecurity = connection.IntegratedSecurity,
+                    Port = connection.Port
+                };
+            }
+        }
+
+        // Connection not found in cache, try to reload
+        _ = Task.Run(async () => await LoadConnectionsAsync());
+        
+        _logger.LogWarning("Connection not found in cache. ConnectionId: {ConnectionId}", connectionId);
+        return null;
     }
 
     [HttpPost("test")]
@@ -40,12 +196,8 @@ public class SqlController : ControllerBase
 
         try
         {
-            var result = await _sqlConnectionService.TestConnectionAsync(config);
-            var response = new TestConnectionResponse 
-            { 
-                Success = result, 
-                Error = result ? null : "Connection failed" 
-            };
+            // Use enhanced test connection that returns detailed information
+            var response = await _sqlConnectionService.TestConnectionWithDetailsAsync(config);
             return Ok(response);
         }
         catch (Exception ex)
@@ -142,18 +294,21 @@ public class SqlController : ControllerBase
             return BadRequest(errorResponse);
         }
 
-        // In a real application, you would retrieve the connection config from storage
-        // For now, we'll use a simplified approach where ConnectionId contains the config
-        // This should be replaced with proper storage/retrieval mechanism
+        // Retrieve connection config from storage
+        var connectionConfig = GetConnectionConfig(request.ConnectionId);
+        if (connectionConfig == null)
+        {
+            _logger.LogWarning("ExecuteQuery failed: Connection not found. ConnectionId: {ConnectionId}", request.ConnectionId);
+            var errorResponse = new QueryResponse
+            {
+                Success = false,
+                Error = $"Connection '{request.ConnectionId}' not found"
+            };
+            return BadRequest(errorResponse);
+        }
+
         try
         {
-            // Parse connection config from request (simplified - should come from storage)
-            var connectionConfig = new ConnectionConfig
-            {
-                Id = request.ConnectionId,
-                Server = request.ConnectionId // Simplified - should be retrieved from storage
-            };
-
             var response = await _sqlConnectionService.ExecuteQueryAsync(connectionConfig, request.Query);
             return Ok(response);
         }

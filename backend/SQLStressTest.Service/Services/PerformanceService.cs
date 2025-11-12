@@ -12,10 +12,18 @@ public class PerformanceService : IPerformanceService
     private CancellationTokenSource? _cancellationTokenSource;
     private bool _isStreaming = false;
     private readonly ILogger<PerformanceService> _logger;
+    private readonly IStorageService? _storageService;
+    private readonly Queue<PerformanceMetricsDto> _metricsBuffer = new();
+    private readonly object _bufferLock = new();
+    private const int BATCH_SIZE = 10; // Save metrics in batches
+    private const int BUFFER_MAX_SIZE = 100; // Max buffer size before forced save
 
-    public PerformanceService(ILogger<PerformanceService> logger)
+    public PerformanceService(
+        ILogger<PerformanceService> logger,
+        IStorageService? storageService = null)
     {
         _logger = logger;
+        _storageService = storageService;
     }
 
     public async Task StartStreamingAsync(IHubContext<SqlHub> hubContext)
@@ -50,29 +58,79 @@ public class PerformanceService : IPerformanceService
                         CpuPercent = Math.Round(cpuPercent, 2)
                     };
 
-                    _logger.LogDebug("Sending PerformanceData. Iteration: {Iteration}, CPU: {CpuPercent}, Timestamp: {Timestamp}, DataType: {Type}, DataTypeName: {TypeName}", 
-                        iteration, 
-                        data.CpuPercent, 
-                        data.Timestamp,
-                        data.GetType(),
-                        data.GetType().FullName);
-
-                    // Log the actual object being sent
-                    _logger.LogDebug("PerformanceData object details: Type={Type}, Assembly={Assembly}, IsValueType={IsValueType}, IsPrimitive={IsPrimitive}",
-                        data.GetType(),
-                        data.GetType().Assembly.FullName,
-                        data.GetType().IsValueType,
-                        data.GetType().IsPrimitive);
+                    // Performance data logging reduced to Trace level to reduce noise
+                    // Only log every 10th iteration at Debug level
+                    if (iteration % 10 == 0)
+                    {
+                        _logger.LogDebug("Sending PerformanceData. Iteration: {Iteration}, CPU: {CpuPercent}", 
+                            iteration, 
+                            data.CpuPercent);
+                    }
 
                     // Send to all connected clients
                     try
                     {
-                        _logger.LogDebug("About to call SendAsync with PerformanceData. Method: {Method}, Arguments: {ArgCount}, ArgTypes: {ArgTypes}",
-                            "PerformanceData",
-                            1,
-                            data.GetType().FullName);
-                        await hubContext.Clients.All.SendAsync("PerformanceData", data, _cancellationTokenSource.Token);
-                        _logger.LogDebug("PerformanceData sent successfully. Iteration: {Iteration}", iteration);
+                    await hubContext.Clients.All.SendAsync("PerformanceData", data, _cancellationTokenSource.Token);
+                        
+                        // Buffer metrics for batch saving (if storage service available)
+                        if (_storageService != null)
+                        {
+                            var metrics = new PerformanceMetricsDto
+                            {
+                                Id = Guid.NewGuid().ToString(),
+                                ConnectionId = "default", // TODO: Get actual connection ID from context
+                                Timestamp = DateTime.UtcNow,
+                                CpuPercent = data.CpuPercent,
+                                MemoryBytes = 0, // TODO: Get actual memory usage
+                                ActiveConnections = 1, // TODO: Get actual connection count
+                                QueryExecutionTimeMs = 0 // TODO: Get actual query execution time
+                            };
+                            
+                            lock (_bufferLock)
+                            {
+                                _metricsBuffer.Enqueue(metrics);
+                                
+                                // Save in batches or if buffer is full
+                                if (_metricsBuffer.Count >= BATCH_SIZE || _metricsBuffer.Count >= BUFFER_MAX_SIZE)
+                                {
+                                    var batch = new List<PerformanceMetricsDto>();
+                                    while (batch.Count < BATCH_SIZE && _metricsBuffer.Count > 0)
+                                    {
+                                        batch.Add(_metricsBuffer.Dequeue());
+                                    }
+                                    
+                                    // Save batch asynchronously (fire and forget)
+                                    _ = Task.Run(async () =>
+                                    {
+                                        foreach (var metric in batch)
+                                        {
+                                            try
+                                            {
+                                                var saveResponse = await _storageService.SavePerformanceMetricsAsync(metric);
+                                                if (!saveResponse.Success)
+                                                {
+                                                    // Only log as ERROR if it's an unexpected failure
+                                                    // "No SignalR connection available" is expected when no client is connected
+                                                    if (saveResponse.Error?.Contains("No SignalR connection available") == true)
+                                                    {
+                                                        _logger.LogDebug("Cannot save performance metrics: No SignalR connection (expected when no client connected). MetricId: {MetricId}", metric.Id);
+                                                    }
+                                                    else
+                                                    {
+                                                        _logger.LogWarning("Failed to save performance metrics. Error: {Error}, MetricId: {MetricId}", saveResponse.Error, metric.Id);
+                                                    }
+                                                }
+                                            }
+                                            catch (Exception ex)
+                                            {
+                                                // Only log as ERROR for unexpected exceptions
+                                                _logger.LogError(ex, "Unexpected error saving performance metric. MetricId: {MetricId}", metric.Id);
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -92,26 +150,18 @@ public class PerformanceService : IPerformanceService
                         Status = "connected"
                     };
                     
-                    _logger.LogDebug("Sending Heartbeat. Timestamp: {Timestamp}, HeartbeatType: {Type}, HeartbeatTypeName: {TypeName}", 
-                        heartbeat.Timestamp,
-                        heartbeat.GetType(),
-                        heartbeat.GetType().FullName);
-                    
-                    // Log the actual object being sent
-                    _logger.LogDebug("Heartbeat object details: Type={Type}, Assembly={Assembly}, IsValueType={IsValueType}, IsPrimitive={IsPrimitive}",
-                        heartbeat.GetType(),
-                        heartbeat.GetType().Assembly.FullName,
-                        heartbeat.GetType().IsValueType,
-                        heartbeat.GetType().IsPrimitive);
+                    // Heartbeat logging reduced to reduce noise
+                    // Only log every 10th heartbeat at Debug level
+                    if (iteration % 10 == 0)
+                    {
+                        _logger.LogDebug("Sending Heartbeat. Iteration: {Iteration}, Timestamp: {Timestamp}", 
+                            iteration,
+                            heartbeat.Timestamp);
+                    }
                     
                     try
                     {
-                        _logger.LogDebug("About to call SendAsync with Heartbeat. Method: {Method}, Arguments: {ArgCount}, ArgTypes: {ArgTypes}",
-                            "Heartbeat",
-                            1,
-                            heartbeat.GetType().FullName);
-                        await hubContext.Clients.All.SendAsync("Heartbeat", heartbeat, _cancellationTokenSource.Token);
-                        _logger.LogDebug("Heartbeat sent successfully");
+                    await hubContext.Clients.All.SendAsync("Heartbeat", heartbeat, _cancellationTokenSource.Token);
                     }
                     catch (Exception ex)
                     {

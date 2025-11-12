@@ -19,6 +19,8 @@ public class SqlConnectionWrapper : ISqlConnectionWrapper
         return new SqlCommandWrapper(new SqlCommand(query, _connection));
     }
 
+    public string DataSource => _connection.DataSource;
+
     public void Dispose() => _connection.Dispose();
 }
 
@@ -34,6 +36,11 @@ public class SqlCommandWrapper : ISqlCommandWrapper
     public Task<ISqlDataReaderWrapper> ExecuteReaderAsync()
     {
         return Task.FromResult<ISqlDataReaderWrapper>(new SqlDataReaderWrapper(_command.ExecuteReader()));
+    }
+
+    public async Task<object?> ExecuteScalarAsync()
+    {
+        return await _command.ExecuteScalarAsync();
     }
 
     public void Dispose() => _command.Dispose();

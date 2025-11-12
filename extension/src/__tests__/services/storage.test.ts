@@ -84,6 +84,48 @@ describe('StorageService', () => {
                 [newConnection]
             );
         });
+
+        it('should update existing connection if ID already exists', async () => {
+            const existingConnections: ConnectionConfig[] = [
+                { id: '1', name: 'Old Name', server: 'localhost' }
+            ];
+            const updatedConnection: ConnectionConfig = {
+                id: '1',
+                name: 'New Name',
+                server: 'localhost',
+                database: 'master'
+            };
+
+            (mockContext.workspaceState.get as any).mockReturnValue(existingConnections);
+
+            await storageService.addConnection(updatedConnection);
+
+            expect(mockContext.workspaceState.update).toHaveBeenCalledWith(
+                'sqlStressTest.connections',
+                [updatedConnection]
+            );
+            expect(mockContext.workspaceState.update).toHaveBeenCalledTimes(1);
+        });
+
+        it('should add connection to existing list without duplicates', async () => {
+            const existingConnections: ConnectionConfig[] = [
+                { id: '1', name: 'Server 1', server: 'localhost' }
+            ];
+            const newConnection: ConnectionConfig = {
+                id: '2',
+                name: 'Server 2',
+                server: 'remote'
+            };
+
+            (mockContext.workspaceState.get as any).mockReturnValue(existingConnections);
+
+            await storageService.addConnection(newConnection);
+
+            expect(mockContext.workspaceState.update).toHaveBeenCalledWith(
+                'sqlStressTest.connections',
+                [existingConnections[0], newConnection]
+            );
+        });
     });
 
     describe('removeConnection', () => {

@@ -1,11 +1,14 @@
 using System.Text;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Serilog;
 using SQLStressTest.Service.Hubs;
 using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Services;
 using SQLStressTest.Service.Utilities;
+using SQLStressTest.Service.Validation;
 
 // Ensure logs directory exists in project root
 // Find project root by looking for masterun.ps1 or .git folder
@@ -83,9 +86,39 @@ try
     builder.Host.UseSerilog();
 
 // Add services to the container
-builder.Services.AddControllers();
+// Configure API Explorer first to enable enhanced model metadata
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // Configure JSON options for MVC controllers
+        // With PublishTrimmed=true, .NET 9 disables reflection-based serialization by default
+        // We must explicitly enable it via TypeInfoResolver for model binding to work
+        options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+        options.JsonSerializerOptions.TypeInfoResolver = new System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver();
+    })
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        // Suppress automatic model state validation to avoid "IsConvertibleType is not initialized" error
+        // when trimming is enabled. Controllers will handle validation manually.
+        // This is a known limitation in .NET 9 with PublishTrimmed=true and enhanced model metadata
+        options.SuppressModelStateInvalidFilter = true;
+    })
+    .AddMvcOptions(options =>
+    {
+        // Disable validation during model binding to avoid "IsConvertibleType is not initialized" error
+        // when trimming is enabled. We'll handle validation manually in controllers.
+        // Replace the ObjectModelValidator with a no-op validator
+        options.ModelValidatorProviders.Clear();
+    });
+
+// Replace IObjectModelValidator with a no-op implementation to prevent validation during model binding
+// This avoids the "IsConvertibleType is not initialized" error when trimming is enabled
+// Remove any existing registration first, then add our custom validator
+builder.Services.RemoveAll<IObjectModelValidator>();
+builder.Services.AddSingleton<IObjectModelValidator, NoOpObjectModelValidator>();
 
 // Add SignalR with JSON protocol configured for strongly-typed DTOs
 // NOTE: SignalR's SendAsync accepts params object[], which boxes strongly-typed DTOs as object.
@@ -94,7 +127,7 @@ builder.Services.AddSwaggerGen();
 // reflection-based serialization by default, so we must explicitly enable it via TypeInfoResolver.
 builder.Services.AddSignalR()
     .AddJsonProtocol(options =>
-    {
+{
         // Configure JSON options for SignalR
         options.PayloadSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
         options.PayloadSerializerOptions.WriteIndented = false;
@@ -109,8 +142,22 @@ builder.Services.AddSignalR()
 // Register services with dependency injection (SOLID principles)
 builder.Services.AddSingleton<IConnectionStringBuilder, ConnectionStringBuilder>();
 builder.Services.AddSingleton<ISqlConnectionFactory, SqlConnectionFactory>();
-builder.Services.AddScoped<ISqlConnectionService, SqlConnectionService>();
-builder.Services.AddSingleton<IPerformanceService, PerformanceService>();
+builder.Services.AddScoped<ISqlConnectionService, SqlConnectionService>(sp =>
+{
+    var connectionStringBuilder = sp.GetRequiredService<IConnectionStringBuilder>();
+    var connectionFactory = sp.GetRequiredService<ISqlConnectionFactory>();
+    var storageService = sp.GetService<IStorageService>();
+    var logger = sp.GetService<ILogger<SqlConnectionService>>();
+    return new SqlConnectionService(connectionStringBuilder, connectionFactory, storageService, logger);
+});
+builder.Services.AddSingleton<IPerformanceService, PerformanceService>(sp =>
+{
+    var logger = sp.GetRequiredService<ILogger<PerformanceService>>();
+    var storageService = sp.GetService<IStorageService>();
+    return new PerformanceService(logger, storageService);
+});
+builder.Services.AddSingleton<IStorageService, VSCodeStorageService>();
+builder.Services.AddSingleton<VSCodeStorageService>(); // Also register as concrete type for hub injection
 
 var app = builder.Build();
 
@@ -222,11 +269,19 @@ app.Use(async (context, next) =>
     
     await next();
     
-    logger.LogInformation("Response: {StatusCode} for {Method} {Path} | Origin: {Origin}",
-        context.Response.StatusCode,
-        context.Request.Method,
-        context.Request.Path,
-        origin);
+    // Filter out noise: Don't log 404 for GET requests to root path (health checks, etc.)
+    var shouldLogResponse = !(context.Request.Method == "GET" && 
+                              context.Request.Path == "/" && 
+                              context.Response.StatusCode == 404);
+    
+    if (shouldLogResponse)
+    {
+        logger.LogInformation("Response: {StatusCode} for {Method} {Path} | Origin: {Origin}",
+            context.Response.StatusCode,
+            context.Request.Method,
+            context.Request.Path,
+            origin);
+    }
     
     // Log 400 and 403 specifically with full context
     if (context.Response.StatusCode == 400)

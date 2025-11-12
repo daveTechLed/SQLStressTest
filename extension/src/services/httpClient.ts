@@ -62,18 +62,44 @@ export class HttpClient {
         }
     }
 
-    async testConnection(connectionConfig: any): Promise<{ success: boolean; error?: string }> {
+    async testConnection(connectionConfig: any): Promise<{
+        success: boolean;
+        error?: string;
+        serverVersion?: string;
+        authenticatedUser?: string;
+        databases?: string[];
+        serverName?: string;
+    }> {
         this.logger.log('Testing connection', { server: connectionConfig.server, name: connectionConfig.name });
         try {
-            const response = await this.client.post<{ success: boolean; error?: string }>('/api/sql/test', connectionConfig);
+            const response = await this.client.post<{
+                success: boolean;
+                error?: string;
+                serverVersion?: string;
+                authenticatedUser?: string;
+                databases?: string[];
+                serverName?: string;
+            }>('/api/sql/test', connectionConfig);
             if (response.data.success) {
-                this.logger.log('Connection test successful', { server: connectionConfig.server });
+                this.logger.log('Connection test successful', {
+                    server: connectionConfig.server,
+                    serverVersion: response.data.serverVersion,
+                    authenticatedUser: response.data.authenticatedUser,
+                    databaseCount: response.data.databases?.length
+                });
             } else {
                 this.logger.warn('Connection test failed', { server: connectionConfig.server, error: response.data.error });
             }
             return response.data;
         } catch (error) {
-            const axiosError = error as AxiosError<{ success: boolean; error?: string }>;
+            const axiosError = error as AxiosError<{
+                success: boolean;
+                error?: string;
+                serverVersion?: string;
+                authenticatedUser?: string;
+                databases?: string[];
+                serverName?: string;
+            }>;
             this.logger.error('Connection test error', {
                 message: axiosError.message,
                 status: axiosError.response?.status,

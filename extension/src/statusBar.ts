@@ -24,11 +24,18 @@ export class StatusBar {
     initialize(): void {
         this.logger.log('Initializing StatusBar');
         
+        // Reduced heartbeat callback logging - only log state changes
+        let lastStatus: string = '';
         this.heartbeatCallback = (message: HeartbeatMessage) => {
-            this.logger.log('Heartbeat callback triggered', { 
-                timestamp: message.timestamp, 
-                status: message.status 
-            });
+            // Only log when status changes
+            if (message.status !== lastStatus) {
+                this.logger.log('Heartbeat callback triggered - status changed', { 
+                    timestamp: message.timestamp, 
+                    status: message.status,
+                    previousStatus: lastStatus
+                });
+                lastStatus = message.status;
+            }
             this.updateStatus(message);
         };
 
@@ -36,15 +43,21 @@ export class StatusBar {
         this.updateStatus({ timestamp: Date.now(), status: 'disconnected' });
 
         // Update every 2 seconds
+        let statusCheckCount = 0;
         this.updateTimer = setInterval(() => {
             const isConnected = this.websocketClient.isConnected();
             const timeSinceLastHeartbeat = Date.now() - this.lastHeartbeatTime;
             
-            this.logger.log('Periodic status check', { 
-                isConnected, 
-                timeSinceLastHeartbeat,
-                lastHeartbeatTime: this.lastHeartbeatTime 
-            });
+            // Only log periodic status checks every 10th time to reduce noise
+            statusCheckCount++;
+            if (statusCheckCount % 10 === 0) {
+                this.logger.log('Periodic status check', { 
+                    count: statusCheckCount,
+                    isConnected, 
+                    timeSinceLastHeartbeat,
+                    lastHeartbeatTime: this.lastHeartbeatTime 
+                });
+            }
             
             if (!isConnected) {
                 this.logger.log('Connection lost, updating status to disconnected');
@@ -82,11 +95,12 @@ export class StatusBar {
         this.statusBarItem.tooltip = `Backend connection status. Last heartbeat: ${time}`;
         this.statusBarItem.show();
         
-        this.logger.log('Status updated', { 
-            status: message.status, 
-            timestamp: message.timestamp,
-            displayTime: time 
-        });
+        // Reduced status update logging - only log when status changes
+        // this.logger.log('Status updated', { 
+        //     status: message.status, 
+        //     timestamp: message.timestamp,
+        //     displayTime: time 
+        // });
     }
 
     dispose(): void {

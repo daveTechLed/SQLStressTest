@@ -20,7 +20,7 @@ A VS Code extension for SQL Server stress testing and monitoring with real-time 
 
 ### Prerequisites
 
-- Docker Desktop (for Dev Containers)
+- Docker Desktop (for Dev Containers and SQL Server)
 - VS Code with Dev Containers extension
 
 ### Getting Started
@@ -31,6 +31,32 @@ A VS Code extension for SQL Server stress testing and monitoring with real-time 
    - Set up Node.js 20+ for extension development
    - Set up .NET 8 SDK for backend development
    - Install dependencies
+
+### Running SQL Server 2025 (Docker)
+
+For local development and testing, you can run SQL Server 2025 in Docker:
+
+**macOS/Linux:**
+```bash
+./docker/start-sqlserver.sh
+```
+
+**Windows (PowerShell):**
+```powershell
+.\docker\start-sqlserver.ps1
+```
+
+**Or using Docker Compose directly:**
+```bash
+docker-compose up -d sqlserver2025
+```
+
+**Connection Details:**
+- Server: `localhost,1433`
+- Username: `sa`
+- Password: `YourStrong!Passw0rd123`
+
+See [docker/README.md](docker/README.md) for more details.
 
 ### Running the Backend
 
@@ -82,6 +108,13 @@ dotnet test SQLStressTest.Service.IntegrationTests
 ```
 SQLStressTest/
 ├── .devcontainer/          # Dev Container configuration
+├── docker/                  # Docker scripts and documentation
+│   ├── README.md           # SQL Server Docker setup guide
+│   ├── start-sqlserver.sh  # Start SQL Server (macOS/Linux)
+│   ├── start-sqlserver.ps1 # Start SQL Server (Windows)
+│   ├── stop-sqlserver.sh   # Stop SQL Server (macOS/Linux)
+│   └── stop-sqlserver.ps1  # Stop SQL Server (Windows)
+├── docker-compose.yml       # SQL Server 2025 Docker configuration
 ├── extension/              # VS Code extension (TypeScript)
 │   ├── src/
 │   │   ├── extension.ts   # Main entry point

@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 
@@ -7,13 +8,19 @@ public class SqlConnectionService : ISqlConnectionService
 {
     private readonly IConnectionStringBuilder _connectionStringBuilder;
     private readonly ISqlConnectionFactory _connectionFactory;
+    private readonly IStorageService? _storageService;
+    private readonly ILogger<SqlConnectionService>? _logger;
 
     public SqlConnectionService(
         IConnectionStringBuilder connectionStringBuilder,
-        ISqlConnectionFactory connectionFactory)
+        ISqlConnectionFactory connectionFactory,
+        IStorageService? storageService = null,
+        ILogger<SqlConnectionService>? logger = null)
     {
         _connectionStringBuilder = connectionStringBuilder ?? throw new ArgumentNullException(nameof(connectionStringBuilder));
         _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
+        _storageService = storageService;
+        _logger = logger;
     }
 
     public async Task<bool> TestConnectionAsync(ConnectionConfig config)
@@ -34,6 +41,90 @@ public class SqlConnectionService : ISqlConnectionService
         catch
         {
             return false;
+        }
+    }
+
+    public async Task<TestConnectionResponse> TestConnectionWithDetailsAsync(ConnectionConfig config)
+    {
+        if (config == null)
+        {
+            throw new ArgumentNullException(nameof(config));
+        }
+
+        var response = new TestConnectionResponse { Success = false };
+        var connectionString = _connectionStringBuilder.Build(config);
+
+        try
+        {
+            using var connection = _connectionFactory.CreateConnection(connectionString);
+            await connection.OpenAsync();
+            
+            response.Success = true;
+            response.ServerName = connection.DataSource;
+
+            // Get server version
+            try
+            {
+                using var versionCommand = connection.CreateCommand("SELECT @@VERSION");
+                var version = await versionCommand.ExecuteScalarAsync();
+                response.ServerVersion = version?.ToString();
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogWarning(ex, "Failed to get server version");
+                response.ServerVersion = "Unable to retrieve";
+            }
+
+            // Get authenticated user
+            try
+            {
+                using var userCommand = connection.CreateCommand("SELECT SUSER_SNAME(), SYSTEM_USER, USER_NAME()");
+                using var userReader = await userCommand.ExecuteReaderAsync();
+                if (await userReader.ReadAsync())
+                {
+                    // SUSER_SNAME() = SQL Server login name (domain\user for Windows Auth)
+                    // SYSTEM_USER = SQL Server login name
+                    // USER_NAME() = Database user name
+                    var sqlLogin = userReader.IsDBNull(0) ? null : userReader.GetValue(0)?.ToString();
+                    var systemUser = userReader.IsDBNull(1) ? null : userReader.GetValue(1)?.ToString();
+                    response.AuthenticatedUser = sqlLogin ?? systemUser ?? "Unknown";
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogWarning(ex, "Failed to get authenticated user");
+                response.AuthenticatedUser = "Unable to retrieve";
+            }
+
+            // Get database list
+            try
+            {
+                var databases = new List<string>();
+                using var dbCommand = connection.CreateCommand("SELECT name FROM sys.databases WHERE state = 0 ORDER BY name"); // state 0 = ONLINE
+                using var dbReader = await dbCommand.ExecuteReaderAsync();
+                while (await dbReader.ReadAsync())
+                {
+                    if (!dbReader.IsDBNull(0))
+                    {
+                        databases.Add(dbReader.GetValue(0)?.ToString() ?? string.Empty);
+                    }
+                }
+                response.Databases = databases;
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogWarning(ex, "Failed to get database list");
+                response.Databases = new List<string>();
+            }
+
+            return response;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogError(ex, "TestConnectionWithDetailsAsync failed");
+            response.Success = false;
+            response.Error = ex.Message;
+            return response;
         }
     }
 
@@ -95,6 +186,46 @@ public class SqlConnectionService : ISqlConnectionService
             response.Success = false;
             response.Error = ex.Message;
             response.ExecutionTimeMs = stopwatch.ElapsedMilliseconds;
+        }
+
+        // Save query result to storage (fire and forget - don't block response)
+        if (_storageService != null && config != null)
+        {
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    var resultDto = new QueryResultDto
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        ConnectionId = config.Id ?? string.Empty,
+                        Query = query,
+                        ExecutionTimeMs = response.ExecutionTimeMs ?? 0,
+                        ExecutedAt = DateTime.UtcNow,
+                        Success = response.Success,
+                        ErrorMessage = response.Error,
+                        RowsAffected = response.Success && response.RowCount.HasValue ? response.RowCount.Value : null,
+                        ResultData = response.Success && response.Rows != null 
+                            ? System.Text.Json.JsonSerializer.Serialize(new { response.Columns, response.Rows })
+                            : null
+                    };
+
+                    var saveResponse = await _storageService.SaveQueryResultAsync(resultDto);
+                    if (!saveResponse.Success)
+                    {
+                        _logger?.LogWarning("Failed to save query result to storage. Error: {Error}", saveResponse.Error);
+                    }
+                    else
+                    {
+                        _logger?.LogDebug("Query result saved to storage. QueryId: {QueryId}, ConnectionId: {ConnectionId}", 
+                            resultDto.Id, resultDto.ConnectionId);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger?.LogError(ex, "Error saving query result to storage");
+                }
+            });
         }
 
         return response;

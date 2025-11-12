@@ -68,8 +68,14 @@ public class SqlControllerTests : TestBase
     {
         // Arrange
         var config = CreateTestConnectionConfig();
-        _mockSqlConnectionService.Setup(x => x.TestConnectionAsync(It.IsAny<ConnectionConfig>()))
-            .ReturnsAsync(true);
+        var expectedResponse = new TestConnectionResponse
+        {
+            Success = true,
+            ServerVersion = "Microsoft SQL Server 2022",
+            ServerName = "localhost"
+        };
+        _mockSqlConnectionService.Setup(x => x.TestConnectionWithDetailsAsync(It.IsAny<ConnectionConfig>()))
+            .ReturnsAsync(expectedResponse);
 
         // Act
         var result = await _controller.TestConnection(config);
@@ -88,8 +94,13 @@ public class SqlControllerTests : TestBase
     {
         // Arrange
         var config = CreateTestConnectionConfig();
-        _mockSqlConnectionService.Setup(x => x.TestConnectionAsync(It.IsAny<ConnectionConfig>()))
-            .ReturnsAsync(false);
+        var expectedResponse = new TestConnectionResponse
+        {
+            Success = false,
+            Error = "Connection failed"
+        };
+        _mockSqlConnectionService.Setup(x => x.TestConnectionWithDetailsAsync(It.IsAny<ConnectionConfig>()))
+            .ReturnsAsync(expectedResponse);
 
         // Act
         var result = await _controller.TestConnection(config);
@@ -101,6 +112,113 @@ public class SqlControllerTests : TestBase
         Assert.NotNull(response);
         Assert.False(response!.Success);
         Assert.NotNull(response.Error);
+    }
+
+    [Fact]
+    public async Task TestConnection_ReturnsServerVersion_WhenSuccessful()
+    {
+        // Arrange
+        var config = CreateTestConnectionConfig();
+        var expectedResponse = new TestConnectionResponse
+        {
+            Success = true,
+            ServerVersion = "Microsoft SQL Server 2022",
+            ServerName = "localhost",
+            AuthenticatedUser = "DOMAIN\\user",
+            Databases = new List<string> { "master", "tempdb", "model", "msdb" }
+        };
+        _mockSqlConnectionService.Setup(x => x.TestConnectionWithDetailsAsync(It.IsAny<ConnectionConfig>()))
+            .ReturnsAsync(expectedResponse);
+
+        // Act
+        var result = await _controller.TestConnection(config);
+
+        // Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        var response = Assert.IsType<TestConnectionResponse>(okResult.Value);
+        Assert.NotNull(response);
+        Assert.True(response!.Success);
+        Assert.Equal("Microsoft SQL Server 2022", response.ServerVersion);
+        Assert.Equal("localhost", response.ServerName);
+        Assert.Equal("DOMAIN\\user", response.AuthenticatedUser);
+        Assert.NotNull(response.Databases);
+        Assert.Equal(4, response.Databases!.Count);
+    }
+
+    [Fact]
+    public async Task TestConnection_ReturnsAuthenticatedUser_WhenIntegratedSecurity()
+    {
+        // Arrange
+        var config = CreateTestConnectionConfig(integratedSecurity: true);
+        var expectedResponse = new TestConnectionResponse
+        {
+            Success = true,
+            AuthenticatedUser = "DOMAIN\\currentuser"
+        };
+        _mockSqlConnectionService.Setup(x => x.TestConnectionWithDetailsAsync(It.IsAny<ConnectionConfig>()))
+            .ReturnsAsync(expectedResponse);
+
+        // Act
+        var result = await _controller.TestConnection(config);
+
+        // Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        var response = Assert.IsType<TestConnectionResponse>(okResult.Value);
+        Assert.NotNull(response);
+        Assert.True(response!.Success);
+        Assert.NotNull(response.AuthenticatedUser);
+        Assert.Contains("\\", response.AuthenticatedUser); // Should be domain\user format
+    }
+
+    [Fact]
+    public async Task TestConnection_ReturnsDatabaseList_WhenSuccessful()
+    {
+        // Arrange
+        var config = CreateTestConnectionConfig();
+        var expectedResponse = new TestConnectionResponse
+        {
+            Success = true,
+            Databases = new List<string> { "master", "tempdb", "model", "msdb", "AdventureWorks" }
+        };
+        _mockSqlConnectionService.Setup(x => x.TestConnectionWithDetailsAsync(It.IsAny<ConnectionConfig>()))
+            .ReturnsAsync(expectedResponse);
+
+        // Act
+        var result = await _controller.TestConnection(config);
+
+        // Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        var response = Assert.IsType<TestConnectionResponse>(okResult.Value);
+        Assert.NotNull(response);
+        Assert.True(response!.Success);
+        Assert.NotNull(response.Databases);
+        Assert.True(response.Databases!.Count > 0);
+        Assert.Contains("master", response.Databases);
+    }
+
+    [Fact]
+    public async Task TestConnection_HandlesInvalidCredentials()
+    {
+        // Arrange
+        var config = CreateTestConnectionConfig(integratedSecurity: false);
+        var expectedResponse = new TestConnectionResponse
+        {
+            Success = false,
+            Error = "Login failed for user 'sa'."
+        };
+        _mockSqlConnectionService.Setup(x => x.TestConnectionWithDetailsAsync(It.IsAny<ConnectionConfig>()))
+            .ReturnsAsync(expectedResponse);
+
+        // Act
+        var result = await _controller.TestConnection(config);
+
+        // Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        var response = Assert.IsType<TestConnectionResponse>(okResult.Value);
+        Assert.NotNull(response);
+        Assert.False(response!.Success);
+        Assert.NotNull(response.Error);
+        Assert.Contains("Login failed", response.Error);
     }
 
     [Fact]

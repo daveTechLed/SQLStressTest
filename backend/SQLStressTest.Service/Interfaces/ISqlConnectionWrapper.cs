@@ -4,11 +4,13 @@ public interface ISqlConnectionWrapper : IDisposable
 {
     Task OpenAsync();
     ISqlCommandWrapper CreateCommand(string query);
+    string DataSource { get; }
 }
 
 public interface ISqlCommandWrapper : IDisposable
 {
     Task<ISqlDataReaderWrapper> ExecuteReaderAsync();
+    Task<object?> ExecuteScalarAsync();
 }
 
 public interface ISqlDataReaderWrapper : IDisposable

@@ -6,6 +6,7 @@ import { StatusBar } from './statusBar';
 import { WebSocketClient } from './services/websocketClient';
 import { BackendServiceManager } from './services/backendServiceManager';
 import { Logger } from './services/logger';
+import { StorageService } from './services/storage';
 
 let sqlExplorer: SqlServerExplorer;
 let performanceGraph: PerformanceGraph | undefined;
@@ -14,6 +15,7 @@ let statusBar: StatusBar;
 let websocketClient: WebSocketClient;
 let backendServiceManager: BackendServiceManager;
 let logger: Logger;
+let storageService: StorageService;
 
 export async function activate(context: vscode.ExtensionContext) {
     // Initialize logger first so all messages are captured
@@ -54,6 +56,9 @@ export async function activate(context: vscode.ExtensionContext) {
         websocketClient = new WebSocketClient(backendInfo.url, logger);
         statusBar = new StatusBar(websocketClient, logger);
         
+        // Initialize storage service
+        storageService = new StorageService(context);
+        
         // Initialize SQL Server Explorer
         sqlExplorer = new SqlServerExplorer(context, websocketClient, logger);
         context.subscriptions.push(sqlExplorer);
@@ -83,6 +88,9 @@ export async function activate(context: vscode.ExtensionContext) {
         console.log('[SQL Stress Test] Attempting fallback connection...');
         websocketClient = new WebSocketClient(undefined, logger);
         statusBar = new StatusBar(websocketClient, logger);
+        
+        // Initialize storage service
+        storageService = new StorageService(context);
         
         sqlExplorer = new SqlServerExplorer(context, websocketClient, logger);
         context.subscriptions.push(sqlExplorer);
@@ -114,27 +122,32 @@ export async function activate(context: vscode.ExtensionContext) {
     // Connect WebSocket with detailed error handling
     // Wait a moment for backend to fully start before connecting
     setTimeout(() => {
-        websocketClient.connect().catch((err: any) => {
-            const errorMessage = err?.message || String(err);
-            const statusCode = err?.statusCode || err?.code || err?.response?.status;
-            
-            logger.error('WebSocket connection failed', {
-                message: errorMessage,
-                statusCode,
-                error: err
-            });
-            
-            if (statusCode === 403) {
-                vscode.window.showErrorMessage(
-                    `WebSocket connection failed with 403 Forbidden. Check backend CORS configuration. Error: ${errorMessage}`
-                );
-            } else {
-                vscode.window.showErrorMessage(`Failed to connect to backend: ${errorMessage}`);
-            }
-            
-            // Show output channel for detailed logs
-            logger.showOutputChannel();
+    websocketClient.connect().then(() => {
+        // Register storage handlers after connection is established
+        logger.info('Registering storage handlers...');
+        websocketClient.registerStorageHandlers(storageService);
+        logger.info('Storage handlers registered');
+    }).catch((err: any) => {
+        const errorMessage = err?.message || String(err);
+        const statusCode = err?.statusCode || err?.code || err?.response?.status;
+        
+        logger.error('WebSocket connection failed', {
+            message: errorMessage,
+            statusCode,
+            error: err
         });
+        
+        if (statusCode === 403) {
+            vscode.window.showErrorMessage(
+                `WebSocket connection failed with 403 Forbidden. Check backend CORS configuration. Error: ${errorMessage}`
+            );
+        } else {
+            vscode.window.showErrorMessage(`Failed to connect to backend: ${errorMessage}`);
+        }
+        
+        // Show output channel for detailed logs
+        logger.showOutputChannel();
+    });
     }, 2000); // Wait 2 seconds for backend to be ready
     
     // Initialize status bar

@@ -61,19 +61,28 @@ export class Logger implements ILogger {
             } else {
                 // Fallback to workspace folder
                 const workspaceFolder = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
-                if (workspaceFolder) {
-                    logsDir = path.join(workspaceFolder, 'logs');
-                } else {
+            if (workspaceFolder) {
+                logsDir = path.join(workspaceFolder, 'logs');
+            } else {
                     // Last resort: use temp directory
-                    logsDir = path.join(os.tmpdir(), 'sql-stress-test-logs');
+                logsDir = path.join(os.tmpdir(), 'sql-stress-test-logs');
                 }
             }
 
             // Create logs directory if it doesn't exist
             fs.mkdirSync(logsDir, { recursive: true });
 
-            const dateStr = new Date().toISOString().split('T')[0];
-            const logFileName = `${this.channelName.toLowerCase().replace(/\s+/g, '-')}-${dateStr}.log`;
+            // Generate unique log file name with timestamp for each execution
+            // Format: sql-stress-test---extension-YYYYMMDD-HHMMSS.log (matching backend format)
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timestamp = `${year}${month}${day}-${hours}${minutes}${seconds}`;
+            const logFileName = `${this.channelName.toLowerCase().replace(/\s+/g, '-')}-${timestamp}.log`;
             this.logFilePath = path.join(logsDir, logFileName);
             
             // Write initial log entry
@@ -90,6 +99,42 @@ export class Logger implements ILogger {
             } catch (fallbackError) {
                 console.error('Failed to initialize log file:', fallbackError);
                 this.logFilePath = null;
+            }
+        }
+        
+        // Clean up old log files (keep only last 50 execution logs)
+        if (this.logFilePath) {
+            try {
+                const logDir = path.dirname(this.logFilePath);
+                const logPrefix = `${this.channelName.toLowerCase().replace(/\s+/g, '-')}-`;
+                const oldLogFiles = fs.readdirSync(logDir)
+                    .filter(f => f.startsWith(logPrefix) && f.endsWith('.log'))
+                    .map(f => path.join(logDir, f))
+                    .filter(f => {
+                        try {
+                            return fs.statSync(f).isFile();
+                        } catch {
+                            return false;
+                        }
+                    })
+                    .sort((a, b) => {
+                        try {
+                            return fs.statSync(b).mtime.getTime() - fs.statSync(a).mtime.getTime();
+                        } catch {
+                            return 0;
+                        }
+                    })
+                    .slice(50); // Keep only last 50
+                
+                for (const oldFile of oldLogFiles) {
+                    try {
+                        fs.unlinkSync(oldFile);
+                    } catch {
+                        // Ignore errors when deleting old log files
+                    }
+                }
+            } catch {
+                // Ignore errors during log cleanup
             }
         }
     }

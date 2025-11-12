@@ -1,6 +1,7 @@
 import * as signalR from '@microsoft/signalr';
 import * as vscode from 'vscode';
 import { ILogger, Logger } from './logger';
+import { StorageService, QueryResult, PerformanceMetrics } from './storage';
 
 export interface PerformanceData {
     timestamp: number;
@@ -10,6 +11,85 @@ export interface PerformanceData {
 export interface HeartbeatMessage {
     timestamp: number;
     status: 'connected' | 'disconnected';
+}
+
+// Storage request/response interfaces matching backend DTOs
+export interface StorageResponse<T = any> {
+    success: boolean;
+    error?: string;
+    data?: T;
+}
+
+export interface ConnectionConfigDto {
+    id: string;
+    name: string;
+    server: string;
+    database?: string;
+    username?: string;
+    password?: string;
+    integratedSecurity: boolean;
+    port?: number;
+}
+
+export interface SaveConnectionRequest {
+    connection: ConnectionConfigDto;
+}
+
+export interface UpdateConnectionRequest {
+    id: string;
+    connection: ConnectionConfigDto;
+}
+
+export interface DeleteConnectionRequest {
+    id: string;
+}
+
+export interface LoadConnectionsRequest {
+    // No parameters
+}
+
+export interface QueryResultDto {
+    id: string;
+    connectionId: string;
+    query: string;
+    executionTimeMs: number;
+    executedAt: string; // ISO date string
+    success: boolean;
+    errorMessage?: string;
+    rowsAffected?: number;
+    resultData?: string;
+}
+
+export interface SaveQueryResultRequest {
+    result: QueryResultDto;
+}
+
+export interface LoadQueryResultsRequest {
+    connectionId: string;
+}
+
+export interface PerformanceMetricsDto {
+    id: string;
+    connectionId: string;
+    timestamp: string; // ISO date string
+    cpuPercent: number;
+    memoryBytes: number;
+    activeConnections: number;
+    queryExecutionTimeMs: number;
+}
+
+export interface SavePerformanceMetricsRequest {
+    metrics: PerformanceMetricsDto;
+}
+
+export interface TimeRangeDto {
+    startTime?: string; // ISO date string
+    endTime?: string; // ISO date string
+}
+
+export interface LoadPerformanceMetricsRequest {
+    connectionId: string;
+    timeRange: TimeRangeDto;
 }
 
 export class WebSocketClient {
@@ -65,19 +145,31 @@ export class WebSocketClient {
                 .build();
 
             // Register handlers
+            // Reduced logging for PerformanceData - only log every 10th message
+            let performanceDataCount = 0;
             this.connection.on('PerformanceData', (data: PerformanceData) => {
-                this.logger.log('PerformanceData received', { 
-                    timestamp: data.timestamp, 
-                    cpuPercent: data.cpuPercent 
-                });
+                performanceDataCount++;
+                if (performanceDataCount % 10 === 0) {
+                    this.logger.log('PerformanceData received', { 
+                        count: performanceDataCount,
+                        timestamp: data.timestamp, 
+                        cpuPercent: data.cpuPercent 
+                    });
+                }
                 this.onPerformanceDataCallbacks.forEach(callback => callback(data));
             });
 
+            // Reduced logging for Heartbeat - only log every 10th message
+            let heartbeatCount = 0;
             this.connection.on('Heartbeat', (message: HeartbeatMessage) => {
-                this.logger.log('Heartbeat received', { 
-                    timestamp: message.timestamp, 
-                    status: message.status 
-                });
+                heartbeatCount++;
+                if (heartbeatCount % 10 === 0) {
+                    this.logger.log('Heartbeat received', { 
+                        count: heartbeatCount,
+                        timestamp: message.timestamp, 
+                        status: message.status 
+                    });
+                }
                 this.onHeartbeatCallbacks.forEach(callback => callback(message));
             });
 
@@ -177,10 +269,11 @@ export class WebSocketClient {
 
     isConnected(): boolean {
         const connected = this.connection?.state === signalR.HubConnectionState.Connected;
-        this.logger.log('Connection status check', { 
-            connected, 
-            state: this.connection?.state 
-        });
+        // Reduced logging - only log when state changes or at debug level
+        // this.logger.log('Connection status check', { 
+        //     connected, 
+        //     state: this.connection?.state 
+        // });
         return connected;
     }
 
@@ -207,6 +300,211 @@ export class WebSocketClient {
         const index = this.onHeartbeatCallbacks.indexOf(callback);
         if (index >= 0) {
             this.onHeartbeatCallbacks.splice(index, 1);
+        }
+    }
+
+    /**
+     * Register storage operation handlers that the backend can invoke
+     * @param storageService The storage service to use for operations
+     */
+    registerStorageHandlers(storageService: StorageService): void {
+        if (!this.connection) {
+            this.logger.log('Cannot register storage handlers: connection not established');
+            return;
+        }
+
+        // Connection handlers
+        this.connection.on('SaveConnection', async (request: SaveConnectionRequest): Promise<StorageResponse> => {
+            try {
+                this.logger.log('SaveConnection request received from backend', { 
+                    connectionId: request.connection.id,
+                    connectionName: request.connection.name,
+                    server: request.connection.server 
+                });
+                await storageService.addConnection(request.connection);
+                this.logger.log('SaveConnection completed successfully', { 
+                    connectionId: request.connection.id,
+                    connectionName: request.connection.name 
+                });
+                return { success: true };
+            } catch (error: any) {
+                this.logger.error('SaveConnection failed', error);
+                return { success: false, error: error.message || 'Unknown error' };
+            }
+        });
+
+        this.connection.on('LoadConnections', async (request: LoadConnectionsRequest): Promise<StorageResponse<ConnectionConfigDto[]>> => {
+            try {
+                this.logger.log('LoadConnections request received');
+                const connections = await storageService.loadConnections();
+                // Convert to DTO format (integratedSecurity is required in DTO)
+                const dtoConnections: ConnectionConfigDto[] = connections.map(c => ({
+                    id: c.id,
+                    name: c.name,
+                    server: c.server,
+                    database: c.database,
+                    username: c.username,
+                    password: c.password,
+                    integratedSecurity: c.integratedSecurity ?? false,
+                    port: c.port
+                }));
+                return { success: true, data: dtoConnections };
+            } catch (error: any) {
+                this.logger.error('LoadConnections failed', error);
+                return { success: false, error: error.message || 'Unknown error' };
+            }
+        });
+
+        this.connection.on('UpdateConnection', async (request: UpdateConnectionRequest): Promise<StorageResponse> => {
+            try {
+                this.logger.log('UpdateConnection request received', { id: request.id });
+                await storageService.updateConnection(request.id, request.connection);
+                return { success: true };
+            } catch (error: any) {
+                this.logger.error('UpdateConnection failed', error);
+                return { success: false, error: error.message || 'Unknown error' };
+            }
+        });
+
+        this.connection.on('DeleteConnection', async (request: DeleteConnectionRequest): Promise<StorageResponse> => {
+            try {
+                this.logger.log('DeleteConnection request received', { id: request.id });
+                await storageService.removeConnection(request.id);
+                return { success: true };
+            } catch (error: any) {
+                this.logger.error('DeleteConnection failed', error);
+                return { success: false, error: error.message || 'Unknown error' };
+            }
+        });
+
+        // Query result handlers
+        this.connection.on('SaveQueryResult', async (request: SaveQueryResultRequest): Promise<StorageResponse> => {
+            try {
+                this.logger.log('SaveQueryResult request received', { connectionId: request.result.connectionId });
+                const result = {
+                    ...request.result,
+                    executedAt: new Date(request.result.executedAt)
+                };
+                await storageService.saveQueryResult(result);
+                return { success: true };
+            } catch (error: any) {
+                this.logger.error('SaveQueryResult failed', error);
+                return { success: false, error: error.message || 'Unknown error' };
+            }
+        });
+
+        this.connection.on('LoadQueryResults', async (request: LoadQueryResultsRequest): Promise<StorageResponse<QueryResultDto[]>> => {
+            try {
+                this.logger.log('LoadQueryResults request received', { connectionId: request.connectionId });
+                const results = await storageService.loadQueryResults(request.connectionId);
+                // Convert Date objects to ISO strings for serialization
+                const dtoResults: QueryResultDto[] = results.map((r: QueryResult) => ({
+                    id: r.id,
+                    connectionId: r.connectionId,
+                    query: r.query,
+                    executionTimeMs: r.executionTimeMs,
+                    executedAt: r.executedAt.toISOString(),
+                    success: r.success,
+                    errorMessage: r.errorMessage,
+                    rowsAffected: r.rowsAffected,
+                    resultData: r.resultData
+                }));
+                return { success: true, data: dtoResults };
+            } catch (error: any) {
+                this.logger.error('LoadQueryResults failed', error);
+                return { success: false, error: error.message || 'Unknown error' };
+            }
+        });
+
+        // Performance metrics handlers
+        this.connection.on('SavePerformanceMetrics', async (request: SavePerformanceMetricsRequest): Promise<StorageResponse> => {
+            try {
+                this.logger.log('SavePerformanceMetrics request received', { connectionId: request.metrics.connectionId });
+                const metrics = {
+                    ...request.metrics,
+                    timestamp: new Date(request.metrics.timestamp)
+                };
+                await storageService.savePerformanceMetrics(metrics);
+                return { success: true };
+            } catch (error: any) {
+                this.logger.error('SavePerformanceMetrics failed', error);
+                return { success: false, error: error.message || 'Unknown error' };
+            }
+        });
+
+        this.connection.on('LoadPerformanceMetrics', async (request: LoadPerformanceMetricsRequest): Promise<StorageResponse<PerformanceMetricsDto[]>> => {
+            try {
+                this.logger.log('LoadPerformanceMetrics request received', { 
+                    connectionId: request.connectionId,
+                    timeRange: request.timeRange 
+                });
+                const timeRange = {
+                    startTime: request.timeRange.startTime ? new Date(request.timeRange.startTime) : undefined,
+                    endTime: request.timeRange.endTime ? new Date(request.timeRange.endTime) : undefined
+                };
+                const metrics = await storageService.loadPerformanceMetrics(request.connectionId, timeRange);
+                // Convert Date objects to ISO strings for serialization
+                const dtoMetrics: PerformanceMetricsDto[] = metrics.map((m: PerformanceMetrics) => ({
+                    id: m.id,
+                    connectionId: m.connectionId,
+                    timestamp: m.timestamp.toISOString(),
+                    cpuPercent: m.cpuPercent,
+                    memoryBytes: m.memoryBytes,
+                    activeConnections: m.activeConnections,
+                    queryExecutionTimeMs: m.queryExecutionTimeMs
+                }));
+                return { success: true, data: dtoMetrics };
+            } catch (error: any) {
+                this.logger.error('LoadPerformanceMetrics failed', error);
+                return { success: false, error: error.message || 'Unknown error' };
+            }
+        });
+
+        this.logger.log('Storage handlers registered successfully');
+    }
+
+    /**
+     * Notify the backend that a connection was saved in VS Code storage.
+     * This triggers the backend to reload connections so its cache stays in sync.
+     * @param connectionId The ID of the connection that was saved
+     */
+    async notifyConnectionSaved(connectionId: string): Promise<void> {
+        if (!this.connection || this.connection.state !== signalR.HubConnectionState.Connected) {
+            this.logger.error('=== CANNOT NOTIFY BACKEND: SIGNALR NOT CONNECTED ===');
+            this.logger.error('Connection state', {
+                connectionId,
+                state: this.connection?.state,
+                isConnected: this.connection?.state === signalR.HubConnectionState.Connected
+            });
+            return;
+        }
+
+        try {
+            this.logger.info('=== SENDING BACKEND NOTIFICATION ===');
+            this.logger.info('Invoking NotifyConnectionSaved', { 
+                connectionId,
+                signalRState: this.connection.state,
+                connectionId_backend: this.connection.connectionId
+            });
+            
+            const startTime = Date.now();
+            await this.connection.invoke('NotifyConnectionSaved', connectionId);
+            const duration = Date.now() - startTime;
+            
+            this.logger.info('=== BACKEND NOTIFICATION SUCCESS ===');
+            this.logger.info('Backend notified successfully', { 
+                connectionId,
+                durationMs: duration
+            });
+        } catch (error: any) {
+            // Log but don't throw - save operation should succeed even if notification fails
+            this.logger.error('=== BACKEND NOTIFICATION ERROR ===');
+            this.logger.error('Failed to notify backend of connection save', { 
+                error: error?.message || String(error),
+                errorStack: error?.stack,
+                errorName: error?.name,
+                connectionId 
+            });
         }
     }
 }
