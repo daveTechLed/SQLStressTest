@@ -437,5 +437,42 @@ public class SqlHub : Hub
             return Task.FromException(ex);
         }
     }
+
+    /// <summary>
+    /// Send Extended Events data to all connected clients
+    /// Called by StressTestService to stream events in real-time
+    /// </summary>
+    public async Task SendExtendedEventDataAsync(ExtendedEventData eventData)
+    {
+        try
+        {
+            await Clients.All.SendAsync("ExtendedEventData", eventData);
+            _logger.LogTrace("ExtendedEventData sent. EventName: {EventName}, ExecutionId: {ExecutionId}",
+                eventData.EventName, eventData.ExecutionId);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error sending ExtendedEventData. EventName: {EventName}", eventData.EventName);
+        }
+    }
+
+    /// <summary>
+    /// Send execution boundary to all connected clients
+    /// Called by StressTestService to mark execution start/end times
+    /// </summary>
+    public async Task SendExecutionBoundaryAsync(ExecutionBoundary boundary)
+    {
+        try
+        {
+            await Clients.All.SendAsync("ExecutionBoundary", boundary);
+            _logger.LogTrace("ExecutionBoundary sent. ExecutionNumber: {ExecutionNumber}, IsStart: {IsStart}",
+                boundary.ExecutionNumber, boundary.IsStart);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error sending ExecutionBoundary. ExecutionNumber: {ExecutionNumber}",
+                boundary.ExecutionNumber);
+        }
+    }
 }
 

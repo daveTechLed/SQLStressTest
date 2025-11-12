@@ -13,6 +13,7 @@ public class SqlController : ControllerBase
     private readonly IConnectionStringBuilder _connectionStringBuilder;
     private readonly ILogger<SqlController> _logger;
     private readonly IStorageService? _storageService;
+    private readonly IStressTestService _stressTestService;
     private static List<ConnectionConfigDto>? _cachedConnections;
     private static readonly object _cacheLock = new();
     private static IStorageService? _staticStorageService;
@@ -22,11 +23,13 @@ public class SqlController : ControllerBase
         ISqlConnectionService sqlConnectionService,
         IConnectionStringBuilder connectionStringBuilder,
         ILogger<SqlController> logger,
+        IStressTestService stressTestService,
         IStorageService? storageService = null)
     {
         _sqlConnectionService = sqlConnectionService ?? throw new ArgumentNullException(nameof(sqlConnectionService));
         _connectionStringBuilder = connectionStringBuilder ?? throw new ArgumentNullException(nameof(connectionStringBuilder));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _stressTestService = stressTestService ?? throw new ArgumentNullException(nameof(stressTestService));
         _storageService = storageService;
         
         // Store static references for reload capability from hub
@@ -329,6 +332,100 @@ public class SqlController : ControllerBase
                 request.ConnectionId, request.Query?.Length ?? 0);
             
             var errorResponse = new QueryResponse
+            {
+                Success = false,
+                Error = ex.Message
+            };
+            return Ok(errorResponse);
+        }
+    }
+
+    [HttpPost("stress-test")]
+    public async Task<IActionResult> ExecuteStressTest([FromBody] StressTestRequest request)
+    {
+        // Check for null request first
+        if (request == null)
+        {
+            _logger.LogWarning("ExecuteStressTest validation failed: Request is null");
+            var errorResponse = new StressTestResponse
+            {
+                Success = false,
+                Error = "Request is required"
+            };
+            return BadRequest(errorResponse);
+        }
+
+        // Validate model state
+        if (!ModelState.IsValid)
+        {
+            var modelErrors = string.Join(", ", ModelState.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage ?? "Unknown error"));
+            
+            _logger.LogWarning("ExecuteStressTest model validation failed. Errors: {Errors}", modelErrors);
+            
+            var errorResponse = new StressTestResponse
+            {
+                Success = false,
+                Error = $"Validation failed: {modelErrors}"
+            };
+            return BadRequest(errorResponse);
+        }
+
+        _logger.LogInformation("ExecuteStressTest received request. ConnectionId: {ConnectionId}, ParallelExecutions: {ParallelExecutions}, TotalExecutions: {TotalExecutions}",
+            request.ConnectionId, request.ParallelExecutions, request.TotalExecutions);
+
+        if (string.IsNullOrWhiteSpace(request.ConnectionId))
+        {
+            _logger.LogWarning("ExecuteStressTest validation failed: ConnectionId is null or empty");
+            var errorResponse = new StressTestResponse
+            {
+                Success = false,
+                Error = "ConnectionId is required"
+            };
+            return BadRequest(errorResponse);
+        }
+
+        if (string.IsNullOrWhiteSpace(request.Query))
+        {
+            _logger.LogWarning("ExecuteStressTest validation failed: Query is null or empty");
+            var errorResponse = new StressTestResponse
+            {
+                Success = false,
+                Error = "Query is required"
+            };
+            return BadRequest(errorResponse);
+        }
+
+        // Retrieve connection config from storage
+        var connectionConfig = GetConnectionConfig(request.ConnectionId);
+        if (connectionConfig == null)
+        {
+            _logger.LogWarning("ExecuteStressTest failed: Connection not found. ConnectionId: {ConnectionId}", request.ConnectionId);
+            var errorResponse = new StressTestResponse
+            {
+                Success = false,
+                Error = $"Connection '{request.ConnectionId}' not found"
+            };
+            return BadRequest(errorResponse);
+        }
+
+        try
+        {
+            var response = await _stressTestService.ExecuteStressTestAsync(
+                connectionConfig,
+                request.Query,
+                request.ParallelExecutions,
+                request.TotalExecutions);
+            
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "ExecuteStressTest failed with exception. ConnectionId: {ConnectionId}",
+                request.ConnectionId);
+            
+            var errorResponse = new StressTestResponse
             {
                 Success = false,
                 Error = ex.Message

@@ -13,6 +13,24 @@ export interface HeartbeatMessage {
     status: 'connected' | 'disconnected';
 }
 
+export interface ExtendedEventData {
+    eventName: string;
+    timestamp: string; // ISO date string
+    executionId: string; // GUID
+    executionNumber: number;
+    eventFields: { [key: string]: any }; // Extensible dictionary for event-specific fields
+    actions: { [key: string]: any }; // Actions captured with the event
+}
+
+export interface ExecutionBoundary {
+    executionNumber: number;
+    executionId: string; // GUID
+    startTime: string; // ISO date string
+    endTime?: string; // ISO date string (null if still running)
+    isStart: boolean;
+    timestampMs: number; // Unix timestamp in milliseconds
+}
+
 // Storage request/response interfaces matching backend DTOs
 export interface StorageResponse<T = any> {
     success: boolean;
@@ -102,6 +120,8 @@ export class WebSocketClient {
 
     private onPerformanceDataCallbacks: ((data: PerformanceData) => void)[] = [];
     private onHeartbeatCallbacks: ((message: HeartbeatMessage) => void)[] = [];
+    private onExtendedEventDataCallbacks: ((data: ExtendedEventData) => void)[] = [];
+    private onExecutionBoundaryCallbacks: ((boundary: ExecutionBoundary) => void)[] = [];
 
     constructor(baseUrl?: string, logger?: ILogger) {
         // Default to localhost, can be configured via settings
@@ -171,6 +191,15 @@ export class WebSocketClient {
                     });
                 }
                 this.onHeartbeatCallbacks.forEach(callback => callback(message));
+            });
+
+            // Extended Events handlers
+            this.connection.on('ExtendedEventData', (data: ExtendedEventData) => {
+                this.onExtendedEventDataCallbacks.forEach(callback => callback(data));
+            });
+
+            this.connection.on('ExecutionBoundary', (boundary: ExecutionBoundary) => {
+                this.onExecutionBoundaryCallbacks.forEach(callback => callback(boundary));
             });
 
             this.connection.onclose(async (error) => {
@@ -300,6 +329,28 @@ export class WebSocketClient {
         const index = this.onHeartbeatCallbacks.indexOf(callback);
         if (index >= 0) {
             this.onHeartbeatCallbacks.splice(index, 1);
+        }
+    }
+
+    onExtendedEventData(callback: (data: ExtendedEventData) => void): void {
+        this.onExtendedEventDataCallbacks.push(callback);
+    }
+
+    offExtendedEventData(callback: (data: ExtendedEventData) => void): void {
+        const index = this.onExtendedEventDataCallbacks.indexOf(callback);
+        if (index >= 0) {
+            this.onExtendedEventDataCallbacks.splice(index, 1);
+        }
+    }
+
+    onExecutionBoundary(callback: (boundary: ExecutionBoundary) => void): void {
+        this.onExecutionBoundaryCallbacks.push(callback);
+    }
+
+    offExecutionBoundary(callback: (boundary: ExecutionBoundary) => void): void {
+        const index = this.onExecutionBoundaryCallbacks.indexOf(callback);
+        if (index >= 0) {
+            this.onExecutionBoundaryCallbacks.splice(index, 1);
         }
     }
 

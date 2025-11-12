@@ -16,6 +16,7 @@ public class SqlControllerTests : TestBase
 {
     private readonly Mock<ISqlConnectionService> _mockSqlConnectionService;
     private readonly Mock<IConnectionStringBuilder> _mockConnectionStringBuilder;
+    private readonly Mock<IStressTestService> _mockStressTestService;
     private readonly Mock<ILogger<SqlController>> _mockLogger;
     private readonly SqlController _controller;
 
@@ -23,8 +24,13 @@ public class SqlControllerTests : TestBase
     {
         _mockSqlConnectionService = new Mock<ISqlConnectionService>();
         _mockConnectionStringBuilder = new Mock<IConnectionStringBuilder>();
+        _mockStressTestService = new Mock<IStressTestService>();
         _mockLogger = new Mock<ILogger<SqlController>>();
-        _controller = new SqlController(_mockSqlConnectionService.Object, _mockConnectionStringBuilder.Object, _mockLogger.Object);
+        _controller = new SqlController(
+            _mockSqlConnectionService.Object, 
+            _mockConnectionStringBuilder.Object, 
+            _mockLogger.Object,
+            _mockStressTestService.Object);
     }
 
     [Fact]
@@ -32,7 +38,7 @@ public class SqlControllerTests : TestBase
     {
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() => 
-            new SqlController(null!, _mockConnectionStringBuilder.Object, _mockLogger.Object));
+            new SqlController(null!, _mockConnectionStringBuilder.Object, _mockLogger.Object, _mockStressTestService.Object));
     }
 
     [Fact]
@@ -40,7 +46,7 @@ public class SqlControllerTests : TestBase
     {
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() => 
-            new SqlController(_mockSqlConnectionService.Object, null!, _mockLogger.Object));
+            new SqlController(_mockSqlConnectionService.Object, null!, _mockLogger.Object, _mockStressTestService.Object));
     }
 
     [Fact]
@@ -48,7 +54,15 @@ public class SqlControllerTests : TestBase
     {
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() => 
-            new SqlController(_mockSqlConnectionService.Object, _mockConnectionStringBuilder.Object, null!));
+            new SqlController(_mockSqlConnectionService.Object, _mockConnectionStringBuilder.Object, null!, _mockStressTestService.Object));
+    }
+
+    [Fact]
+    public void Constructor_ThrowsArgumentNullException_WhenStressTestServiceIsNull()
+    {
+        // Act & Assert
+        Assert.Throws<ArgumentNullException>(() => 
+            new SqlController(_mockSqlConnectionService.Object, _mockConnectionStringBuilder.Object, _mockLogger.Object, null!));
     }
 
     [Fact]
@@ -520,6 +534,151 @@ public class SqlControllerTests : TestBase
         {
             staticStorageServiceField?.SetValue(null, originalStorageService);
         }
+    }
+
+    [Fact]
+    public async Task ExecuteStressTest_ReturnsBadRequest_WhenRequestIsNull()
+    {
+        // Act
+        var result = await _controller.ExecuteStressTest(null!);
+
+        // Assert
+        var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+        Assert.Equal(400, badRequestResult.StatusCode);
+        var response = Assert.IsType<StressTestResponse>(badRequestResult.Value);
+        Assert.NotNull(response);
+        Assert.False(response!.Success);
+        Assert.NotNull(response.Error);
+    }
+
+    [Fact]
+    public async Task ExecuteStressTest_ReturnsBadRequest_WhenConnectionIdIsEmpty()
+    {
+        // Arrange
+        var request = new StressTestRequest
+        {
+            ConnectionId = string.Empty,
+            Query = "SELECT 1",
+            ParallelExecutions = 1,
+            TotalExecutions = 10
+        };
+
+        // Act
+        var result = await _controller.ExecuteStressTest(request);
+
+        // Assert
+        var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+        Assert.Equal(400, badRequestResult.StatusCode);
+        var response = Assert.IsType<StressTestResponse>(badRequestResult.Value);
+        Assert.NotNull(response);
+        Assert.False(response!.Success);
+        Assert.NotNull(response.Error);
+    }
+
+    [Fact]
+    public async Task ExecuteStressTest_ReturnsBadRequest_WhenQueryIsEmpty()
+    {
+        // Arrange
+        var request = new StressTestRequest
+        {
+            ConnectionId = "test-conn",
+            Query = string.Empty,
+            ParallelExecutions = 1,
+            TotalExecutions = 10
+        };
+
+        // Act
+        var result = await _controller.ExecuteStressTest(request);
+
+        // Assert
+        var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
+        Assert.Equal(400, badRequestResult.StatusCode);
+        var response = Assert.IsType<StressTestResponse>(badRequestResult.Value);
+        Assert.NotNull(response);
+        Assert.False(response!.Success);
+        Assert.NotNull(response.Error);
+    }
+
+    [Fact]
+    public async Task ExecuteStressTest_CallsStressTestService()
+    {
+        // Arrange
+        var request = new StressTestRequest
+        {
+            ConnectionId = "test-conn",
+            Query = "SELECT 1",
+            ParallelExecutions = 2,
+            TotalExecutions = 10
+        };
+
+        var expectedResponse = new StressTestResponse
+        {
+            Success = true,
+            TestId = Guid.NewGuid().ToString(),
+            Message = "Stress test completed"
+        };
+
+        _mockStressTestService.Setup(x => x.ExecuteStressTestAsync(
+            It.IsAny<ConnectionConfig>(),
+            It.IsAny<string>(),
+            It.IsAny<int>(),
+            It.IsAny<int>(),
+            It.IsAny<CancellationToken>()))
+            .ReturnsAsync(expectedResponse);
+
+        // Act
+        var result = await _controller.ExecuteStressTest(request);
+
+        // Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(200, okResult.StatusCode);
+        var response = Assert.IsType<StressTestResponse>(okResult.Value);
+        Assert.NotNull(response);
+        Assert.True(response!.Success);
+        Assert.NotNull(response.TestId);
+        _mockStressTestService.Verify(x => x.ExecuteStressTestAsync(
+            It.IsAny<ConnectionConfig>(),
+            request.Query,
+            request.ParallelExecutions,
+            request.TotalExecutions,
+            It.IsAny<CancellationToken>()), Times.Once);
+    }
+
+    [Fact]
+    public async Task ExecuteStressTest_ReturnsErrorResponse_WhenServiceFails()
+    {
+        // Arrange
+        var request = new StressTestRequest
+        {
+            ConnectionId = "test-conn",
+            Query = "SELECT 1",
+            ParallelExecutions = 1,
+            TotalExecutions = 10
+        };
+
+        var expectedResponse = new StressTestResponse
+        {
+            Success = false,
+            Error = "Connection failed"
+        };
+
+        _mockStressTestService.Setup(x => x.ExecuteStressTestAsync(
+            It.IsAny<ConnectionConfig>(),
+            It.IsAny<string>(),
+            It.IsAny<int>(),
+            It.IsAny<int>(),
+            It.IsAny<CancellationToken>()))
+            .ReturnsAsync(expectedResponse);
+
+        // Act
+        var result = await _controller.ExecuteStressTest(request);
+
+        // Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        var response = Assert.IsType<StressTestResponse>(okResult.Value);
+        Assert.NotNull(response);
+        Assert.False(response!.Success);
+        Assert.NotNull(response.Error);
     }
 }
 

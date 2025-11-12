@@ -57,6 +57,14 @@ export class QueryEditor {
                 case 'executeQuery':
                     await this.executeQuery(message.connectionId, message.query);
                     break;
+                case 'executeStressTest':
+                    await this.executeStressTest(
+                        message.connectionId, 
+                        message.query,
+                        message.parallelExecutions,
+                        message.totalExecutions
+                    );
+                    break;
                 case 'getConnections':
                     await this.sendConnections();
                     break;
@@ -112,6 +120,58 @@ export class QueryEditor {
                     success: false,
                     error: errorMessage
                 } as QueryResponse
+            });
+        }
+    }
+
+    private async executeStressTest(
+        connectionId: string, 
+        query: string,
+        parallelExecutions: number,
+        totalExecutions: number
+    ): Promise<void> {
+        if (!this.panel) {
+            return;
+        }
+
+        this.logger.log('Executing stress test', { 
+            connectionId, 
+            queryLength: query.length,
+            parallelExecutions,
+            totalExecutions
+        });
+
+        // Notify that stress test is starting (this will be handled by extension.ts to start PerformanceGraph)
+        vscode.commands.executeCommand('sqlStressTest.showPerformanceGraph', connectionId);
+
+        try {
+            const response = await this.httpClient.executeStressTest({
+                connectionId,
+                query,
+                parallelExecutions,
+                totalExecutions
+            });
+            
+            this.logger.log('Stress test execution completed', { 
+                success: response.success, 
+                testId: response.testId,
+                message: response.message,
+                error: response.error
+            });
+            
+            this.panel.webview.postMessage({
+                command: 'stressTestResult',
+                data: response
+            });
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+            this.logger.error('Stress test execution error', error);
+            this.panel.webview.postMessage({
+                command: 'stressTestResult',
+                data: {
+                    success: false,
+                    error: errorMessage
+                }
             });
         }
     }
@@ -186,6 +246,21 @@ export class QueryEditor {
         </select>
         <button id="executeBtn">Execute</button>
     </div>
+    <div id="stressTestConfig" style="margin-top: 10px; padding: 10px; border: 1px solid var(--vscode-input-border); background-color: var(--vscode-input-background);">
+        <h3 style="margin-top: 0;">Stress Test Configuration</h3>
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+            <label>
+                Parallel Executions:
+                <input type="number" id="parallelExecutions" value="1" min="1" max="1000" style="width: 80px; margin-left: 5px; padding: 3px;">
+            </label>
+            <label>
+                Total Executions:
+                <input type="number" id="totalExecutions" value="10" min="1" max="100000" style="width: 80px; margin-left: 5px; padding: 3px;">
+            </label>
+            <button id="stressTestBtn" style="padding: 5px 15px;">Run Stress Test</button>
+        </div>
+        <div id="stressTestStatus" style="font-size: 12px; color: var(--vscode-descriptionForeground);"></div>
+    </div>
     <div id="editor"></div>
     <div id="results"></div>
     
@@ -205,6 +280,10 @@ export class QueryEditor {
 
         const connectionSelect = document.getElementById('connectionSelect');
         const executeBtn = document.getElementById('executeBtn');
+        const stressTestBtn = document.getElementById('stressTestBtn');
+        const parallelExecutionsInput = document.getElementById('parallelExecutions');
+        const totalExecutionsInput = document.getElementById('totalExecutions');
+        const stressTestStatus = document.getElementById('stressTestStatus');
         const resultsDiv = document.getElementById('results');
 
         executeBtn.addEventListener('click', () => {
@@ -228,6 +307,44 @@ export class QueryEditor {
             });
         });
 
+        stressTestBtn.addEventListener('click', () => {
+            const connectionId = connectionSelect.value;
+            const query = editor.getValue();
+            const parallelExecutions = parseInt(parallelExecutionsInput.value) || 1;
+            const totalExecutions = parseInt(totalExecutionsInput.value) || 10;
+            
+            if (!connectionId) {
+                showError('Please select a connection');
+                return;
+            }
+            
+            if (!query.trim()) {
+                showError('Please enter a query');
+                return;
+            }
+
+            if (parallelExecutions < 1 || parallelExecutions > 1000) {
+                showError('Parallel executions must be between 1 and 1000');
+                return;
+            }
+
+            if (totalExecutions < 1 || totalExecutions > 100000) {
+                showError('Total executions must be between 1 and 100000');
+                return;
+            }
+
+            stressTestStatus.textContent = 'Starting stress test...';
+            stressTestBtn.disabled = true;
+
+            vscode.postMessage({
+                command: 'executeStressTest',
+                connectionId: connectionId,
+                query: query,
+                parallelExecutions: parallelExecutions,
+                totalExecutions: totalExecutions
+            });
+        });
+
         window.addEventListener('message', event => {
             const message = event.data;
             switch (message.command) {
@@ -236,6 +353,16 @@ export class QueryEditor {
                     break;
                 case 'queryResult':
                     showResults(message.data);
+                    break;
+                case 'stressTestResult':
+                    if (message.data.success) {
+                        stressTestStatus.textContent = 'Stress test completed: ' + (message.data.message || 'Success');
+                        stressTestStatus.style.color = 'var(--vscode-textLink-foreground)';
+                    } else {
+                        stressTestStatus.textContent = 'Stress test failed: ' + (message.data.error || 'Unknown error');
+                        stressTestStatus.style.color = 'var(--vscode-errorForeground)';
+                    }
+                    stressTestBtn.disabled = false;
                     break;
             }
         });

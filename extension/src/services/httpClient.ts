@@ -62,6 +62,52 @@ export class HttpClient {
         }
     }
 
+    async executeStressTest(request: {
+        connectionId: string;
+        query: string;
+        parallelExecutions: number;
+        totalExecutions: number;
+    }): Promise<{
+        success: boolean;
+        testId?: string;
+        error?: string;
+        message?: string;
+    }> {
+        this.logger.log('Executing stress test', { 
+            connectionId: request.connectionId, 
+            parallelExecutions: request.parallelExecutions,
+            totalExecutions: request.totalExecutions,
+            queryLength: request.query.length 
+        });
+        try {
+            const response = await this.client.post<{
+                success: boolean;
+                testId?: string;
+                error?: string;
+                message?: string;
+            }>('/api/sql/stress-test', request);
+            this.logger.log('Stress test executed', { 
+                success: response.data.success, 
+                testId: response.data.testId,
+                message: response.data.message,
+                error: response.data.error
+            });
+            return response.data;
+        } catch (error) {
+            const axiosError = error as any;
+            this.logger.error('Stress test execution failed', {
+                message: axiosError.message,
+                status: axiosError.response?.status,
+                statusText: axiosError.response?.statusText,
+                data: axiosError.response?.data
+            });
+            if (axiosError.response?.data) {
+                return axiosError.response.data;
+            }
+            throw new Error(`Failed to execute stress test: ${axiosError.message}`);
+        }
+    }
+
     async testConnection(connectionConfig: any): Promise<{
         success: boolean;
         error?: string;

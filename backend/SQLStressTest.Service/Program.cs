@@ -156,6 +156,15 @@ builder.Services.AddSingleton<IPerformanceService, PerformanceService>(sp =>
     var storageService = sp.GetService<IStorageService>();
     return new PerformanceService(logger, storageService);
 });
+builder.Services.AddScoped<IStressTestService, StressTestService>(sp =>
+{
+    var connectionStringBuilder = sp.GetRequiredService<IConnectionStringBuilder>();
+    var connectionFactory = sp.GetRequiredService<ISqlConnectionFactory>();
+    var hubContext = sp.GetRequiredService<IHubContext<SqlHub>>();
+    var logger = sp.GetRequiredService<ILogger<StressTestService>>();
+    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+    return new StressTestService(connectionStringBuilder, connectionFactory, hubContext, logger, loggerFactory);
+});
 builder.Services.AddSingleton<IStorageService, VSCodeStorageService>();
 builder.Services.AddSingleton<VSCodeStorageService>(); // Also register as concrete type for hub injection
 

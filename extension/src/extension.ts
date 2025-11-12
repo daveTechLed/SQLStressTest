@@ -155,6 +155,13 @@ export async function activate(context: vscode.ExtensionContext) {
             }
             performanceGraph.show();
         }),
+        vscode.commands.registerCommand('sqlStressTest.showPerformanceGraph', (connectionId?: string) => {
+            if (!performanceGraph) {
+                performanceGraph = new PerformanceGraph(context, websocketClient, logger);
+            }
+            performanceGraph.show(connectionId);
+            performanceGraph.startStressTest();
+        }),
         vscode.commands.registerCommand('sqlStressTest.openQueryEditor', () => {
             if (!queryEditor) {
                 queryEditor = new QueryEditor(context, websocketClient, logger);
