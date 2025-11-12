@@ -209,5 +209,85 @@ describe('StorageService', () => {
             expect(result).toBeUndefined();
         });
     });
+
+    describe('addConnection - persistence verification (failing tests)', () => {
+        it('addConnection_ShouldPersistToStorage', async () => {
+            // This test replicates the real-world scenario where:
+            // 1. Connection is saved via addConnection
+            // 2. Backend immediately tries to reload via LoadConnections
+            // 3. Connection should be immediately readable after save
+            
+            const newConnection: ConnectionConfig = {
+                id: 'conn_1762928362535', // From logs
+                name: 'local',
+                server: 'localhost',
+                port: 1433,
+                integratedSecurity: false,
+                username: 'sa',
+                password: 'password'
+            };
+
+            // Simulate storage that starts empty
+            let storage: ConnectionConfig[] = [];
+            (mockContext.workspaceState.get as any).mockImplementation(() => storage);
+            (mockContext.workspaceState.update as any).mockImplementation((key: string, value: ConnectionConfig[]) => {
+                storage = value;
+            });
+
+            // Act: Save connection
+            await storageService.addConnection(newConnection);
+
+            // Immediately try to load - this should work if persistence is synchronous
+            // This test will FAIL if there's a timing issue or async persistence problem
+            const connectionsAfter = await storageService.loadConnections();
+            
+            expect(connectionsAfter).toHaveLength(1);
+            expect(connectionsAfter[0].id).toBe('conn_1762928362535');
+            expect(connectionsAfter[0].name).toBe('local');
+            expect(connectionsAfter[0].server).toBe('localhost');
+        });
+
+        it('loadConnections_AfterAdd_ShouldReturnAddedConnection', async () => {
+            // This test verifies that after adding a connection, it's immediately available
+            // This is critical for the backend reload scenario where:
+            // - Frontend saves connection
+            // - Frontend notifies backend
+            // - Backend calls LoadConnections
+            // - Backend should receive the just-saved connection
+            
+            const connectionToAdd: ConnectionConfig = {
+                id: 'conn_test_immediate',
+                name: 'Test Server',
+                server: 'testserver',
+                port: 1433
+            };
+
+            // Setup storage mock to track state
+            let storage: ConnectionConfig[] = [];
+            (mockContext.workspaceState.get as any).mockImplementation(() => [...storage]);
+            (mockContext.workspaceState.update as any).mockImplementation((key: string, value: ConnectionConfig[]) => {
+                storage = [...value];
+            });
+
+            // Verify storage is empty initially
+            const beforeAdd = await storageService.loadConnections();
+            expect(beforeAdd).toHaveLength(0);
+
+            // Add connection
+            await storageService.addConnection(connectionToAdd);
+
+            // Immediately load - should return the connection
+            // This test will FAIL if:
+            // 1. Storage update is not synchronous
+            // 2. There's a race condition between save and load
+            // 3. Storage mock doesn't properly simulate persistence
+            const afterAdd = await storageService.loadConnections();
+            
+            expect(afterAdd).toHaveLength(1);
+            expect(afterAdd[0].id).toBe('conn_test_immediate');
+            expect(afterAdd[0].name).toBe('Test Server');
+            expect(afterAdd[0].server).toBe('testserver');
+        });
+    });
 });
 

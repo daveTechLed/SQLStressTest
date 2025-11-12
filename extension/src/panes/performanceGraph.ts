@@ -8,6 +8,7 @@ export class PerformanceGraph {
     private dataPoints: PerformanceData[] = [];
     private readonly maxDataPoints = 100;
     private logger: ILogger;
+    private selectedConnectionId: string | undefined;
 
     constructor(
         private context: vscode.ExtensionContext,
@@ -18,13 +19,15 @@ export class PerformanceGraph {
         this.logger.log('PerformanceGraph initialized');
     }
 
-    show(): void {
+    show(connectionId?: string): void {
+        this.selectedConnectionId = connectionId;
+        
         if (this.panel) {
             this.panel.reveal();
             return;
         }
 
-        this.logger.log('Showing performance graph panel');
+        this.logger.log('Showing performance graph panel', { connectionId });
         this.panel = vscode.window.createWebviewPanel(
             'performanceGraph',
             'Performance Graph',
@@ -41,13 +44,15 @@ export class PerformanceGraph {
         });
 
         // Register for performance data updates
+        // Note: In the future, this could be filtered by connectionId
         this.performanceDataCallback = (data: PerformanceData) => {
+            // TODO: Filter data by connectionId if provided
             this.addDataPoint(data);
             this.updateChart();
         };
 
         this.websocketClient.onPerformanceData(this.performanceDataCallback);
-        this.logger.log('Performance graph panel opened and registered for data updates');
+        this.logger.log('Performance graph panel opened and registered for data updates', { connectionId });
     }
 
     private addDataPoint(data: PerformanceData): void {

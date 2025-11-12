@@ -86,13 +86,24 @@ public class SqlController : ControllerBase
     /// <summary>
     /// Static method to trigger connection reload. Can be called from hub without controller instance.
     /// </summary>
-    public static async Task ReloadConnectionsStaticAsync()
+    /// <param name="connectionId">Optional connection ID to use for the reload. If provided, sets this on the storage service before reloading.</param>
+    public static async Task ReloadConnectionsStaticAsync(string? connectionId = null)
     {
         if (_staticStorageService == null) return;
         
         try
         {
             _staticLogger?.LogInformation("ReloadConnectionsStaticAsync: Starting reload from storage");
+            
+            // CRITICAL FIX: If a connection ID is provided, set it on the storage service before reloading
+            // This ensures we use the correct connection ID (the one that notified us of the save)
+            // rather than relying on a potentially stale connection ID
+            if (!string.IsNullOrEmpty(connectionId) && _staticStorageService is VSCodeStorageService vscodeStorage)
+            {
+                vscodeStorage.SetConnectionId(connectionId);
+                _staticLogger?.LogDebug("Storage service connection ID set to {ConnectionId} for reload", connectionId);
+            }
+            
             var response = await _staticStorageService.LoadConnectionsAsync();
             if (response.Success && response.Data != null)
             {

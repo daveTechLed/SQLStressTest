@@ -61,7 +61,30 @@ export async function activate(context: vscode.ExtensionContext) {
         
         // Initialize SQL Server Explorer
         sqlExplorer = new SqlServerExplorer(context, websocketClient, logger);
+        
+        // CRITICAL: Register the tree data provider with VS Code
+        // Without this registration, VS Code doesn't know about the tree view,
+        // so refresh events won't trigger UI updates
+        const treeView = vscode.window.createTreeView('sqlServerExplorer', {
+            treeDataProvider: sqlExplorer
+        });
+        context.subscriptions.push(treeView);
         context.subscriptions.push(sqlExplorer);
+
+        // Register tree view selection listener to open query editor and performance graph
+        treeView.onDidChangeSelection(async (e) => {
+            if (e.selection && e.selection.length > 0) {
+                const selectedItem = e.selection[0];
+                // Ensure queryEditor and performanceGraph are initialized
+                if (!queryEditor) {
+                    queryEditor = new QueryEditor(context, websocketClient, logger);
+                }
+                if (!performanceGraph) {
+                    performanceGraph = new PerformanceGraph(context, websocketClient, logger);
+                }
+                await sqlExplorer.handleServerSelection(selectedItem, queryEditor, performanceGraph);
+            }
+        });
     } catch (error: any) {
         const errorMessage = error?.message || String(error);
         const errorStack = error?.stack || 'No stack trace';
@@ -93,7 +116,30 @@ export async function activate(context: vscode.ExtensionContext) {
         storageService = new StorageService(context);
         
         sqlExplorer = new SqlServerExplorer(context, websocketClient, logger);
+        
+        // CRITICAL: Register the tree data provider with VS Code
+        // Without this registration, VS Code doesn't know about the tree view,
+        // so refresh events won't trigger UI updates
+        const treeView = vscode.window.createTreeView('sqlServerExplorer', {
+            treeDataProvider: sqlExplorer
+        });
+        context.subscriptions.push(treeView);
         context.subscriptions.push(sqlExplorer);
+
+        // Register tree view selection listener to open query editor and performance graph
+        treeView.onDidChangeSelection(async (e) => {
+            if (e.selection && e.selection.length > 0) {
+                const selectedItem = e.selection[0];
+                // Ensure queryEditor and performanceGraph are initialized
+                if (!queryEditor) {
+                    queryEditor = new QueryEditor(context, websocketClient, logger);
+                }
+                if (!performanceGraph) {
+                    performanceGraph = new PerformanceGraph(context, websocketClient, logger);
+                }
+                await sqlExplorer.handleServerSelection(selectedItem, queryEditor, performanceGraph);
+            }
+        });
     }
     
     // Register commands

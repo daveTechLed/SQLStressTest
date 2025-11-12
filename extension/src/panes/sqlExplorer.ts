@@ -35,6 +35,51 @@ export class SqlServerExplorer implements vscode.TreeDataProvider<ServerTreeItem
         this._onDidChangeTreeData.fire();
     }
 
+    /**
+     * Makes a connection name unique by appending a number if a duplicate exists.
+     * Examples: "local" -> "local (2)", "local (2)" -> "local (3)", etc.
+     */
+    private makeConnectionNameUnique(proposedName: string, excludeConnectionId?: string): string {
+        const existingConnections = this.connections.filter(
+            conn => !excludeConnectionId || conn.id !== excludeConnectionId
+        );
+        
+        // Check if name is already unique
+        const isUnique = !existingConnections.some(conn => conn.name === proposedName);
+        if (isUnique) {
+            return proposedName;
+        }
+
+        // Find the highest number suffix for this base name
+        const baseName = proposedName;
+        const namePattern = /^(.+?)\s*\((\d+)\)$/;
+        const match = baseName.match(namePattern);
+        const actualBaseName = match ? match[1] : baseName;
+        
+        // Find all existing names that start with the base name
+        const existingNames = existingConnections
+            .map(conn => conn.name)
+            .filter(name => {
+                if (name === actualBaseName) return true;
+                const nameMatch = name.match(namePattern);
+                return nameMatch && nameMatch[1] === actualBaseName;
+            });
+
+        // Find the next available number
+        let nextNumber = 2;
+        while (existingNames.includes(`${actualBaseName} (${nextNumber})`)) {
+            nextNumber++;
+        }
+
+        const uniqueName = `${actualBaseName} (${nextNumber})`;
+        this.logger.log('Made connection name unique', { 
+            original: proposedName, 
+            unique: uniqueName 
+        });
+        
+        return uniqueName;
+    }
+
     getTreeItem(element: ServerTreeItem): vscode.TreeItem {
         return element;
     }
@@ -133,9 +178,32 @@ export class SqlServerExplorer implements vscode.TreeDataProvider<ServerTreeItem
                             }
                             break;
                         case 'save':
+                            // Load current connections to check for duplicates
+                            const currentConnections = await this.storageService.loadConnections();
+                            this.connections = currentConnections; // Update internal cache for uniqueness check
+                            
+                            let connectionName = message.name || '';
+                            
+                            // Make name unique if it's a duplicate (unless we're editing the same connection)
+                            if (connectionName) {
+                                connectionName = this.makeConnectionNameUnique(
+                                    connectionName,
+                                    editConnection?.id // Exclude current connection if editing
+                                );
+                                
+                                // If name was changed, update the dialog to show the unique name
+                                if (connectionName !== message.name) {
+                                    panel.webview.postMessage({
+                                        command: 'nameUpdated',
+                                        originalName: message.name,
+                                        uniqueName: connectionName
+                                    });
+                                }
+                            }
+                            
                             const config: ConnectionConfig = {
                                 id: editConnection?.id || `conn_${Date.now()}`,
-                                name: message.name || '',
+                                name: connectionName,
                                 server: message.server || '',
                                 database: message.database || undefined,
                                 username: message.username || undefined,
@@ -675,6 +743,30 @@ export class SqlServerExplorer implements vscode.TreeDataProvider<ServerTreeItem
                 } else {
                     showTestError(message.error || 'Connection test failed');
                 }
+            } else if (message.command === 'nameUpdated') {
+                // Connection name was automatically made unique due to duplicate
+                const nameInput = document.getElementById('name');
+                if (nameInput) {
+                    nameInput.value = message.uniqueName;
+                    // Show a brief notification that name was updated
+                    const notification = document.createElement('div');
+                    notification.style.cssText = 'margin-top: 5px; padding: 5px; background-color: var(--vscode-inputValidation-infoBackground); border: 1px solid var(--vscode-inputValidation-infoBorder); border-radius: 2px; font-size: 11px; color: var(--vscode-inputValidation-infoForeground);';
+                    notification.textContent = \`Name updated from "\${message.originalName}" to "\${message.uniqueName}" to ensure uniqueness\`;
+                    const nameGroup = nameInput.closest('.form-group');
+                    if (nameGroup) {
+                        // Remove any existing notification
+                        const existingNotification = nameGroup.querySelector('.name-update-notification');
+                        if (existingNotification) {
+                            existingNotification.remove();
+                        }
+                        notification.className = 'name-update-notification';
+                        nameGroup.appendChild(notification);
+                        // Remove notification after 5 seconds
+                        setTimeout(() => {
+                            notification.remove();
+                        }, 5000);
+                    }
+                }
             } else if (message.command === 'saving') {
                 // Already handled in form submit, but can update if needed
                 saveStatus.className = 'save-status saving';
@@ -783,6 +875,34 @@ export class SqlServerExplorer implements vscode.TreeDataProvider<ServerTreeItem
                 }
             }
         );
+    }
+
+    async handleServerSelection(
+        serverTreeItem: ServerTreeItem,
+        queryEditor?: { show: (connectionId?: string) => void },
+        performanceGraph?: { show: (connectionId?: string) => void }
+    ): Promise<void> {
+        // Only handle server nodes, not other node types
+        if (serverTreeItem.contextValue !== 'server') {
+            this.logger.log('Selection ignored - not a server node', { contextValue: serverTreeItem.contextValue });
+            return;
+        }
+
+        const connectionId = serverTreeItem.connectionId;
+        if (!connectionId) {
+            this.logger.warn('Server node selected but no connectionId found', { label: serverTreeItem.label });
+            return;
+        }
+
+        this.logger.log('Server node selected', { connectionId, label: serverTreeItem.label });
+
+        // Open both panels together - they are intrinsically related
+        if (queryEditor) {
+            queryEditor.show(connectionId);
+        }
+        if (performanceGraph) {
+            performanceGraph.show(connectionId);
+        }
     }
 
     dispose(): void {

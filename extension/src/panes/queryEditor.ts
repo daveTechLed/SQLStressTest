@@ -9,6 +9,7 @@ export class QueryEditor {
     private httpClient: HttpClient;
     private storageService: StorageService;
     private logger: ILogger;
+    private selectedConnectionId: string | undefined;
 
     constructor(
         private context: vscode.ExtensionContext,
@@ -21,13 +22,19 @@ export class QueryEditor {
         this.logger.log('QueryEditor initialized');
     }
 
-    show(): void {
+    show(connectionId?: string): void {
+        this.selectedConnectionId = connectionId;
+        
         if (this.panel) {
             this.panel.reveal();
+            // Update connection selection if panel already exists
+            if (connectionId) {
+                this.sendConnections();
+            }
             return;
         }
 
-        this.logger.log('Showing query editor panel');
+        this.logger.log('Showing query editor panel', { connectionId });
         this.panel = vscode.window.createWebviewPanel(
             'queryEditor',
             'SQL Query Editor',
@@ -66,10 +73,11 @@ export class QueryEditor {
         }
 
         const connections = await this.storageService.loadConnections();
-        this.logger.log('Sending connections to webview', { count: connections.length });
+        this.logger.log('Sending connections to webview', { count: connections.length, selectedConnectionId: this.selectedConnectionId });
         this.panel.webview.postMessage({
             command: 'connections',
-            data: connections
+            data: connections,
+            selectedConnectionId: this.selectedConnectionId
         });
     }
 
@@ -224,7 +232,7 @@ export class QueryEditor {
             const message = event.data;
             switch (message.command) {
                 case 'connections':
-                    updateConnections(message.data);
+                    updateConnections(message.data, message.selectedConnectionId);
                     break;
                 case 'queryResult':
                     showResults(message.data);
@@ -232,12 +240,15 @@ export class QueryEditor {
             }
         });
 
-        function updateConnections(connections) {
+        function updateConnections(connections, selectedConnectionId) {
             connectionSelect.innerHTML = '<option value="">Select connection...</option>';
             connections.forEach(conn => {
                 const option = document.createElement('option');
                 option.value = conn.id;
                 option.textContent = conn.name + ' (' + conn.server + ')';
+                if (selectedConnectionId && conn.id === selectedConnectionId) {
+                    option.selected = true;
+                }
                 connectionSelect.appendChild(option);
             });
         }

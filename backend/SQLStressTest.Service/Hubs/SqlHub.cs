@@ -364,8 +364,14 @@ public class SqlHub : Hub
             _logger.LogInformation("ConnectionId: {ConnectionId}", connectionId);
             _logger.LogInformation("Timestamp: {Timestamp}", DateTimeOffset.UtcNow);
             
+            // CRITICAL FIX: Capture the current hub connection ID before Task.Run
+            // The storage service is a singleton and may have a stale connection ID
+            // We need to use the connection ID from the current hub context (the one that notified us)
+            var currentHubConnectionId = Context.ConnectionId;
+            
             // Trigger reload of connections from storage
             // Use static method since we don't have direct access to SqlController instance
+            // Pass the connection ID so ReloadConnectionsStaticAsync can set it before reloading
             _ = Task.Run(async () =>
             {
                 try
@@ -381,7 +387,8 @@ public class SqlHub : Hub
                     }
                     _logger.LogInformation("Connection count before reload: {Count}", countBefore ?? 0);
                     
-                    await SQLStressTest.Service.Controllers.SqlController.ReloadConnectionsStaticAsync();
+                    // Pass the connection ID to ensure the correct connection is used for the reload
+                    await SQLStressTest.Service.Controllers.SqlController.ReloadConnectionsStaticAsync(currentHubConnectionId);
                     
                     // Get connection count after reload
                     int? countAfter = null;
