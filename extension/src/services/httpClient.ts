@@ -5,6 +5,7 @@ import { ILogger, Logger } from './logger';
 export interface QueryRequest {
     connectionId: string;
     query: string;
+    database?: string; // Optional database to override connection's default database
 }
 
 export interface QueryResponse {
@@ -67,6 +68,7 @@ export class HttpClient {
         query: string;
         parallelExecutions: number;
         totalExecutions: number;
+        database?: string;
     }): Promise<{
         success: boolean;
         testId?: string;

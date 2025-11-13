@@ -51,6 +51,10 @@
       {
         "command": "sqlStressTest.refreshExplorer",
         "title": "Refresh"
+      },
+      {
+        "command": "sqlStressTest.openEEReaderStatus",
+        "title": "Open EE Reader Status"
       }
     ],
     "menus": {
@@ -62,6 +66,11 @@
         },
         {
           "command": "sqlStressTest.refreshExplorer",
+          "when": "view == sqlServerExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "sqlStressTest.openEEReaderStatus",
           "when": "view == sqlServerExplorer",
           "group": "navigation"
         }
@@ -114,6 +123,7 @@
     "@vitest/coverage-v8": "^1.1.0",
     "@vitest/ui": "^1.1.0",
     "eslint": "^8.56.0",
+    "happy-dom": "^20.0.10",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0"
   },
@@ -122,4 +132,3 @@
     "axios": "^1.6.2"
   }
 }
-

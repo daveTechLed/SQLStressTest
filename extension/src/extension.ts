@@ -2,6 +2,8 @@ import * as vscode from 'vscode';
 import { SqlServerExplorer } from './panes/sqlExplorer';
 import { PerformanceGraph } from './panes/performanceGraph';
 import { QueryEditor } from './panes/queryEditor';
+import { HistoricalMetricsView } from './panes/historicalMetricsView';
+import { EEReaderStatusView } from './panes/eeReaderStatusView';
 import { StatusBar } from './statusBar';
 import { WebSocketClient } from './services/websocketClient';
 import { BackendServiceManager } from './services/backendServiceManager';
@@ -11,6 +13,8 @@ import { StorageService } from './services/storage';
 let sqlExplorer: SqlServerExplorer;
 let performanceGraph: PerformanceGraph | undefined;
 let queryEditor: QueryEditor | undefined;
+let historicalMetricsView: HistoricalMetricsView | undefined;
+let eeReaderStatusView: EEReaderStatusView | undefined;
 let statusBar: StatusBar;
 let websocketClient: WebSocketClient;
 let backendServiceManager: BackendServiceManager;
@@ -167,19 +171,47 @@ export async function activate(context: vscode.ExtensionContext) {
                 queryEditor = new QueryEditor(context, websocketClient, logger);
             }
             queryEditor.show();
+        }),
+        vscode.commands.registerCommand('sqlStressTest.openHistoricalMetrics', () => {
+            if (!historicalMetricsView) {
+                historicalMetricsView = new HistoricalMetricsView(context, websocketClient, logger);
+            }
+            historicalMetricsView.show();
+        }),
+        vscode.commands.registerCommand('sqlStressTest.showHistoricalMetrics', (connectionId?: string) => {
+            if (!historicalMetricsView) {
+                historicalMetricsView = new HistoricalMetricsView(context, websocketClient, logger);
+            }
+            historicalMetricsView.show(connectionId);
+            historicalMetricsView.startStressTest();
+        }),
+        vscode.commands.registerCommand('sqlStressTest.openEEReaderStatus', () => {
+            if (!eeReaderStatusView) {
+                eeReaderStatusView = new EEReaderStatusView(context, websocketClient, logger);
+            }
+            eeReaderStatusView.show();
         })
     ];
     
     context.subscriptions.push(...commands);
     
     // Connect WebSocket with detailed error handling
+    // CRITICAL FIX: Register storage handlers BEFORE connecting to prevent race condition
+    // This ensures handlers are ready when backend calls LoadConnections immediately after connection
+    logger.info('Registering storage handlers before connection...');
+    websocketClient.registerStorageHandlers(storageService);
+    logger.info('Storage handlers registered');
+    
     // Wait a moment for backend to fully start before connecting
     setTimeout(() => {
     websocketClient.connect().then(() => {
-        // Register storage handlers after connection is established
-        logger.info('Registering storage handlers...');
-        websocketClient.registerStorageHandlers(storageService);
-        logger.info('Storage handlers registered');
+        logger.info('WebSocket connection established');
+        
+        // Auto-show EE Reader Status pane after connection
+        if (!eeReaderStatusView) {
+            eeReaderStatusView = new EEReaderStatusView(context, websocketClient, logger);
+        }
+        eeReaderStatusView.show();
     }).catch((err: any) => {
         const errorMessage = err?.message || String(err);
         const statusCode = err?.statusCode || err?.code || err?.response?.status;
@@ -211,6 +243,8 @@ export async function deactivate() {
     websocketClient?.disconnect();
     performanceGraph?.dispose();
     queryEditor?.dispose();
+    historicalMetricsView?.dispose();
+    // Note: EEReaderStatusView doesn't have a dispose method, but panel cleanup is handled internally
     statusBar?.dispose();
     await backendServiceManager?.dispose();
 }

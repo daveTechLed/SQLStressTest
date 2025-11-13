@@ -31,6 +31,14 @@ export interface ExecutionBoundary {
     timestampMs: number; // Unix timestamp in milliseconds
 }
 
+export interface ExecutionMetrics {
+    executionNumber: number;
+    executionId: string; // GUID
+    dataSizeBytes: number;
+    timestamp: string; // ISO date string
+    timestampMs: number; // Unix timestamp in milliseconds
+}
+
 // Storage request/response interfaces matching backend DTOs
 export interface StorageResponse<T = any> {
     success: boolean;
@@ -117,11 +125,13 @@ export class WebSocketClient {
     private isConnecting = false;
     private isIntentionallyDisconnected = false;
     private logger: ILogger;
+    private pendingStorageService: StorageService | null = null;
 
     private onPerformanceDataCallbacks: ((data: PerformanceData) => void)[] = [];
     private onHeartbeatCallbacks: ((message: HeartbeatMessage) => void)[] = [];
     private onExtendedEventDataCallbacks: ((data: ExtendedEventData) => void)[] = [];
     private onExecutionBoundaryCallbacks: ((boundary: ExecutionBoundary) => void)[] = [];
+    private onExecutionMetricsCallbacks: ((metrics: ExecutionMetrics) => void)[] = [];
 
     constructor(baseUrl?: string, logger?: ILogger) {
         // Default to localhost, can be configured via settings
@@ -202,6 +212,10 @@ export class WebSocketClient {
                 this.onExecutionBoundaryCallbacks.forEach(callback => callback(boundary));
             });
 
+            this.connection.on('ExecutionMetrics', (metrics: ExecutionMetrics) => {
+                this.onExecutionMetricsCallbacks.forEach(callback => callback(metrics));
+            });
+
             this.connection.onclose(async (error) => {
                 this.isConnecting = false;
                 if (error) {
@@ -251,10 +265,25 @@ export class WebSocketClient {
 
             this.connection.onreconnected((connectionId) => {
                 this.logger.log('WebSocket reconnected', { connectionId });
+                // Register storage handlers if they weren't registered yet (e.g., if connection was lost before initial registration)
+                if (this.pendingStorageService && this.connection) {
+                    this.logger.log('Registering storage handlers after reconnection');
+                    this.registerStorageHandlersInternal(this.pendingStorageService);
+                    this.pendingStorageService = null; // Clear the pending reference
+                }
             });
 
             this.logger.log('Attempting to start connection...');
             await this.connection.start();
+            
+            // Register storage handlers immediately after connection is established
+            // This ensures handlers are ready before backend calls LoadConnections in OnConnectedAsync
+            if (this.pendingStorageService) {
+                this.logger.log('Registering storage handlers now that connection is established');
+                this.registerStorageHandlersInternal(this.pendingStorageService);
+                this.pendingStorageService = null; // Clear the pending reference
+            }
+            
             this.isConnecting = false;
             this.logger.log('WebSocket connection established successfully', { 
                 connectionId: this.connection.connectionId,
@@ -354,13 +383,40 @@ export class WebSocketClient {
         }
     }
 
+    onExecutionMetrics(callback: (metrics: ExecutionMetrics) => void): void {
+        this.onExecutionMetricsCallbacks.push(callback);
+    }
+
+    offExecutionMetrics(callback: (metrics: ExecutionMetrics) => void): void {
+        const index = this.onExecutionMetricsCallbacks.indexOf(callback);
+        if (index >= 0) {
+            this.onExecutionMetricsCallbacks.splice(index, 1);
+        }
+    }
+
     /**
      * Register storage operation handlers that the backend can invoke
      * @param storageService The storage service to use for operations
      */
     registerStorageHandlers(storageService: StorageService): void {
+        // Store the storage service reference even if connection doesn't exist yet
+        this.pendingStorageService = storageService;
+        
+        // If connection exists, register handlers immediately
+        if (this.connection) {
+            this.registerStorageHandlersInternal(storageService);
+        } else {
+            this.logger.log('Storage service stored for registration when connection is established');
+        }
+    }
+
+    /**
+     * Internal method to actually register the storage handlers on the connection
+     * @param storageService The storage service to use for operations
+     */
+    private registerStorageHandlersInternal(storageService: StorageService): void {
         if (!this.connection) {
-            this.logger.log('Cannot register storage handlers: connection not established');
+            this.logger.error('Cannot register storage handlers: connection is null');
             return;
         }
 

@@ -31,6 +31,14 @@ public class VSCodeStorageService : IStorageService
         _logger.LogDebug("Storage service connection ID set to {ConnectionId}", connectionId);
     }
 
+    /// <summary>
+    /// Gets the current SignalR connection ID being used for storage operations
+    /// </summary>
+    public string? GetConnectionId()
+    {
+        return _currentConnectionId;
+    }
+
     private async Task<StorageResponse> InvokeStorageOperationAsync(
         Func<ISingleClientProxy, Task<StorageResponse>> operation,
         string operationName)
@@ -61,6 +69,15 @@ public class VSCodeStorageService : IStorageService
             
             _logger.LogDebug("{OperationName} completed successfully", operationName);
             return result;
+        }
+        catch (Microsoft.AspNetCore.SignalR.HubException hubEx) when (hubEx.Message.Contains("Client didn't provide a result"))
+        {
+            // Better error message for timing/handler registration issues
+            _logger.LogWarning(hubEx, 
+                "Error performing {OperationName}: Handler not registered yet (timing issue). This may indicate the frontend hasn't registered handlers before backend called this method.", 
+                operationName);
+            return StorageResponse.CreateError(
+                $"Handler not ready: The frontend handler for {operationName} may not be registered yet. This is typically a timing issue - handlers should be registered before SignalR connection completes.");
         }
         catch (Exception ex)
         {
@@ -103,6 +120,15 @@ public class VSCodeStorageService : IStorageService
             
             _logger.LogDebug("{OperationName} completed successfully", operationName);
             return result;
+        }
+        catch (Microsoft.AspNetCore.SignalR.HubException hubEx) when (hubEx.Message.Contains("Client didn't provide a result"))
+        {
+            // Better error message for timing/handler registration issues
+            _logger.LogWarning(hubEx, 
+                "Error performing {OperationName}: Handler not registered yet (timing issue). This may indicate the frontend hasn't registered handlers before backend called this method.", 
+                operationName);
+            return StorageResponse.CreateError<T>(
+                $"Handler not ready: The frontend handler for {operationName} may not be registered yet. This is typically a timing issue - handlers should be registered before SignalR connection completes.");
         }
         catch (Exception ex)
         {

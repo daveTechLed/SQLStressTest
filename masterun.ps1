@@ -132,7 +132,7 @@ if (-not $SkipTests) {
     Push-Location backend
     
     try {
-        dotnet test SQLStressTest.Service.Tests/SQLStressTest.Service.Tests.csproj --no-build -c Release --verbosity normal
+        dotnet test SQLStressTest.Service.UnitTests/SQLStressTest.Service.Tests.csproj --no-build -c Release --verbosity normal
         
         if ($LASTEXITCODE -ne 0) {
             throw "Backend unit tests failed"

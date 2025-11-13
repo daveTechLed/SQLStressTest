@@ -5,6 +5,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
+    // Use happy-dom for webview JavaScript tests
+    environmentMatchGlobs: [
+      ['**/webviews/**/*.test.{js,ts}', 'happy-dom']
+    ],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'lcov', 'json'],
@@ -22,7 +26,10 @@ export default defineConfig({
         statements: 80
       }
     },
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
+    include: [
+      'src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+      'webviews/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'
+    ]
   },
   resolve: {
     alias: {

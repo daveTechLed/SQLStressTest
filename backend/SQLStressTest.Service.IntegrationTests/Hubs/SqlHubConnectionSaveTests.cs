@@ -122,7 +122,8 @@ public class SqlHubConnectionSaveTests : IClassFixture<WebApplicationFixture>
 
             // Call reload with the connection ID (simulating what NotifyConnectionSaved does)
             // The fix ensures this connection ID is set on the storage service
-            await SqlController.ReloadConnectionsStaticAsync(hubConnectionId);
+            // Use proper DI - pass the storage service instead of relying on static field
+            await SqlController.ReloadConnectionsStaticAsync(storageService!, hubConnectionId);
 
             // Wait a bit for async operations
             await Task.Delay(100);

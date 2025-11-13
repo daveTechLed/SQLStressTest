@@ -15,5 +15,11 @@ public class StressTestRequest
     
     [Range(1, 100000, ErrorMessage = "TotalExecutions must be between 1 and 100000")]
     public int TotalExecutions { get; set; } = 1;
+    
+    /// <summary>
+    /// Optional database name to override the connection's default database.
+    /// If provided, queries will be executed in this database context.
+    /// </summary>
+    public string? Database { get; set; }
 }
 

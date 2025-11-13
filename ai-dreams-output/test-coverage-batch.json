@@ -1,0 +1,2526 @@
+﻿{
+  "projectId": "e00642ef-bae2-4377-80aa-a1bea50da7af",
+  "generatedAt": "2025-11-13T14:00:48.423672Z",
+  "itemCount": 148,
+  "items": [
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView show should create webview panel",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 314.3775,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView show should register callbacks for ExtendedEventData, ExecutionBoundary, and ExecutionMetrics",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 357.9886,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView show should reveal existing panel if already shown",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 314.3691,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView startStressTest should start new run without clearing historical runs",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 336.2808,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView data handling should process ExtendedEventData and update view",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 355.0827,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView data handling should ignore non-sql_batch_completed events",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 426.2947,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView data handling should process ExecutionBoundary",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 440.8482,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView data handling should process ExecutionMetrics",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 314.2775,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView dispose should unregister all callbacks",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 314.2887,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView historical runs persistence during batch runs should preserve historical runs when starting a new batch run",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 314.3348,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView historical runs persistence during batch runs should show all historical runs when starting a new batch after multiple completed batches",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 312.6242,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView per-run card functionality should create a card for each stress test run",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 312.2817,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView per-run card functionality should create multiple cards for multiple runs",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 296.6955,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView per-run card functionality should handle Execution Time without Data Size",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 329.8876,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView data flow edge cases should process ExtendedEventData even when stress test is NOT active",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 359.4148,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView data flow edge cases should process ExtendedEventData with different event field names",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 344.8054,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView data flow edge cases should update view when ExecutionBoundary is received before ExtendedEventData",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 187.2468,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView data flow edge cases should have execution summaries after receiving all data types",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 296.6882,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HistoricalMetricsView data flow edge cases should process data when panel is shown but stress test started later",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 312.1768,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "PerformanceGraph show should create webview panel",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 294.4336,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "PerformanceGraph show should register performance data callback",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 315.3014,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "PerformanceGraph show should reveal existing panel if already shown",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 293.8443,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "PerformanceGraph data handling should add data point and update chart",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 229.7151,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "PerformanceGraph data handling should limit data points to max",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 229.598,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "PerformanceGraph Extended Events data flow should process ExtendedEventData even when stress test is NOT active",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 266.9602,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "PerformanceGraph Extended Events data flow should update chart when startStressTest is called after data arrives",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 338.5615,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "PerformanceGraph Extended Events data flow should register Extended Events callbacks on show",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 338.5971,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "PerformanceGraph dispose should unregister callback and dispose panel",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 323.1174,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "QueryEditor show should create webview panel",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 354.3852,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "QueryEditor show should send connections on show",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 328.8419,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "QueryEditor show should reveal existing panel if already shown",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 273.9092,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "QueryEditor executeQuery should execute query but NOT send queryResult message (results removed)",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 304.8856,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "QueryEditor executeQuery should NOT display query results in webview HTML",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 335.7248,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "QueryEditor executeQuery should handle query execution errors without displaying them",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 350.4563,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "QueryEditor dispose should dispose panel",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 205.2352,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer getChildren should return empty array when no connections",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 237.421,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer getChildren should return server items for connections",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 283.0367,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer should not add server if name is cancelled",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 312.43,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer should not add server if server address is cancelled",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 393.0569,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer removeServer should remove server when confirmed",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 450.3629,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer removeServer should not remove server when cancelled",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 371.8527,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer testConnection should show error if connection not found",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 515.6868,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer - save confirmation behavior should not close dialog automatically after successful save",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 558.5609,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer - save confirmation behavior should verify connection is saved before showing success",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 573.2545,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer - save confirmation behavior should throw error if connection verification fails",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 501.6133,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer - save confirmation behavior should keep dialog open on save error",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 523.6689,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer - save confirmation behavior should handle closeAfterSave command",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 417.0867,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer - save confirmation behavior should verify connection update when editing",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 387.7456,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer - save confirmation behavior should notify backend after successful save",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 372.2234,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer addServer - save confirmation behavior should handle backend notification failure gracefully",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 275.5711,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer saveConnection - end-to-end backend notification (failing tests) saveConnection_ShouldNotifyBackendAndReloadSuccessfully",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 302.073,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer saveConnection - end-to-end backend notification (failing tests) should handle timing issue when backend reloads immediately after save",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 377.0459,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer tree view refresh after save (failing tests) should refresh tree view after successful connection save",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 259.9942,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer tree view refresh after save (failing tests) should fire onDidChangeTreeData event after save",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 260.4137,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer tree view refresh after save (failing tests) should refresh tree view after updateConnection",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 258.7967,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer tree view refresh after save (failing tests) should refresh tree view in correct order: load then refresh",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 356.9358,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer connection name uniqueness (failing tests) should prevent saving connection with duplicate name",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 260.3914,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer connection name uniqueness (failing tests) should make connection name unique when duplicate exists",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 214.4752,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer connection name uniqueness (failing tests) should show unique names in tree view",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 260.2999,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer connection name uniqueness (failing tests) should validate name uniqueness before saving",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 429.5652,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer connection name uniqueness (failing tests) should handle multiple duplicates correctly",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 323.4735,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer server node selection should open query editor when server node is selected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 323.1452,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer server node selection should open performance graph when server node is selected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 337.7825,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer server node selection should open both query editor and graph view together when server node is selected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 292.2308,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer server node selection should pass connection id to query editor when server node is selected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 171.8322,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer server node selection should pass connection id to performance graph when server node is selected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 290.383,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "SqlServerExplorer server node selection should handle selection of non-server nodes gracefully",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 304.4037,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HttpClient executeQuery should execute query successfully",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 170.907,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HttpClient executeQuery should handle errors from server",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 239.2293,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HttpClient executeQuery should throw error on network failure",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 256.1626,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HttpClient testConnection should test connection successfully",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 192.576,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "HttpClient testConnection should handle connection test failure",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 320.2006,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService saveConnections should save connections to workspace state",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 334.9368,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService loadConnections should load connections from workspace state",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 275.1103,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService loadConnections should return empty array if no connections exist",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 240.5343,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService addConnection should add a new connection",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 294.2691,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService addConnection should update existing connection if ID already exists",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 202.9288,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService addConnection should add connection to existing list without duplicates",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 168.4598,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService removeConnection should remove a connection by id",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 321.8537,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService updateConnection should update an existing connection",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 382.6265,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService updateConnection should not update if connection not found",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 415.2478,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService getConnection should return connection by id",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 240.4617,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService getConnection should return undefined if connection not found",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 240.3847,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService addConnection - persistence verification (failing tests) addConnection_ShouldPersistToStorage",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 240.2836,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "StorageService addConnection - persistence verification (failing tests) loadConnections_AfterAdd_ShouldReturnAddedConnection",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 378.9101,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient connect should create and start connection",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 241.8577,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient connect should not connect if already connected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 240.285,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient connect should handle connection errors",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 289.715,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient disconnect should stop connection",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 261.5883,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient isConnected should return true when connected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 257.0375,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient isConnected should return false when disconnected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 242.5051,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient event callbacks should call performance data callbacks",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 257.0082,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient event callbacks should call heartbeat callbacks",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 286.3628,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient event callbacks should remove callbacks",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 272.336,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient event callbacks should call execution metrics callbacks",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 257.8653,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient event callbacks should remove execution metrics callbacks",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 348.2467,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient registerStorageHandlers - Race Condition Tests should register LoadConnections handler before connection completes",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 348.234,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient registerStorageHandlers - Race Condition Tests should allow backend to call LoadConnections immediately after connection",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 226.0138,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "WebSocketClient registerStorageHandlers - Race Condition Tests should fail if handler is not registered when backend calls LoadConnections",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 260.0172,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js formatValue should format bytes correctly",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 278.6303,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js formatValue should format milliseconds correctly",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 293.7639,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js formatValue should format other units as numbers",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 229.3836,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js createCard should create a regular metric card",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 217.4076,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js createCard should create a combined card with execution time and data size",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 274.9609,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js createCard should show trend indicators correctly",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 202.0496,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js createCard should calculate and display percentage change",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 314.8381,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js Message handling should update metrics container with cards",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 313.5444,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js Message handling should show empty state when no cards provided",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 267.5293,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js Message handling should clear data on clearData command",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 267.5642,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js Historical runs persistence during batch runs should render all historical runs when multiple cards are sent",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 389.6536,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js Historical runs persistence during batch runs should preserve historical runs when a new batch starts",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 221.5085,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js Historical runs persistence during batch runs should display all historical runs when starting a new batch after multiple completed batches",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 250.3056,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js Historical runs persistence during batch runs should preserve historical runs when receiving updateMetrics with empty cards array after having historical runs",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 271.2572,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "historicalMetricsView.js Historical runs persistence during batch runs should preserve historical runs when receiving empty cards followed by cards with historical runs (simulating batch start bug)",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 365.252,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js TimeFormatter should format seconds correctly",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 355.2678,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js TimeFormatter should format minutes and seconds",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 229.2891,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js TimeFormatter should return 0s when testStartTime is null",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 247.609,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js StatisticsCalculator should calculate percentiles correctly",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 232.5952,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js StatisticsCalculator should handle empty array",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 157.1357,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js Chart initialization should create chart on load",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 262.3865,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js Chart initialization should have correct chart configuration",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 234.9327,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js Button interactions should reset zoom when resetZoomBtn is clicked",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 362.5635,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js Button interactions should export chart when exportBtn is clicked",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 392.4688,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js Metric visibility toggles should toggle metric visibility when checkbox changes",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 266.8791,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js Message handling should clear chart on clearChart command",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 207.9662,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js Message handling should update chart with extended events data",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 315.7622,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js Message handling should update statistics panel",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 226.9208,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "performanceGraph.js UIUpdater should update statistics correctly",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 389.1614,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Connection selection should disable database select and show loading when connection is selected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 272.8928,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Connection selection should reset database select when connection is cleared",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 272.8857,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Execute query should show alert if no connection is selected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 195.2325,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Execute query should show alert if query is empty",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 244.1655,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Execute query should send executeQuery message with correct data",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 334.4548,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Execute query should send executeQuery without database if not selected",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 303.0225,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Stress test should validate parallel executions range",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 225.6367,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Stress test should validate total executions range",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 255.8157,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Stress test should send executeStressTest message with correct data",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 255.9369,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Stress test should handle stop stress test",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 292.8241,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Message handling should update connections list",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 168.3832,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Message handling should update databases list",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 275.2752,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Message handling should show error when database fetch fails",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 215.2904,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Message handling should handle stressTestStarted message",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 171.7565,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Message handling should handle stressTestStopped message",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 162.5051,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Message handling should handle successful stressTestResult",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 149.4813,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "queryEditor.js Message handling should handle failed stressTestResult",
+      "priority": 80,
+      "data": {
+        "testProjectName": "extension",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 139.954,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "./test/tests.js\n",
+      "priority": 80,
+      "data": {
+        "testProjectName": "has-tostringtag",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (53ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Fast execution (53ms \u003C= 100ms threshold)",
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 53.468,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "./test/tests.js\n",
+      "priority": 80,
+      "data": {
+        "testProjectName": "has-symbols",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (56ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Fast execution (56ms \u003C= 100ms threshold)",
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 56.0769,
+        "coveredMethodsCount": 0
+      }
+    },
+    {
+      "type": "testMisplacement",
+      "testFullName": "./test/test.js\n",
+      "priority": 80,
+      "data": {
+        "testProjectName": "fastq",
+        "expectedType": "Integration",
+        "actualType": "Unit",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (55ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "indicators": [
+          "Fast execution (55ms \u003C= 100ms threshold)",
+          "Simple method coverage (0 methods \u003C= 3 threshold)",
+          "Simple line coverage (0 lines \u003C= 50 threshold)"
+        ],
+        "duration": 55.0681,
+        "coveredMethodsCount": 0
+      }
+    }
+  ]
+}

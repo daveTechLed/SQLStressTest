@@ -137,11 +137,33 @@ builder.Services.AddSignalR()
         options.PayloadSerializerOptions.TypeInfoResolver = new System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver();
     });
 
-// CORS removed - not needed for local development
+// Add CORS configuration for SignalR
+// This is needed to prevent 403 Forbidden errors during SignalR negotiation
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin() // Allow all origins for local development
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 // Register services with dependency injection (SOLID principles)
 builder.Services.AddSingleton<IConnectionStringBuilder, ConnectionStringBuilder>();
 builder.Services.AddSingleton<ISqlConnectionFactory, SqlConnectionFactory>();
+
+// Register extracted services for StressTestService
+builder.Services.AddSingleton<DataSizeCalculator>();
+builder.Services.AddScoped<QueryExecutor>();
+// ExtendedEventConverter has no dependencies, can be singleton
+builder.Services.AddSingleton<ExtendedEventConverter>();
+// SignalRMessageSender only needs IHubContext (singleton), can be singleton for hosted service
+builder.Services.AddSingleton<SignalRMessageSender>();
+builder.Services.AddScoped<ExtendedEventProcessor>();
+// ExtendedEventsStore holds the shared events dictionary for ExtendedEventsService and StressTestService
+builder.Services.AddSingleton<ExtendedEventsStore>();
+
 builder.Services.AddScoped<ISqlConnectionService, SqlConnectionService>(sp =>
 {
     var connectionStringBuilder = sp.GetRequiredService<IConnectionStringBuilder>();
@@ -159,14 +181,30 @@ builder.Services.AddSingleton<IPerformanceService, PerformanceService>(sp =>
 builder.Services.AddScoped<IStressTestService, StressTestService>(sp =>
 {
     var connectionStringBuilder = sp.GetRequiredService<IConnectionStringBuilder>();
-    var connectionFactory = sp.GetRequiredService<ISqlConnectionFactory>();
-    var hubContext = sp.GetRequiredService<IHubContext<SqlHub>>();
+    var queryExecutor = sp.GetRequiredService<QueryExecutor>();
+    var messageSender = sp.GetRequiredService<SignalRMessageSender>();
+    var eventProcessor = sp.GetRequiredService<ExtendedEventProcessor>();
+    var eventsStore = sp.GetRequiredService<ExtendedEventsStore>();
     var logger = sp.GetRequiredService<ILogger<StressTestService>>();
     var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
-    return new StressTestService(connectionStringBuilder, connectionFactory, hubContext, logger, loggerFactory);
+    return new StressTestService(connectionStringBuilder, queryExecutor, messageSender, eventProcessor, eventsStore, logger, loggerFactory);
 });
 builder.Services.AddSingleton<IStorageService, VSCodeStorageService>();
 builder.Services.AddSingleton<VSCodeStorageService>(); // Also register as concrete type for hub injection
+
+// Register ExtendedEventsService as a hosted service to start at application startup
+builder.Services.AddSingleton<ExtendedEventsService>(sp =>
+{
+    var connectionStringBuilder = sp.GetRequiredService<IConnectionStringBuilder>();
+    var storageService = sp.GetService<IStorageService>();
+    var logger = sp.GetRequiredService<ILogger<ExtendedEventsService>>();
+    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+    var eventsStore = sp.GetRequiredService<ExtendedEventsStore>();
+    var messageSender = sp.GetService<SignalRMessageSender>();
+    var eventConverter = sp.GetService<ExtendedEventConverter>();
+    return new ExtendedEventsService(connectionStringBuilder, storageService, logger, loggerFactory, eventsStore, messageSender, eventConverter);
+});
+builder.Services.AddHostedService(sp => sp.GetRequiredService<ExtendedEventsService>());
 
 var app = builder.Build();
 
@@ -313,6 +351,10 @@ app.Use(async (context, next) =>
             string.Join(" | ", headerStrings403));
     }
 });
+
+// Use CORS middleware BEFORE routing to handle preflight OPTIONS requests
+// This is critical for SignalR negotiation to work properly
+app.UseCors();
 
 app.UseRouting();
 

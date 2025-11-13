@@ -1,13 +1,54 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { QueryEditor } from '../../panes/queryEditor';
 import * as vscode from 'vscode';
-import { WebSocketClient } from '../../services/websocketClient';
 import { HttpClient, QueryResponse } from '../../services/httpClient';
 import { StorageService } from '../../services/storage';
 
 vi.mock('../../services/httpClient');
 vi.mock('../../services/storage');
-vi.mock('vscode');
+vi.mock('vscode', () => ({
+    window: {
+        createWebviewPanel: vi.fn(),
+        createStatusBarItem: vi.fn(),
+        createTreeView: vi.fn(),
+        createOutputChannel: vi.fn(() => ({
+            append: vi.fn(),
+            appendLine: vi.fn(),
+            show: vi.fn(),
+            dispose: vi.fn()
+        })),
+        showInputBox: vi.fn(),
+        showQuickPick: vi.fn(),
+        showInformationMessage: vi.fn(),
+        showErrorMessage: vi.fn(),
+        showWarningMessage: vi.fn(),
+        withProgress: vi.fn()
+    },
+    workspace: {
+        getConfiguration: vi.fn(),
+        workspaceState: {
+            get: vi.fn(),
+            update: vi.fn()
+        }
+    },
+    commands: {
+        registerCommand: vi.fn()
+    },
+    ViewColumn: {
+        One: 1,
+        Two: 2,
+        Three: 3
+    },
+    StatusBarAlignment: {
+        Left: 1,
+        Right: 2
+    },
+    TreeItemCollapsibleState: {
+        None: 0,
+        Collapsed: 1,
+        Expanded: 2
+    }
+}));
 
 describe('QueryEditor', () => {
     let editor: QueryEditor;
@@ -96,51 +137,79 @@ describe('QueryEditor', () => {
     });
 
     describe('executeQuery', () => {
-        it('should execute query and send result', async () => {
+        it('should execute query but NOT send queryResult message (results removed)', async () => {
             editor.show();
 
             const response: QueryResponse = {
                 success: true,
-                columns: ['id', 'name'],
-                rows: [[1, 'Test']],
-                rowCount: 1,
-                executionTimeMs: 100
+                rowCount: 5,
+                executionTimeMs: 21,
+                columns: ['name', 'object_id'],
+                rows: [['test', '123']]
             };
 
             mockHttpClient.executeQuery.mockResolvedValue(response);
 
             // Simulate message from webview
-            const messageHandler = mockPanel.webview.onDidReceiveMessage.mock.calls[0][0];
-            await messageHandler({
-                command: 'executeQuery',
-                connectionId: '1',
-                query: 'SELECT * FROM users'
-            });
+            const messageHandler = mockPanel.webview.onDidReceiveMessage.mock.calls[0]?.[0];
+            if (messageHandler) {
+                await messageHandler({
+                    command: 'executeQuery',
+                    connectionId: 'test-conn',
+                    query: 'SELECT 1',
+                    database: 'testdb'
+                });
+            }
 
+            // Wait for async operations
+            await new Promise(resolve => setTimeout(resolve, 50));
+
+            // Verify query was executed
             expect(mockHttpClient.executeQuery).toHaveBeenCalled();
-            expect(mockPanel.webview.postMessage).toHaveBeenCalled();
+
+            // Verify queryResult message was NOT sent (results are removed)
+            const queryResultCalls = mockPanel.webview.postMessage.mock.calls.filter(
+                (call: any[]) => call[0]?.command === 'queryResult'
+            );
+            expect(queryResultCalls.length).toBe(0);
         });
 
-        it('should handle query execution errors', async () => {
+        it('should NOT display query results in webview HTML', () => {
+            editor.show();
+
+            const html = mockPanel.webview.html;
+            
+            // Verify results div is not in HTML
+            expect(html).not.toContain('id="results"');
+            expect(html).not.toContain('showResults');
+            expect(html).not.toContain('showError');
+            expect(html).not.toContain('escapeHtml');
+        });
+
+        it('should handle query execution errors without displaying them', async () => {
             editor.show();
 
             mockHttpClient.executeQuery.mockRejectedValue(new Error('Connection failed'));
 
-            const messageHandler = mockPanel.webview.onDidReceiveMessage.mock.calls[0][0];
-            await messageHandler({
-                command: 'executeQuery',
-                connectionId: '1',
-                query: 'SELECT * FROM users'
-            });
+            const messageHandler = mockPanel.webview.onDidReceiveMessage.mock.calls[0]?.[0];
+            if (messageHandler) {
+                await messageHandler({
+                    command: 'executeQuery',
+                    connectionId: 'test-conn',
+                    query: 'SELECT 1'
+                });
+            }
 
-            expect(mockPanel.webview.postMessage).toHaveBeenCalledWith(
-                expect.objectContaining({
-                    command: 'queryResult',
-                    data: expect.objectContaining({
-                        success: false
-                    })
-                })
+            await new Promise(resolve => setTimeout(resolve, 50));
+
+            // Verify query was attempted
+            expect(mockHttpClient.executeQuery).toHaveBeenCalled();
+
+            // Verify queryResult error message was NOT sent
+            const queryResultCalls = mockPanel.webview.postMessage.mock.calls.filter(
+                (call: any[]) => call[0]?.command === 'queryResult'
             );
+            expect(queryResultCalls.length).toBe(0);
         });
     });
 

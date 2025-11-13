@@ -3,11 +3,13 @@
 # ===========================================
 .vscode-test/
 *.code-workspace
-.vscode/
+# Keep some VS Code settings for team consistency
+.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode-test.json
 
 # ===========================================
 # Extension (TypeScript/Node.js)
@@ -29,6 +31,11 @@ extension/.yarn/install-state.gz
 # TypeScript build outputs
 extension/**/*.js
 extension/**/*.js.map
+# Allow webview JavaScript files (they are source files, not build outputs)
+!extension/webviews/**/*.js
+# Allow webview test files
+!extension/webviews/**/*.test.js
+# Allow vitest config files
 !extension/vitest.config.js
 !extension/vitest.config.js.map
 
@@ -53,27 +60,10 @@ bld/
 
 # Visual Studio cache/options directory
 .vs/
-.vscode/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
 
 # .NET Core
 project.lock.json
@@ -111,6 +101,9 @@ artifacts/
 coverage/
 *.lcov
 .nyc_output/
+# Vitest coverage
+extension/coverage/
+extension/.coverage/
 
 # ===========================================
 # Logs
@@ -123,6 +116,8 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 pnpm-debug.log*
+# AI analysis logs
+ai-dreams-output/logs/
 
 # ===========================================
 # Environment & Secrets
@@ -190,14 +185,6 @@ $RECYCLE.BIN/
 .idea/
 *.sln.iml
 *.iml
-
-# Visual Studio Code (keep some settings)
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode-test.json
 
 # ===========================================
 # Temporary Files
@@ -271,6 +258,9 @@ out/
 *.sqlite3
 *.mdf
 *.ldf
+# SQL Server backup files (large, should be in separate storage)
+# Uncomment if backup files should not be tracked
+# *.bak
 
 # ===========================================
 # PowerShell

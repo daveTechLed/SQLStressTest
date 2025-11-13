@@ -1,0 +1,3420 @@
+{
+  "solutionPath": "/Users/dave/repos/SQLStressTest",
+  "solutionName": "SQLStressTest",
+  "solutionLanguages": [
+    "CSharp",
+    "TypeScript",
+    "JavaScript"
+  ],
+  "generatedAt": "2025-11-13T14:00:18.671151Z",
+  "folders": [
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service",
+      "relativePath": "backend/SQLStressTest.Service",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Models",
+      "relativePath": "backend/SQLStressTest.Service/Models",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 15,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Utilities",
+      "relativePath": "backend/SQLStressTest.Service/Utilities",
+      "folderType": "utilities",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs",
+      "relativePath": "backend/SQLStressTest.Service/Hubs",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers",
+      "relativePath": "backend/SQLStressTest.Service/Controllers",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services",
+      "relativePath": "backend/SQLStressTest.Service/Services",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 36,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Validation",
+      "relativePath": "backend/SQLStressTest.Service/Validation",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Interfaces",
+      "relativePath": "backend/SQLStressTest.Service/Interfaces",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 6,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests/Models",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests/Models",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 5,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests/Utilities",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests/Utilities",
+      "folderType": "utilities",
+      "isTest": false,
+      "fileCount": 2,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests/Hubs",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests/Hubs",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests/Controllers",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests/Controllers",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 2,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests/Services",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests/Services",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 5,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.IntegrationTests/Utilities",
+      "relativePath": "backend/SQLStressTest.Service.IntegrationTests/Utilities",
+      "folderType": "utilities",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.IntegrationTests/Hubs",
+      "relativePath": "backend/SQLStressTest.Service.IntegrationTests/Hubs",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 2,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.IntegrationTests/Fixtures",
+      "relativePath": "backend/SQLStressTest.Service.IntegrationTests/Fixtures",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.IntegrationTests/Controllers",
+      "relativePath": "backend/SQLStressTest.Service.IntegrationTests/Controllers",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/obj/Release/net8.0",
+      "relativePath": "backend/SQLStressTest.Service/obj/Release/net8.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 4,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/obj/Release/net9.0",
+      "relativePath": "backend/SQLStressTest.Service/obj/Release/net9.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 4,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/obj/Debug/net8.0",
+      "relativePath": "backend/SQLStressTest.Service/obj/Debug/net8.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/obj/Debug/net9.0",
+      "relativePath": "backend/SQLStressTest.Service/obj/Debug/net9.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 4,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests/obj/Release/net8.0",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests/obj/Release/net8.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests/obj/Release/net9.0",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests/obj/Release/net9.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests/obj/Debug/net9.0",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests/obj/Debug/net9.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.IntegrationTests/obj/Release/net8.0",
+      "relativePath": "backend/SQLStressTest.Service.IntegrationTests/obj/Release/net8.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.IntegrationTests/obj/Release/net9.0",
+      "relativePath": "backend/SQLStressTest.Service.IntegrationTests/obj/Release/net9.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.IntegrationTests/obj/Debug/net9.0",
+      "relativePath": "backend/SQLStressTest.Service.IntegrationTests/obj/Debug/net9.0",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/obj/Release/net9.0/osx-arm64",
+      "relativePath": "backend/SQLStressTest.Service/obj/Release/net9.0/osx-arm64",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 4,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/obj/Debug/net9.0/osx-arm64",
+      "relativePath": "backend/SQLStressTest.Service/obj/Debug/net9.0/osx-arm64",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 4,
+      "languages": [
+        "csharp"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension",
+      "relativePath": "extension",
+      "folderType": "other",
+      "isTest": false,
+      "fileCount": 2,
+      "languages": [
+        "typescript",
+        "javascript"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension/src",
+      "relativePath": "extension/src",
+      "folderType": "src",
+      "isTest": false,
+      "fileCount": 2,
+      "languages": [
+        "typescript"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension/src/__tests__",
+      "relativePath": "extension/src/__tests__",
+      "folderType": "src",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "typescript"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension/src/panes",
+      "relativePath": "extension/src/panes",
+      "folderType": "src",
+      "isTest": false,
+      "fileCount": 5,
+      "languages": [
+        "typescript"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension/src/services",
+      "relativePath": "extension/src/services",
+      "folderType": "src",
+      "isTest": false,
+      "fileCount": 17,
+      "languages": [
+        "typescript"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension/src/__tests__/mocks",
+      "relativePath": "extension/src/__tests__/mocks",
+      "folderType": "src",
+      "isTest": false,
+      "fileCount": 1,
+      "languages": [
+        "typescript"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension/src/__tests__/panes",
+      "relativePath": "extension/src/__tests__/panes",
+      "folderType": "src",
+      "isTest": false,
+      "fileCount": 4,
+      "languages": [
+        "typescript"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension/src/__tests__/services",
+      "relativePath": "extension/src/__tests__/services",
+      "folderType": "src",
+      "isTest": false,
+      "fileCount": 3,
+      "languages": [
+        "typescript"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension/src/panes/queryEditor",
+      "relativePath": "extension/src/panes/queryEditor",
+      "folderType": "src",
+      "isTest": false,
+      "fileCount": 4,
+      "languages": [
+        "typescript"
+      ]
+    },
+    {
+      "path": "/Users/dave/repos/SQLStressTest/extension/src/services/interfaces",
+      "relativePath": "extension/src/services/interfaces",
+      "folderType": "src",
+      "isTest": false,
+      "fileCount": 4,
+      "languages": [
+        "typescript"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "SQLStressTest.Service",
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/SQLStressTest.Service.csproj",
+      "relativePath": "backend/SQLStressTest.Service/SQLStressTest.Service.csproj",
+      "projectType": "library",
+      "targetFramework": "net9.0",
+      "isTest": false,
+      "language": "CSharp",
+      "testProjectType": null
+    },
+    {
+      "name": "SQLStressTest.Service.Tests",
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.UnitTests/SQLStressTest.Service.Tests.csproj",
+      "relativePath": "backend/SQLStressTest.Service.UnitTests/SQLStressTest.Service.Tests.csproj",
+      "projectType": "test",
+      "targetFramework": "net9.0",
+      "isTest": true,
+      "language": "CSharp",
+      "testProjectType": "Unit"
+    },
+    {
+      "name": "SQLStressTest.Service.IntegrationTests",
+      "path": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service.IntegrationTests/SQLStressTest.Service.IntegrationTests.csproj",
+      "relativePath": "backend/SQLStressTest.Service.IntegrationTests/SQLStressTest.Service.IntegrationTests.csproj",
+      "projectType": "library",
+      "targetFramework": "net9.0",
+      "isTest": false,
+      "language": "CSharp",
+      "testProjectType": null
+    },
+    {
+      "name": "extension",
+      "path": "/Users/dave/repos/SQLStressTest/extension/package.json",
+      "relativePath": "extension/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "reusify",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/reusify/package.json",
+      "relativePath": "extension/node_modules/reusify/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "strip-literal",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/strip-literal/package.json",
+      "relativePath": "extension/node_modules/strip-literal/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "ts-api-utils",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/ts-api-utils/package.json",
+      "relativePath": "extension/node_modules/ts-api-utils/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "flatted",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/flatted/package.json",
+      "relativePath": "extension/node_modules/flatted/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "es-errors",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/es-errors/package.json",
+      "relativePath": "extension/node_modules/es-errors/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "confbox",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/confbox/package.json",
+      "relativePath": "extension/node_modules/confbox/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "happy-dom",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/happy-dom/package.json",
+      "relativePath": "extension/node_modules/happy-dom/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "math-intrinsics",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/math-intrinsics/package.json",
+      "relativePath": "extension/node_modules/math-intrinsics/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "std-env",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/std-env/package.json",
+      "relativePath": "extension/node_modules/std-env/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "has-tostringtag",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/has-tostringtag/package.json",
+      "relativePath": "extension/node_modules/has-tostringtag/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "abort-controller",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/abort-controller/package.json",
+      "relativePath": "extension/node_modules/abort-controller/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "eslint-scope",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/eslint-scope/package.json",
+      "relativePath": "extension/node_modules/eslint-scope/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "type-fest",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/type-fest/package.json",
+      "relativePath": "extension/node_modules/type-fest/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "estree-walker",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/estree-walker/package.json",
+      "relativePath": "extension/node_modules/estree-walker/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "call-bind-apply-helpers",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/call-bind-apply-helpers/package.json",
+      "relativePath": "extension/node_modules/call-bind-apply-helpers/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "pkg-types",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/pkg-types/package.json",
+      "relativePath": "extension/node_modules/pkg-types/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "signal-exit",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/signal-exit/package.json",
+      "relativePath": "extension/node_modules/signal-exit/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "ignore",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/ignore/package.json",
+      "relativePath": "extension/node_modules/ignore/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "assertion-error",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/assertion-error/package.json",
+      "relativePath": "extension/node_modules/assertion-error/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "typescript",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/typescript/package.json",
+      "relativePath": "extension/node_modules/typescript/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "psl",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/psl/package.json",
+      "relativePath": "extension/node_modules/psl/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "es-define-property",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/es-define-property/package.json",
+      "relativePath": "extension/node_modules/es-define-property/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "ufo",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/ufo/package.json",
+      "relativePath": "extension/node_modules/ufo/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "keyv",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/keyv/package.json",
+      "relativePath": "extension/node_modules/keyv/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "eslint-visitor-keys",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/eslint-visitor-keys/package.json",
+      "relativePath": "extension/node_modules/eslint-visitor-keys/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "tinyspy",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/tinyspy/package.json",
+      "relativePath": "extension/node_modules/tinyspy/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "dunder-proto",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/dunder-proto/package.json",
+      "relativePath": "extension/node_modules/dunder-proto/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "hasown",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/hasown/package.json",
+      "relativePath": "extension/node_modules/hasown/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "chalk",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/chalk/package.json",
+      "relativePath": "extension/node_modules/chalk/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "has-symbols",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/has-symbols/package.json",
+      "relativePath": "extension/node_modules/has-symbols/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "cac",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/cac/package.json",
+      "relativePath": "extension/node_modules/cac/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "vite",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/vite/package.json",
+      "relativePath": "extension/node_modules/vite/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "minimatch",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/minimatch/package.json",
+      "relativePath": "extension/node_modules/minimatch/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "graphemer",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/graphemer/package.json",
+      "relativePath": "extension/node_modules/graphemer/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "mlly",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/mlly/package.json",
+      "relativePath": "extension/node_modules/mlly/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "rollup",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/rollup/package.json",
+      "relativePath": "extension/node_modules/rollup/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "uri-js",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/uri-js/package.json",
+      "relativePath": "extension/node_modules/uri-js/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "get-proto",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/get-proto/package.json",
+      "relativePath": "extension/node_modules/get-proto/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "event-target-shim",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/event-target-shim/package.json",
+      "relativePath": "extension/node_modules/event-target-shim/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "gopd",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/gopd/package.json",
+      "relativePath": "extension/node_modules/gopd/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "local-pkg",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/local-pkg/package.json",
+      "relativePath": "extension/node_modules/local-pkg/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "type-detect",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/type-detect/package.json",
+      "relativePath": "extension/node_modules/type-detect/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "execa",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/execa/package.json",
+      "relativePath": "extension/node_modules/execa/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "magicast",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/magicast/package.json",
+      "relativePath": "extension/node_modules/magicast/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fast-glob",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fast-glob/package.json",
+      "relativePath": "extension/node_modules/fast-glob/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fastq",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fastq/package.json",
+      "relativePath": "extension/node_modules/fastq/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "pathe",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/pathe/package.json",
+      "relativePath": "extension/node_modules/pathe/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "es-set-tostringtag",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/es-set-tostringtag/package.json",
+      "relativePath": "extension/node_modules/es-set-tostringtag/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "axios",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/axios/package.json",
+      "relativePath": "extension/node_modules/axios/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fetch-cookie",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fetch-cookie/package.json",
+      "relativePath": "extension/node_modules/fetch-cookie/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "ajv",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/ajv/package.json",
+      "relativePath": "extension/node_modules/ajv/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fflate",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fflate/package.json",
+      "relativePath": "extension/node_modules/fflate/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "human-signals",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/human-signals/package.json",
+      "relativePath": "extension/node_modules/human-signals/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fast-deep-equal",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fast-deep-equal/package.json",
+      "relativePath": "extension/node_modules/fast-deep-equal/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "es-object-atoms",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/es-object-atoms/package.json",
+      "relativePath": "extension/node_modules/es-object-atoms/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "TypeScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "remapping",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@ampproject/remapping/package.json",
+      "relativePath": "extension/node_modules/@ampproject/remapping/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "types",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@typescript-eslint/types/package.json",
+      "relativePath": "extension/node_modules/@typescript-eslint/types/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "typescript-estree",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@typescript-eslint/typescript-estree/package.json",
+      "relativePath": "extension/node_modules/@typescript-eslint/typescript-estree/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "utils",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@typescript-eslint/utils/package.json",
+      "relativePath": "extension/node_modules/@typescript-eslint/utils/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "parser",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@typescript-eslint/parser/package.json",
+      "relativePath": "extension/node_modules/@typescript-eslint/parser/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "type-utils",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@typescript-eslint/type-utils/package.json",
+      "relativePath": "extension/node_modules/@typescript-eslint/type-utils/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "scope-manager",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@typescript-eslint/scope-manager/package.json",
+      "relativePath": "extension/node_modules/@typescript-eslint/scope-manager/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "eslint-plugin",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@typescript-eslint/eslint-plugin/package.json",
+      "relativePath": "extension/node_modules/@typescript-eslint/eslint-plugin/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "visitor-keys",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@typescript-eslint/visitor-keys/package.json",
+      "relativePath": "extension/node_modules/@typescript-eslint/visitor-keys/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "module-importer",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@humanwhocodes/module-importer/package.json",
+      "relativePath": "extension/node_modules/@humanwhocodes/module-importer/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "signalr",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@microsoft/signalr/package.json",
+      "relativePath": "extension/node_modules/@microsoft/signalr/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "types",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/vite/types/package.json",
+      "relativePath": "extension/node_modules/vite/types/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "typebox",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@sinclair/typebox/package.json",
+      "relativePath": "extension/node_modules/@sinclair/typebox/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "resolve-uri",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@jridgewell/resolve-uri/package.json",
+      "relativePath": "extension/node_modules/@jridgewell/resolve-uri/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "v8-coverage",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@bcoe/v8-coverage/package.json",
+      "relativePath": "extension/node_modules/@bcoe/v8-coverage/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "eslint-utils",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@eslint-community/eslint-utils/package.json",
+      "relativePath": "extension/node_modules/@eslint-community/eslint-utils/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "regexpp",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@eslint-community/regexpp/package.json",
+      "relativePath": "extension/node_modules/@eslint-community/regexpp/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "pathe",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/pkg-types/node_modules/pathe/package.json",
+      "relativePath": "extension/node_modules/pkg-types/node_modules/pathe/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "pathe",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/mlly/node_modules/pathe/package.json",
+      "relativePath": "extension/node_modules/mlly/node_modules/pathe/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "lib",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@bcoe/v8-coverage/dist/lib/package.json",
+      "relativePath": "extension/node_modules/@bcoe/v8-coverage/dist/lib/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "TypeScript",
+      "testProjectType": null
+    },
+    {
+      "name": "queue-microtask",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/queue-microtask/package.json",
+      "relativePath": "extension/node_modules/queue-microtask/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "callsites",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/callsites/package.json",
+      "relativePath": "extension/node_modules/callsites/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "test-exclude",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/test-exclude/package.json",
+      "relativePath": "extension/node_modules/test-exclude/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "globals",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/globals/package.json",
+      "relativePath": "extension/node_modules/globals/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "diff-sequences",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/diff-sequences/package.json",
+      "relativePath": "extension/node_modules/diff-sequences/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "istanbul-lib-source-maps",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/istanbul-lib-source-maps/package.json",
+      "relativePath": "extension/node_modules/istanbul-lib-source-maps/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "shebang-regex",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/shebang-regex/package.json",
+      "relativePath": "extension/node_modules/shebang-regex/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "eventsource",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/eventsource/package.json",
+      "relativePath": "extension/node_modules/eventsource/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "path-is-absolute",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/path-is-absolute/package.json",
+      "relativePath": "extension/node_modules/path-is-absolute/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "path-type",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/path-type/package.json",
+      "relativePath": "extension/node_modules/path-type/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "make-dir",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/make-dir/package.json",
+      "relativePath": "extension/node_modules/make-dir/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "mimic-fn",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/mimic-fn/package.json",
+      "relativePath": "extension/node_modules/mimic-fn/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "strip-ansi",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/strip-ansi/package.json",
+      "relativePath": "extension/node_modules/strip-ansi/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "react-is",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/react-is/package.json",
+      "relativePath": "extension/node_modules/react-is/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "istanbul-reports",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/istanbul-reports/package.json",
+      "relativePath": "extension/node_modules/istanbul-reports/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "ms",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/ms/package.json",
+      "relativePath": "extension/node_modules/ms/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "strip-final-newline",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/strip-final-newline/package.json",
+      "relativePath": "extension/node_modules/strip-final-newline/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "prelude-ls",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/prelude-ls/package.json",
+      "relativePath": "extension/node_modules/prelude-ls/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "escape-string-regexp",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/escape-string-regexp/package.json",
+      "relativePath": "extension/node_modules/escape-string-regexp/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "strip-json-comments",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/strip-json-comments/package.json",
+      "relativePath": "extension/node_modules/strip-json-comments/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "imurmurhash",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/imurmurhash/package.json",
+      "relativePath": "extension/node_modules/imurmurhash/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "punycode",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/punycode/package.json",
+      "relativePath": "extension/node_modules/punycode/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "text-table",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/text-table/package.json",
+      "relativePath": "extension/node_modules/text-table/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "rimraf",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/rimraf/package.json",
+      "relativePath": "extension/node_modules/rimraf/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "node-fetch",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/node-fetch/package.json",
+      "relativePath": "extension/node_modules/node-fetch/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "chai",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/chai/package.json",
+      "relativePath": "extension/node_modules/chai/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fast-json-stable-stringify",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fast-json-stable-stringify/package.json",
+      "relativePath": "extension/node_modules/fast-json-stable-stringify/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "balanced-match",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/balanced-match/package.json",
+      "relativePath": "extension/node_modules/balanced-match/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "path-exists",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/path-exists/package.json",
+      "relativePath": "extension/node_modules/path-exists/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "check-error",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/check-error/package.json",
+      "relativePath": "extension/node_modules/check-error/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "nanoid",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/nanoid/package.json",
+      "relativePath": "extension/node_modules/nanoid/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "acorn",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/acorn/package.json",
+      "relativePath": "extension/node_modules/acorn/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "sirv",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/sirv/package.json",
+      "relativePath": "extension/node_modules/sirv/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "file-entry-cache",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/file-entry-cache/package.json",
+      "relativePath": "extension/node_modules/file-entry-cache/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "once",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/once/package.json",
+      "relativePath": "extension/node_modules/once/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "proxy-from-env",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/proxy-from-env/package.json",
+      "relativePath": "extension/node_modules/proxy-from-env/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "vitest",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/vitest/package.json",
+      "relativePath": "extension/node_modules/vitest/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "esrecurse",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/esrecurse/package.json",
+      "relativePath": "extension/node_modules/esrecurse/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "magic-string",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/magic-string/package.json",
+      "relativePath": "extension/node_modules/magic-string/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "argparse",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/argparse/package.json",
+      "relativePath": "extension/node_modules/argparse/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "picomatch",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/picomatch/package.json",
+      "relativePath": "extension/node_modules/picomatch/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "function-bind",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/function-bind/package.json",
+      "relativePath": "extension/node_modules/function-bind/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "is-glob",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/is-glob/package.json",
+      "relativePath": "extension/node_modules/is-glob/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "npm-run-path",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/npm-run-path/package.json",
+      "relativePath": "extension/node_modules/npm-run-path/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "flat-cache",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/flat-cache/package.json",
+      "relativePath": "extension/node_modules/flat-cache/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "querystringify",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/querystringify/package.json",
+      "relativePath": "extension/node_modules/querystringify/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "inherits",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/inherits/package.json",
+      "relativePath": "extension/node_modules/inherits/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "dir-glob",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/dir-glob/package.json",
+      "relativePath": "extension/node_modules/dir-glob/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "color-name",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/color-name/package.json",
+      "relativePath": "extension/node_modules/color-name/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "postcss",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/postcss/package.json",
+      "relativePath": "extension/node_modules/postcss/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "p-locate",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/p-locate/package.json",
+      "relativePath": "extension/node_modules/p-locate/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "get-intrinsic",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/get-intrinsic/package.json",
+      "relativePath": "extension/node_modules/get-intrinsic/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "requires-port",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/requires-port/package.json",
+      "relativePath": "extension/node_modules/requires-port/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "js-yaml",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/js-yaml/package.json",
+      "relativePath": "extension/node_modules/js-yaml/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "whatwg-url",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/whatwg-url/package.json",
+      "relativePath": "extension/node_modules/whatwg-url/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "parent-module",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/parent-module/package.json",
+      "relativePath": "extension/node_modules/parent-module/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "combined-stream",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/combined-stream/package.json",
+      "relativePath": "extension/node_modules/combined-stream/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "is-path-inside",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/is-path-inside/package.json",
+      "relativePath": "extension/node_modules/is-path-inside/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "run-parallel",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/run-parallel/package.json",
+      "relativePath": "extension/node_modules/run-parallel/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "p-limit",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/p-limit/package.json",
+      "relativePath": "extension/node_modules/p-limit/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "mime-types",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/mime-types/package.json",
+      "relativePath": "extension/node_modules/mime-types/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "undici-types",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/undici-types/package.json",
+      "relativePath": "extension/node_modules/undici-types/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "webidl-conversions",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/webidl-conversions/package.json",
+      "relativePath": "extension/node_modules/webidl-conversions/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "json-schema-traverse",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/json-schema-traverse/package.json",
+      "relativePath": "extension/node_modules/json-schema-traverse/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "natural-compare",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/natural-compare/package.json",
+      "relativePath": "extension/node_modules/natural-compare/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "pathval",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/pathval/package.json",
+      "relativePath": "extension/node_modules/pathval/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "is-stream",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/is-stream/package.json",
+      "relativePath": "extension/node_modules/is-stream/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "universalify",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/universalify/package.json",
+      "relativePath": "extension/node_modules/universalify/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "onetime",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/onetime/package.json",
+      "relativePath": "extension/node_modules/onetime/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "esutils",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/esutils/package.json",
+      "relativePath": "extension/node_modules/esutils/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "find-up",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/find-up/package.json",
+      "relativePath": "extension/node_modules/find-up/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "deep-eql",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/deep-eql/package.json",
+      "relativePath": "extension/node_modules/deep-eql/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "ansi-regex",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/ansi-regex/package.json",
+      "relativePath": "extension/node_modules/ansi-regex/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "siginfo",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/siginfo/package.json",
+      "relativePath": "extension/node_modules/siginfo/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "has-flag",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/has-flag/package.json",
+      "relativePath": "extension/node_modules/has-flag/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "supports-color",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/supports-color/package.json",
+      "relativePath": "extension/node_modules/supports-color/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "html-escaper",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/html-escaper/package.json",
+      "relativePath": "extension/node_modules/html-escaper/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "color-convert",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/color-convert/package.json",
+      "relativePath": "extension/node_modules/color-convert/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "path-key",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/path-key/package.json",
+      "relativePath": "extension/node_modules/path-key/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "merge-stream",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/merge-stream/package.json",
+      "relativePath": "extension/node_modules/merge-stream/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "tinybench",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/tinybench/package.json",
+      "relativePath": "extension/node_modules/tinybench/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "istanbul-lib-report",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/istanbul-lib-report/package.json",
+      "relativePath": "extension/node_modules/istanbul-lib-report/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "brace-expansion",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/brace-expansion/package.json",
+      "relativePath": "extension/node_modules/brace-expansion/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fill-range",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fill-range/package.json",
+      "relativePath": "extension/node_modules/fill-range/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "json-stable-stringify-without-jsonify",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/json-stable-stringify-without-jsonify/package.json",
+      "relativePath": "extension/node_modules/json-stable-stringify-without-jsonify/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "word-wrap",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/word-wrap/package.json",
+      "relativePath": "extension/node_modules/word-wrap/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "picocolors",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/picocolors/package.json",
+      "relativePath": "extension/node_modules/picocolors/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "json-buffer",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/json-buffer/package.json",
+      "relativePath": "extension/node_modules/json-buffer/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "slash",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/slash/package.json",
+      "relativePath": "extension/node_modules/slash/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "doctrine",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/doctrine/package.json",
+      "relativePath": "extension/node_modules/doctrine/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "semver",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/semver/package.json",
+      "relativePath": "extension/node_modules/semver/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "istanbul-lib-coverage",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/istanbul-lib-coverage/package.json",
+      "relativePath": "extension/node_modules/istanbul-lib-coverage/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "loupe",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/loupe/package.json",
+      "relativePath": "extension/node_modules/loupe/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "estraverse",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/estraverse/package.json",
+      "relativePath": "extension/node_modules/estraverse/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "ansi-styles",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/ansi-styles/package.json",
+      "relativePath": "extension/node_modules/ansi-styles/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "js-tokens",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/js-tokens/package.json",
+      "relativePath": "extension/node_modules/js-tokens/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "acorn-jsx",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/acorn-jsx/package.json",
+      "relativePath": "extension/node_modules/acorn-jsx/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "tr46",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/tr46/package.json",
+      "relativePath": "extension/node_modules/tr46/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "is-number",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/is-number/package.json",
+      "relativePath": "extension/node_modules/is-number/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fs.realpath",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fs.realpath/package.json",
+      "relativePath": "extension/node_modules/fs.realpath/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "levn",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/levn/package.json",
+      "relativePath": "extension/node_modules/levn/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "yocto-queue",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/yocto-queue/package.json",
+      "relativePath": "extension/node_modules/yocto-queue/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "lodash.merge",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/lodash.merge/package.json",
+      "relativePath": "extension/node_modules/lodash.merge/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "url-parse",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/url-parse/package.json",
+      "relativePath": "extension/node_modules/url-parse/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "concat-map",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/concat-map/package.json",
+      "relativePath": "extension/node_modules/concat-map/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "get-stream",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/get-stream/package.json",
+      "relativePath": "extension/node_modules/get-stream/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "tinypool",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/tinypool/package.json",
+      "relativePath": "extension/node_modules/tinypool/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "optionator",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/optionator/package.json",
+      "relativePath": "extension/node_modules/optionator/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "vite-node",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/vite-node/package.json",
+      "relativePath": "extension/node_modules/vite-node/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "whatwg-mimetype",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/whatwg-mimetype/package.json",
+      "relativePath": "extension/node_modules/whatwg-mimetype/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "form-data",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/form-data/package.json",
+      "relativePath": "extension/node_modules/form-data/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "delayed-stream",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/delayed-stream/package.json",
+      "relativePath": "extension/node_modules/delayed-stream/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "cross-spawn",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/cross-spawn/package.json",
+      "relativePath": "extension/node_modules/cross-spawn/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "asynckit",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/asynckit/package.json",
+      "relativePath": "extension/node_modules/asynckit/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "espree",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/espree/package.json",
+      "relativePath": "extension/node_modules/espree/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "eslint",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/eslint/package.json",
+      "relativePath": "extension/node_modules/eslint/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "glob",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/glob/package.json",
+      "relativePath": "extension/node_modules/glob/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "esquery",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/esquery/package.json",
+      "relativePath": "extension/node_modules/esquery/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "import-fresh",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/import-fresh/package.json",
+      "relativePath": "extension/node_modules/import-fresh/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fast-levenshtein",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fast-levenshtein/package.json",
+      "relativePath": "extension/node_modules/fast-levenshtein/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "to-regex-range",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/to-regex-range/package.json",
+      "relativePath": "extension/node_modules/to-regex-range/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "pretty-format",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/pretty-format/package.json",
+      "relativePath": "extension/node_modules/pretty-format/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "array-union",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/array-union/package.json",
+      "relativePath": "extension/node_modules/array-union/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "why-is-node-running",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/why-is-node-running/package.json",
+      "relativePath": "extension/node_modules/why-is-node-running/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "totalist",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/totalist/package.json",
+      "relativePath": "extension/node_modules/totalist/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "esbuild",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/esbuild/package.json",
+      "relativePath": "extension/node_modules/esbuild/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "stackback",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/stackback/package.json",
+      "relativePath": "extension/node_modules/stackback/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "follow-redirects",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/follow-redirects/package.json",
+      "relativePath": "extension/node_modules/follow-redirects/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "micromatch",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/micromatch/package.json",
+      "relativePath": "extension/node_modules/micromatch/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "wrappy",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/wrappy/package.json",
+      "relativePath": "extension/node_modules/wrappy/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "resolve-from",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/resolve-from/package.json",
+      "relativePath": "extension/node_modules/resolve-from/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "is-extglob",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/is-extglob/package.json",
+      "relativePath": "extension/node_modules/is-extglob/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "set-cookie-parser",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/set-cookie-parser/package.json",
+      "relativePath": "extension/node_modules/set-cookie-parser/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "mrmime",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/mrmime/package.json",
+      "relativePath": "extension/node_modules/mrmime/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "merge2",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/merge2/package.json",
+      "relativePath": "extension/node_modules/merge2/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "deep-is",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/deep-is/package.json",
+      "relativePath": "extension/node_modules/deep-is/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "tough-cookie",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/tough-cookie/package.json",
+      "relativePath": "extension/node_modules/tough-cookie/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "braces",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/braces/package.json",
+      "relativePath": "extension/node_modules/braces/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "which",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/which/package.json",
+      "relativePath": "extension/node_modules/which/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "type-check",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/type-check/package.json",
+      "relativePath": "extension/node_modules/type-check/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "locate-path",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/locate-path/package.json",
+      "relativePath": "extension/node_modules/locate-path/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "globby",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/globby/package.json",
+      "relativePath": "extension/node_modules/globby/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fsevents",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fsevents/package.json",
+      "relativePath": "extension/node_modules/fsevents/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "ws",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/ws/package.json",
+      "relativePath": "extension/node_modules/ws/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "shebang-command",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/shebang-command/package.json",
+      "relativePath": "extension/node_modules/shebang-command/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "acorn-walk",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/acorn-walk/package.json",
+      "relativePath": "extension/node_modules/acorn-walk/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "get-func-name",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/get-func-name/package.json",
+      "relativePath": "extension/node_modules/get-func-name/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "debug",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/debug/package.json",
+      "relativePath": "extension/node_modules/debug/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "glob-parent",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/glob-parent/package.json",
+      "relativePath": "extension/node_modules/glob-parent/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "source-map-js",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/source-map-js/package.json",
+      "relativePath": "extension/node_modules/source-map-js/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "mime-db",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/mime-db/package.json",
+      "relativePath": "extension/node_modules/mime-db/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "isexe",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/isexe/package.json",
+      "relativePath": "extension/node_modules/isexe/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "inflight",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/inflight/package.json",
+      "relativePath": "extension/node_modules/inflight/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "semver",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@types/semver/package.json",
+      "relativePath": "extension/node_modules/@types/semver/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "whatwg-mimetype",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@types/whatwg-mimetype/package.json",
+      "relativePath": "extension/node_modules/@types/whatwg-mimetype/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "estree",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@types/estree/package.json",
+      "relativePath": "extension/node_modules/@types/estree/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "node",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@types/node/package.json",
+      "relativePath": "extension/node_modules/@types/node/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "vscode",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@types/vscode/package.json",
+      "relativePath": "extension/node_modules/@types/vscode/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "json-schema",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@types/json-schema/package.json",
+      "relativePath": "extension/node_modules/@types/json-schema/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "cjs",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/flatted/cjs/package.json",
+      "relativePath": "extension/node_modules/flatted/cjs/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "schemas",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@jest/schemas/package.json",
+      "relativePath": "extension/node_modules/@jest/schemas/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "url",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@polka/url/package.json",
+      "relativePath": "extension/node_modules/@polka/url/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "js",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@eslint/js/package.json",
+      "relativePath": "extension/node_modules/@eslint/js/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "eslintrc",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@eslint/eslintrc/package.json",
+      "relativePath": "extension/node_modules/@eslint/eslintrc/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "async",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/nanoid/async/package.json",
+      "relativePath": "extension/node_modules/nanoid/async/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "non-secure",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/nanoid/non-secure/package.json",
+      "relativePath": "extension/node_modules/nanoid/non-secure/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "url-alphabet",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/nanoid/url-alphabet/package.json",
+      "relativePath": "extension/node_modules/nanoid/url-alphabet/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fs.walk",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@nodelib/fs.walk/package.json",
+      "relativePath": "extension/node_modules/@nodelib/fs.walk/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fs.stat",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@nodelib/fs.stat/package.json",
+      "relativePath": "extension/node_modules/@nodelib/fs.stat/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "fs.scandir",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@nodelib/fs.scandir/package.json",
+      "relativePath": "extension/node_modules/@nodelib/fs.scandir/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "rollup-darwin-arm64",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@rollup/rollup-darwin-arm64/package.json",
+      "relativePath": "extension/node_modules/@rollup/rollup-darwin-arm64/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "structured-clone",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@ungap/structured-clone/package.json",
+      "relativePath": "extension/node_modules/@ungap/structured-clone/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "config-array",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@humanwhocodes/config-array/package.json",
+      "relativePath": "extension/node_modules/@humanwhocodes/config-array/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "object-schema",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@humanwhocodes/object-schema/package.json",
+      "relativePath": "extension/node_modules/@humanwhocodes/object-schema/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "test",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/html-escaper/test/package.json",
+      "relativePath": "extension/node_modules/html-escaper/test/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "cjs",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/html-escaper/cjs/package.json",
+      "relativePath": "extension/node_modules/html-escaper/cjs/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "helper-string-parser",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@babel/helper-string-parser/package.json",
+      "relativePath": "extension/node_modules/@babel/helper-string-parser/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "types",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@babel/types/package.json",
+      "relativePath": "extension/node_modules/@babel/types/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "parser",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@babel/parser/package.json",
+      "relativePath": "extension/node_modules/@babel/parser/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "helper-validator-identifier",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@babel/helper-validator-identifier/package.json",
+      "relativePath": "extension/node_modules/@babel/helper-validator-identifier/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "spy",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@vitest/spy/package.json",
+      "relativePath": "extension/node_modules/@vitest/spy/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "ui",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@vitest/ui/package.json",
+      "relativePath": "extension/node_modules/@vitest/ui/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "snapshot",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@vitest/snapshot/package.json",
+      "relativePath": "extension/node_modules/@vitest/snapshot/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "coverage-v8",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@vitest/coverage-v8/package.json",
+      "relativePath": "extension/node_modules/@vitest/coverage-v8/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "runner",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@vitest/runner/package.json",
+      "relativePath": "extension/node_modules/@vitest/runner/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "utils",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@vitest/utils/package.json",
+      "relativePath": "extension/node_modules/@vitest/utils/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "expect",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@vitest/expect/package.json",
+      "relativePath": "extension/node_modules/@vitest/expect/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "sourcemap-codec",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@jridgewell/sourcemap-codec/package.json",
+      "relativePath": "extension/node_modules/@jridgewell/sourcemap-codec/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "trace-mapping",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@jridgewell/trace-mapping/package.json",
+      "relativePath": "extension/node_modules/@jridgewell/trace-mapping/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "gen-mapping",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@jridgewell/gen-mapping/package.json",
+      "relativePath": "extension/node_modules/@jridgewell/gen-mapping/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "schema",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@istanbuljs/schema/package.json",
+      "relativePath": "extension/node_modules/@istanbuljs/schema/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "esm",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fetch-cookie/esm/package.json",
+      "relativePath": "extension/node_modules/fetch-cookie/esm/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "cjs",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fetch-cookie/cjs/package.json",
+      "relativePath": "extension/node_modules/fetch-cookie/cjs/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "darwin-arm64",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@esbuild/darwin-arm64/package.json",
+      "relativePath": "extension/node_modules/@esbuild/darwin-arm64/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "brace-expansion",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/test-exclude/node_modules/brace-expansion/package.json",
+      "relativePath": "extension/node_modules/test-exclude/node_modules/brace-expansion/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "minimatch",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/test-exclude/node_modules/minimatch/package.json",
+      "relativePath": "extension/node_modules/test-exclude/node_modules/minimatch/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": true,
+      "language": "JavaScript",
+      "testProjectType": "Integration"
+    },
+    {
+      "name": "mjs",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/signal-exit/dist/mjs/package.json",
+      "relativePath": "extension/node_modules/signal-exit/dist/mjs/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "cjs",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/signal-exit/dist/cjs/package.json",
+      "relativePath": "extension/node_modules/signal-exit/dist/cjs/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "path-key",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/npm-run-path/node_modules/path-key/package.json",
+      "relativePath": "extension/node_modules/npm-run-path/node_modules/path-key/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "cjs",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@ungap/structured-clone/cjs/package.json",
+      "relativePath": "extension/node_modules/@ungap/structured-clone/cjs/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "mjs",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/minimatch/dist/mjs/package.json",
+      "relativePath": "extension/node_modules/minimatch/dist/mjs/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "cjs",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/minimatch/dist/cjs/package.json",
+      "relativePath": "extension/node_modules/minimatch/dist/cjs/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "es",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/rollup/dist/es/package.json",
+      "relativePath": "extension/node_modules/rollup/dist/es/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "brace-expansion",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/eslint/node_modules/brace-expansion/package.json",
+      "relativePath": "extension/node_modules/eslint/node_modules/brace-expansion/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "minimatch",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/eslint/node_modules/minimatch/package.json",
+      "relativePath": "extension/node_modules/eslint/node_modules/minimatch/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "brace-expansion",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/glob/node_modules/brace-expansion/package.json",
+      "relativePath": "extension/node_modules/glob/node_modules/brace-expansion/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "minimatch",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/glob/node_modules/minimatch/package.json",
+      "relativePath": "extension/node_modules/glob/node_modules/minimatch/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "ansi-styles",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/pretty-format/node_modules/ansi-styles/package.json",
+      "relativePath": "extension/node_modules/pretty-format/node_modules/ansi-styles/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "glob-parent",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/fast-glob/node_modules/glob-parent/package.json",
+      "relativePath": "extension/node_modules/fast-glob/node_modules/glob-parent/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "brace-expansion",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@eslint/eslintrc/node_modules/brace-expansion/package.json",
+      "relativePath": "extension/node_modules/@eslint/eslintrc/node_modules/brace-expansion/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "minimatch",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@eslint/eslintrc/node_modules/minimatch/package.json",
+      "relativePath": "extension/node_modules/@eslint/eslintrc/node_modules/minimatch/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "brace-expansion",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@humanwhocodes/config-array/node_modules/brace-expansion/package.json",
+      "relativePath": "extension/node_modules/@humanwhocodes/config-array/node_modules/brace-expansion/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "minimatch",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@humanwhocodes/config-array/node_modules/minimatch/package.json",
+      "relativePath": "extension/node_modules/@humanwhocodes/config-array/node_modules/minimatch/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "p-limit",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@vitest/runner/node_modules/p-limit/package.json",
+      "relativePath": "extension/node_modules/@vitest/runner/node_modules/p-limit/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    },
+    {
+      "name": "yocto-queue",
+      "path": "/Users/dave/repos/SQLStressTest/extension/node_modules/@vitest/runner/node_modules/yocto-queue/package.json",
+      "relativePath": "extension/node_modules/@vitest/runner/node_modules/yocto-queue/package.json",
+      "projectType": "library",
+      "targetFramework": "Node.js",
+      "isTest": false,
+      "language": "JavaScript",
+      "testProjectType": null
+    }
+  ],
+  "importantFiles": [
+    {
+      "name": "README.md",
+      "path": "/Users/dave/repos/SQLStressTest/README.md",
+      "relativePath": "README.md",
+      "fileType": "readme",
+      "sizeBytes": 4063
+    },
+    {
+      "name": "README.md",
+      "path": "/Users/dave/repos/SQLStressTest/README.md",
+      "relativePath": "README.md",
+      "fileType": "readme",
+      "sizeBytes": 4063
+    },
+    {
+      "name": "check-logs.md",
+      "path": "/Users/dave/repos/SQLStressTest/check-logs.md",
+      "relativePath": "check-logs.md",
+      "fileType": "documentation",
+      "sizeBytes": 1096
+    },
+    {
+      "name": "F5-DEBUG-README.md",
+      "path": "/Users/dave/repos/SQLStressTest/F5-DEBUG-README.md",
+      "relativePath": "F5-DEBUG-README.md",
+      "fileType": "documentation",
+      "sizeBytes": 1497
+    },
+    {
+      "name": "LOG-FILES-README.md",
+      "path": "/Users/dave/repos/SQLStressTest/LOG-FILES-README.md",
+      "relativePath": "LOG-FILES-README.md",
+      "fileType": "documentation",
+      "sizeBytes": 2887
+    },
+    {
+      "name": "README.md",
+      "path": "/Users/dave/repos/SQLStressTest/README.md",
+      "relativePath": "README.md",
+      "fileType": "readme",
+      "sizeBytes": 4063
+    },
+    {
+      "name": ".gitignore",
+      "path": "/Users/dave/repos/SQLStressTest/.gitignore",
+      "relativePath": ".gitignore",
+      "fileType": "gitignore",
+      "sizeBytes": 4326
+    },
+    {
+      "name": ".gitignore",
+      "path": "/Users/dave/repos/SQLStressTest/.gitignore",
+      "relativePath": ".gitignore",
+      "fileType": "gitignore",
+      "sizeBytes": 4326
+    },
+    {
+      "name": "docker-compose.yml",
+      "path": "/Users/dave/repos/SQLStressTest/docker-compose.yml",
+      "relativePath": "docker-compose.yml",
+      "fileType": "config",
+      "sizeBytes": 604
+    }
+  ]
+}
