@@ -9,17 +9,17 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for orchestrating stress test execution requests.
 /// Single Responsibility: Stress test execution orchestration only.
 /// </summary>
-public class StressTestOrchestrator
+public class StressTestOrchestrator : IStressTestOrchestrator
 {
     private readonly IStressTestService _stressTestService;
-    private readonly ConnectionCacheService _connectionCacheService;
-    private readonly QueryRequestValidator _requestValidator;
+    private readonly IConnectionCacheService _connectionCacheService;
+    private readonly IQueryRequestValidator _requestValidator;
     private readonly ILogger<StressTestOrchestrator> _logger;
 
     public StressTestOrchestrator(
         IStressTestService stressTestService,
-        ConnectionCacheService connectionCacheService,
-        QueryRequestValidator requestValidator,
+        IConnectionCacheService connectionCacheService,
+        IQueryRequestValidator requestValidator,
         ILogger<StressTestOrchestrator> logger)
     {
         _stressTestService = stressTestService ?? throw new ArgumentNullException(nameof(stressTestService));

@@ -8,7 +8,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for executing queries and reading results.
 /// Single Responsibility: Query execution and result reading only.
 /// </summary>
-public class QueryRunner
+public class QueryRunner : IQueryRunner
 {
     private readonly IConnectionStringBuilder _connectionStringBuilder;
     private readonly ISqlConnectionFactory _connectionFactory;

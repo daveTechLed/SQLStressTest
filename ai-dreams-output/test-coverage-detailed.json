@@ -1,6 +1,6 @@
 ﻿{
-  "projectId": "e00642ef-bae2-4377-80aa-a1bea50da7af",
-  "generatedAt": "2025-11-13T14:00:48.412789Z",
+  "projectId": "250fce2c-9a71-4386-a10e-0d21e789d2e8",
+  "generatedAt": "2025-11-13T15:14:44.298143Z",
   "summary": {
     "overTestingScore": 0,
     "totalTests": 148,
@@ -25,7 +25,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 314.3775,
+      "duration": 257.3279,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -39,7 +39,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 357.9886,
+      "duration": 339.3012,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -53,7 +53,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 314.3691,
+      "duration": 242.6522,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -67,7 +67,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 336.2808,
+      "duration": 242.586,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -81,7 +81,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 355.0827,
+      "duration": 257.3761,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -95,7 +95,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 426.2947,
+      "duration": 242.6526,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -109,7 +109,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 440.8482,
+      "duration": 242.6053,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -123,7 +123,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 314.2775,
+      "duration": 242.6728,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -137,7 +137,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 314.2887,
+      "duration": 328.0911,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -151,7 +151,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 314.3348,
+      "duration": 242.622,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -165,7 +165,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 312.6242,
+      "duration": 291.9705,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -179,7 +179,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 312.2817,
+      "duration": 196.3007,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -193,7 +193,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 296.6955,
+      "duration": 221.9758,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -207,7 +207,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 329.8876,
+      "duration": 293.4425,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -221,7 +221,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 359.4148,
+      "duration": 209.6474,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -235,7 +235,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 344.8054,
+      "duration": 173.0152,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -249,7 +249,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 187.2468,
+      "duration": 280.0965,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -263,7 +263,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 296.6882,
+      "duration": 196.3058,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -277,7 +277,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 312.1768,
+      "duration": 203.4379,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -291,7 +291,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 294.4336,
+      "duration": 201.9608,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -305,7 +305,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 315.3014,
+      "duration": 224.9857,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -319,7 +319,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 293.8443,
+      "duration": 203.1006,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -333,7 +333,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 229.7151,
+      "duration": 145.1742,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -342,12 +342,13 @@
       "testProjectName": "extension",
       "expectedType": "Integration",
       "actualType": "Unit",
-      "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+      "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (97ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
       "indicators": [
+        "Fast execution (97ms \u003C= 100ms threshold)",
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 229.598,
+      "duration": 97.0743,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -361,7 +362,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 266.9602,
+      "duration": 214.7273,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -375,7 +376,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 338.5615,
+      "duration": 282.5111,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -389,7 +390,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 338.5971,
+      "duration": 190.1334,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -403,7 +404,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 323.1174,
+      "duration": 201.6107,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -417,7 +418,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 354.3852,
+      "duration": 236.404,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -431,7 +432,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 328.8419,
+      "duration": 259.4262,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -445,7 +446,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 273.9092,
+      "duration": 189.2595,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -459,7 +460,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 304.8856,
+      "duration": 211.9497,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -473,7 +474,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 335.7248,
+      "duration": 271.5144,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -487,7 +488,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 350.4563,
+      "duration": 224.0305,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -501,7 +502,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 205.2352,
+      "duration": 269.078,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -515,7 +516,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 237.421,
+      "duration": 221.3263,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -529,7 +530,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 283.0367,
+      "duration": 202.3876,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -543,7 +544,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 312.43,
+      "duration": 186.425,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -557,7 +558,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 393.0569,
+      "duration": 155.9029,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -571,7 +572,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 450.3629,
+      "duration": 186.7895,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -585,7 +586,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 371.8527,
+      "duration": 266.6478,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -599,7 +600,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 515.6868,
+      "duration": 266.6605,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -613,7 +614,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 558.5609,
+      "duration": 292.38,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -627,7 +628,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 573.2545,
+      "duration": 125.343,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -641,7 +642,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 501.6133,
+      "duration": 105.4081,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -655,7 +656,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 523.6689,
+      "duration": 234.0866,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -669,7 +670,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 417.0867,
+      "duration": 222.4391,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -683,7 +684,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 387.7456,
+      "duration": 304.0498,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -697,7 +698,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 372.2234,
+      "duration": 151.6496,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -711,7 +712,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 275.5711,
+      "duration": 140.0188,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -725,7 +726,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 302.073,
+      "duration": 210.7005,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -739,7 +740,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 377.0459,
+      "duration": 188.7016,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -753,7 +754,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 259.9942,
+      "duration": 236.179,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -767,7 +768,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 260.4137,
+      "duration": 168.5617,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -781,7 +782,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 258.7967,
+      "duration": 229.6096,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -795,7 +796,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 356.9358,
+      "duration": 216.8944,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -809,7 +810,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 260.3914,
+      "duration": 216.715,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -823,7 +824,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 214.4752,
+      "duration": 195.0578,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -837,7 +838,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 260.2999,
+      "duration": 146.2905,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -851,7 +852,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 429.5652,
+      "duration": 239.0253,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -865,7 +866,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 323.4735,
+      "duration": 238.9464,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -879,7 +880,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 323.1452,
+      "duration": 240.6657,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -893,7 +894,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 337.7825,
+      "duration": 301.8325,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -907,7 +908,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 292.2308,
+      "duration": 120.8281,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -921,7 +922,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 171.8322,
+      "duration": 289.0983,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -935,7 +936,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 290.383,
+      "duration": 227.6443,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -949,7 +950,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 304.4037,
+      "duration": 216.8039,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -963,7 +964,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 170.907,
+      "duration": 216.8618,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -977,7 +978,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 239.2293,
+      "duration": 109.4917,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -991,7 +992,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 256.1626,
+      "duration": 230.0143,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1005,7 +1006,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 192.576,
+      "duration": 206.5765,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1019,7 +1020,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 320.2006,
+      "duration": 217.6642,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1033,7 +1034,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 334.9368,
+      "duration": 110.7202,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1047,7 +1048,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 275.1103,
+      "duration": 260.2906,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1061,7 +1062,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 240.5343,
+      "duration": 248.0994,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1075,7 +1076,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 294.2691,
+      "duration": 213.9218,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1089,7 +1090,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 202.9288,
+      "duration": 190.7413,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1103,7 +1104,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 168.4598,
+      "duration": 202.1339,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1117,7 +1118,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 321.8537,
+      "duration": 202.8745,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1131,7 +1132,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 382.6265,
+      "duration": 155.2285,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1145,7 +1146,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 415.2478,
+      "duration": 214.1595,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1159,7 +1160,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 240.4617,
+      "duration": 283.92,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1173,7 +1174,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 240.3847,
+      "duration": 215.659,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1187,7 +1188,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 240.2836,
+      "duration": 144.888,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1201,7 +1202,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 378.9101,
+      "duration": 144.8198,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1215,7 +1216,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 241.8577,
+      "duration": 179.0535,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1229,7 +1230,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 240.285,
+      "duration": 206.9901,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1243,7 +1244,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 289.715,
+      "duration": 179.0375,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1257,7 +1258,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 261.5883,
+      "duration": 179.0702,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1271,7 +1272,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 257.0375,
+      "duration": 119.4151,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1285,7 +1286,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 242.5051,
+      "duration": 270.1136,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1299,7 +1300,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 257.0082,
+      "duration": 180.6138,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1313,7 +1314,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 286.3628,
+      "duration": 295.0563,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1327,7 +1328,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 272.336,
+      "duration": 200.6743,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1341,7 +1342,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 257.8653,
+      "duration": 237.7514,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1355,7 +1356,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 348.2467,
+      "duration": 172.3632,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1369,7 +1370,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 348.234,
+      "duration": 270.6874,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1383,7 +1384,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 226.0138,
+      "duration": 209.5192,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1397,7 +1398,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 260.0172,
+      "duration": 207.9825,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1411,7 +1412,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 278.6303,
+      "duration": 202.49,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1425,7 +1426,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 293.7639,
+      "duration": 208.2022,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1439,7 +1440,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 229.3836,
+      "duration": 208.5837,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1453,7 +1454,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 217.4076,
+      "duration": 171.1348,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1467,7 +1468,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 274.9609,
+      "duration": 221.3846,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1481,7 +1482,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 202.0496,
+      "duration": 235.7522,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1495,7 +1496,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 314.8381,
+      "duration": 209.3334,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1509,7 +1510,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 313.5444,
+      "duration": 175.3611,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1523,7 +1524,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 267.5293,
+      "duration": 149.264,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1537,7 +1538,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 267.5642,
+      "duration": 217.783,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1551,7 +1552,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 389.6536,
+      "duration": 195.2689,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1565,7 +1566,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 221.5085,
+      "duration": 196.4002,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1579,7 +1580,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 250.3056,
+      "duration": 212.6072,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1593,7 +1594,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 271.2572,
+      "duration": 228.7482,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1607,7 +1608,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 365.252,
+      "duration": 212.5123,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1621,7 +1622,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 355.2678,
+      "duration": 242.1975,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1635,7 +1636,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 229.2891,
+      "duration": 146.5077,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1649,7 +1650,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 247.609,
+      "duration": 183.6732,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1663,7 +1664,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 232.5952,
+      "duration": 279.1776,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1677,7 +1678,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 157.1357,
+      "duration": 256.534,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1691,7 +1692,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 262.3865,
+      "duration": 267.9986,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1705,7 +1706,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 234.9327,
+      "duration": 229.3186,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1719,7 +1720,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 362.5635,
+      "duration": 216.561,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1733,7 +1734,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 392.4688,
+      "duration": 161.5216,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1747,7 +1748,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 266.8791,
+      "duration": 240.2314,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1761,7 +1762,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 207.9662,
+      "duration": 228.5226,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1775,7 +1776,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 315.7622,
+      "duration": 144.4642,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1789,7 +1790,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 226.9208,
+      "duration": 235.0846,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1803,7 +1804,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 389.1614,
+      "duration": 233.908,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1817,7 +1818,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 272.8928,
+      "duration": 173.4377,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1831,7 +1832,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 272.8857,
+      "duration": 173.3647,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1845,7 +1846,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 195.2325,
+      "duration": 293.0818,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1859,7 +1860,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 244.1655,
+      "duration": 239.2987,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1873,7 +1874,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 334.4548,
+      "duration": 239.0961,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1887,7 +1888,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 303.0225,
+      "duration": 204.2938,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1901,7 +1902,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 225.6367,
+      "duration": 174.799,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1915,7 +1916,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 255.8157,
+      "duration": 282.14,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1929,7 +1930,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 255.9369,
+      "duration": 241.7191,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1943,7 +1944,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 292.8241,
+      "duration": 216.7622,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1957,7 +1958,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 168.3832,
+      "duration": 216.8736,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1971,7 +1972,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 275.2752,
+      "duration": 216.7552,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1985,7 +1986,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 215.2904,
+      "duration": 159.2278,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -1999,7 +2000,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 171.7565,
+      "duration": 170.9012,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -2013,7 +2014,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 162.5051,
+      "duration": 156.9687,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -2027,7 +2028,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 149.4813,
+      "duration": 158.594,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -2041,7 +2042,7 @@
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 139.954,
+      "duration": 106.724,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -2050,13 +2051,12 @@
       "testProjectName": "has-tostringtag",
       "expectedType": "Integration",
       "actualType": "Unit",
-      "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (53ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+      "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
       "indicators": [
-        "Fast execution (53ms \u003C= 100ms threshold)",
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 53.468,
+      "duration": 107.3866,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -2065,13 +2065,13 @@
       "testProjectName": "has-symbols",
       "expectedType": "Integration",
       "actualType": "Unit",
-      "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (56ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+      "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (55ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
       "indicators": [
-        "Fast execution (56ms \u003C= 100ms threshold)",
+        "Fast execution (55ms \u003C= 100ms threshold)",
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 56.0769,
+      "duration": 55.4534,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     },
@@ -2080,13 +2080,13 @@
       "testProjectName": "fastq",
       "expectedType": "Integration",
       "actualType": "Unit",
-      "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (55ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+      "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (60ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
       "indicators": [
-        "Fast execution (55ms \u003C= 100ms threshold)",
+        "Fast execution (60ms \u003C= 100ms threshold)",
         "Simple method coverage (0 methods \u003C= 3 threshold)",
         "Simple line coverage (0 lines \u003C= 50 threshold)"
       ],
-      "duration": 55.0681,
+      "duration": 60.1744,
       "coveredMethodsCount": 0,
       "coveredLinesCount": 0
     }
@@ -2600,7 +2600,7 @@
       "symbolName": "SqlHub",
       "qualifiedName": "global::SqlHub",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 8,
+      "lineNumber": 9,
       "kind": "Class",
       "priority": "Low",
       "recommendation": "[LOW Priority] Class \u0027SqlHub\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -2654,7 +2654,7 @@
       "symbolName": "QueryRequestValidator",
       "qualifiedName": "global::QueryRequestValidator",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/QueryRequestValidator.cs",
-      "lineNumber": 11,
+      "lineNumber": 12,
       "kind": "Class",
       "priority": "Low",
       "recommendation": "[LOW Priority] Class \u0027QueryRequestValidator\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -2672,7 +2672,7 @@
       "symbolName": "ValidationResult",
       "qualifiedName": "global::ValidationResult",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/QueryRequestValidator.cs",
-      "lineNumber": 166,
+      "lineNumber": 167,
       "kind": "Class",
       "priority": "Low",
       "recommendation": "[LOW Priority] Class \u0027ValidationResult\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -2726,7 +2726,7 @@
       "symbolName": "QueryResultSerializer",
       "qualifiedName": "global::QueryResultSerializer",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/QueryResultSerializer.cs",
-      "lineNumber": 9,
+      "lineNumber": 10,
       "kind": "Class",
       "priority": "Low",
       "recommendation": "[LOW Priority] Class \u0027QueryResultSerializer\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -2744,7 +2744,7 @@
       "symbolName": "ExtendedEventsReader",
       "qualifiedName": "global::ExtendedEventsReader",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs",
-      "lineNumber": 12,
+      "lineNumber": 13,
       "kind": "Class",
       "priority": "Low",
       "recommendation": "[LOW Priority] Class \u0027ExtendedEventsReader\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -2780,7 +2780,7 @@
       "symbolName": "HeartbeatSender",
       "qualifiedName": "global::HeartbeatSender",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/HeartbeatSender.cs",
-      "lineNumber": 11,
+      "lineNumber": 12,
       "kind": "Class",
       "priority": "Low",
       "recommendation": "[LOW Priority] Class \u0027HeartbeatSender\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -2798,7 +2798,7 @@
       "symbolName": "ExtendedEventsProcessor",
       "qualifiedName": "global::ExtendedEventsProcessor",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsProcessor.cs",
-      "lineNumber": 13,
+      "lineNumber": 14,
       "kind": "Class",
       "priority": "Low",
       "recommendation": "[LOW Priority] Class \u0027ExtendedEventsProcessor\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -2874,6 +2874,24 @@
       "kind": "Class",
       "priority": "Low",
       "recommendation": "[LOW Priority] Class \u0027UserInfoRetriever\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
+      "testabilityComplexity": "Complex",
+      "isPublic": true,
+      "isCoreLogic": false,
+      "isErrorHandling": false,
+      "suggestedTestScenarios": [
+        "Add unit tests for ",
+        "Test all public methods in ",
+        "Test error handling in "
+      ]
+    },
+    {
+      "symbolName": "ExtendedEventsReaderFactory",
+      "qualifiedName": "global::ExtendedEventsReaderFactory",
+      "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReaderFactory.cs",
+      "lineNumber": 11,
+      "kind": "Class",
+      "priority": "Low",
+      "recommendation": "[LOW Priority] Class \u0027ExtendedEventsReaderFactory\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
       "testabilityComplexity": "Complex",
       "isPublic": true,
       "isCoreLogic": false,
@@ -3050,7 +3068,7 @@
       "symbolName": "ExtendedEventsSessionManager",
       "qualifiedName": "global::ExtendedEventsSessionManager",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsSessionManager.cs",
-      "lineNumber": 10,
+      "lineNumber": 11,
       "kind": "Class",
       "priority": "Low",
       "recommendation": "[LOW Priority] Class \u0027ExtendedEventsSessionManager\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -5513,7 +5531,7 @@
       "symbolName": "ConnectionCacheService",
       "qualifiedName": "global::ConnectionCacheService",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionCacheService.cs",
-      "lineNumber": 10,
+      "lineNumber": 11,
       "kind": "Class",
       "priority": "High",
       "recommendation": "[HIGH Priority] Class \u0027ConnectionCacheService\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -5531,7 +5549,7 @@
       "symbolName": "ExtendedEventsReaderService",
       "qualifiedName": "global::ExtendedEventsReaderService",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReaderService.cs",
-      "lineNumber": 10,
+      "lineNumber": 11,
       "kind": "Class",
       "priority": "High",
       "recommendation": "[HIGH Priority] Class \u0027ExtendedEventsReaderService\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -5819,7 +5837,7 @@
       "symbolName": "ConnectionLifecycleHandler",
       "qualifiedName": "global::ConnectionLifecycleHandler",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionLifecycleHandler.cs",
-      "lineNumber": 12,
+      "lineNumber": 13,
       "kind": "Class",
       "priority": "High",
       "recommendation": "[HIGH Priority] Class \u0027ConnectionLifecycleHandler\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -5837,7 +5855,7 @@
       "symbolName": "StorageRequestHandler",
       "qualifiedName": "global::StorageRequestHandler",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 11,
+      "lineNumber": 12,
       "kind": "Class",
       "priority": "High",
       "recommendation": "[HIGH Priority] Class \u0027StorageRequestHandler\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is complex to test and may require refactoring.",
@@ -6661,7 +6679,7 @@
       "symbolName": "GetCacheLock",
       "qualifiedName": "global::ConnectionCacheService.GetCacheLock",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionCacheService.cs",
-      "lineNumber": 28,
+      "lineNumber": 29,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027GetCacheLock\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -6679,7 +6697,7 @@
       "symbolName": "GetCachedConnections",
       "qualifiedName": "global::ConnectionCacheService.GetCachedConnections",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionCacheService.cs",
-      "lineNumber": 36,
+      "lineNumber": 37,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027GetCachedConnections\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -6697,7 +6715,7 @@
       "symbolName": "LoadConnectionsAsync",
       "qualifiedName": "global::ConnectionCacheService.LoadConnectionsAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionCacheService.cs",
-      "lineNumber": 44,
+      "lineNumber": 45,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027LoadConnectionsAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -6715,7 +6733,7 @@
       "symbolName": "ReloadConnectionsAsync",
       "qualifiedName": "global::ConnectionCacheService.ReloadConnectionsAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionCacheService.cs",
-      "lineNumber": 116,
+      "lineNumber": 117,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ReloadConnectionsAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -6733,7 +6751,7 @@
       "symbolName": "GetConnectionConfigAsync",
       "qualifiedName": "global::ConnectionCacheService.GetConnectionConfigAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionCacheService.cs",
-      "lineNumber": 229,
+      "lineNumber": 230,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027GetConnectionConfigAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -6751,7 +6769,7 @@
       "symbolName": "ConvertToConnectionConfig",
       "qualifiedName": "global::ConnectionCacheService.ConvertToConnectionConfig",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionCacheService.cs",
-      "lineNumber": 339,
+      "lineNumber": 340,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ConvertToConnectionConfig\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -6769,7 +6787,7 @@
       "symbolName": "InitializeReader",
       "qualifiedName": "global::ExtendedEventsReaderService.InitializeReader",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReaderService.cs",
-      "lineNumber": 36,
+      "lineNumber": 37,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027InitializeReader\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -6787,7 +6805,7 @@
       "symbolName": "StartReadingAsync",
       "qualifiedName": "global::ExtendedEventsReaderService.StartReadingAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReaderService.cs",
-      "lineNumber": 46,
+      "lineNumber": 47,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027StartReadingAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -6805,7 +6823,7 @@
       "symbolName": "ReadEventsLoopAsync",
       "qualifiedName": "global::ExtendedEventsReaderService.ReadEventsLoopAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReaderService.cs",
-      "lineNumber": 56,
+      "lineNumber": 57,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ReadEventsLoopAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -6841,7 +6859,7 @@
       "symbolName": "GetConnectionCacheService",
       "qualifiedName": "global::ConnectionLifecycleHandler.GetConnectionCacheService",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionLifecycleHandler.cs",
-      "lineNumber": 193,
+      "lineNumber": 194,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027GetConnectionCacheService\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7093,7 +7111,7 @@
       "symbolName": "StartAsync",
       "qualifiedName": "global::ExtendedEventsService.StartAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsService.cs",
-      "lineNumber": 47,
+      "lineNumber": 41,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027StartAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7111,7 +7129,7 @@
       "symbolName": "StopAsync",
       "qualifiedName": "global::ExtendedEventsService.StopAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsService.cs",
-      "lineNumber": 58,
+      "lineNumber": 52,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027StopAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7129,7 +7147,7 @@
       "symbolName": "MonitorAndStartReaderAsync",
       "qualifiedName": "global::ExtendedEventsService.MonitorAndStartReaderAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsService.cs",
-      "lineNumber": 105,
+      "lineNumber": 99,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027MonitorAndStartReaderAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7147,7 +7165,7 @@
       "symbolName": "StartExtendedEventsReaderAsync",
       "qualifiedName": "global::ExtendedEventsService.StartExtendedEventsReaderAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsService.cs",
-      "lineNumber": 186,
+      "lineNumber": 180,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027StartExtendedEventsReaderAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7165,7 +7183,7 @@
       "symbolName": "Dispose",
       "qualifiedName": "global::ExtendedEventsService.Dispose",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsService.cs",
-      "lineNumber": 236,
+      "lineNumber": 224,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027Dispose\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7183,7 +7201,7 @@
       "symbolName": "TestConnectionAsync",
       "qualifiedName": "global::SqlConnectionService.TestConnectionAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/SqlConnectionService.cs",
-      "lineNumber": 43,
+      "lineNumber": 30,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027TestConnectionAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7201,7 +7219,7 @@
       "symbolName": "TestConnectionWithDetailsAsync",
       "qualifiedName": "global::SqlConnectionService.TestConnectionWithDetailsAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/SqlConnectionService.cs",
-      "lineNumber": 48,
+      "lineNumber": 35,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027TestConnectionWithDetailsAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7219,7 +7237,7 @@
       "symbolName": "ExecuteQueryAsync",
       "qualifiedName": "global::SqlConnectionService.ExecuteQueryAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/SqlConnectionService.cs",
-      "lineNumber": 53,
+      "lineNumber": 40,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ExecuteQueryAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7456,7 +7474,7 @@
       "symbolName": "OnConnectedAsync",
       "qualifiedName": "global::SqlHub.OnConnectedAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 40,
+      "lineNumber": 28,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027OnConnectedAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7474,7 +7492,7 @@
       "symbolName": "OnDisconnectedAsync",
       "qualifiedName": "global::SqlHub.OnDisconnectedAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 54,
+      "lineNumber": 42,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027OnDisconnectedAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7492,7 +7510,7 @@
       "symbolName": "RequestSaveConnection",
       "qualifiedName": "global::SqlHub.RequestSaveConnection",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 70,
+      "lineNumber": 58,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestSaveConnection\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7510,7 +7528,7 @@
       "symbolName": "RequestLoadConnections",
       "qualifiedName": "global::SqlHub.RequestLoadConnections",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 75,
+      "lineNumber": 63,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestLoadConnections\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7528,7 +7546,7 @@
       "symbolName": "RequestUpdateConnection",
       "qualifiedName": "global::SqlHub.RequestUpdateConnection",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 80,
+      "lineNumber": 68,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestUpdateConnection\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7546,7 +7564,7 @@
       "symbolName": "RequestDeleteConnection",
       "qualifiedName": "global::SqlHub.RequestDeleteConnection",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 85,
+      "lineNumber": 73,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestDeleteConnection\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7564,7 +7582,7 @@
       "symbolName": "RequestSaveQueryResult",
       "qualifiedName": "global::SqlHub.RequestSaveQueryResult",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 90,
+      "lineNumber": 78,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestSaveQueryResult\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7582,7 +7600,7 @@
       "symbolName": "RequestLoadQueryResults",
       "qualifiedName": "global::SqlHub.RequestLoadQueryResults",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 95,
+      "lineNumber": 83,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestLoadQueryResults\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7600,7 +7618,7 @@
       "symbolName": "RequestSavePerformanceMetrics",
       "qualifiedName": "global::SqlHub.RequestSavePerformanceMetrics",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 100,
+      "lineNumber": 88,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestSavePerformanceMetrics\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7618,7 +7636,7 @@
       "symbolName": "RequestLoadPerformanceMetrics",
       "qualifiedName": "global::SqlHub.RequestLoadPerformanceMetrics",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 105,
+      "lineNumber": 93,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestLoadPerformanceMetrics\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7636,7 +7654,7 @@
       "symbolName": "NotifyConnectionSaved",
       "qualifiedName": "global::SqlHub.NotifyConnectionSaved",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 114,
+      "lineNumber": 102,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027NotifyConnectionSaved\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7654,7 +7672,7 @@
       "symbolName": "SendExtendedEventDataAsync",
       "qualifiedName": "global::SqlHub.SendExtendedEventDataAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 144,
+      "lineNumber": 131,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027SendExtendedEventDataAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7672,7 +7690,7 @@
       "symbolName": "SendExecutionBoundaryAsync",
       "qualifiedName": "global::SqlHub.SendExecutionBoundaryAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs",
-      "lineNumber": 162,
+      "lineNumber": 149,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027SendExecutionBoundaryAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7690,7 +7708,7 @@
       "symbolName": "ReloadConnectionsAsync",
       "qualifiedName": "global::SqlController.ReloadConnectionsAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs",
-      "lineNumber": 91,
+      "lineNumber": 47,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ReloadConnectionsAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7708,7 +7726,7 @@
       "symbolName": "ReloadConnectionsStaticAsync",
       "qualifiedName": "global::SqlController.ReloadConnectionsStaticAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs",
-      "lineNumber": 104,
+      "lineNumber": 60,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ReloadConnectionsStaticAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7726,7 +7744,7 @@
       "symbolName": "GetCacheLock",
       "qualifiedName": "global::SqlController.GetCacheLock",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs",
-      "lineNumber": 120,
+      "lineNumber": 76,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027GetCacheLock\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7744,7 +7762,7 @@
       "symbolName": "GetCachedConnections",
       "qualifiedName": "global::SqlController.GetCachedConnections",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs",
-      "lineNumber": 130,
+      "lineNumber": 86,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027GetCachedConnections\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7762,7 +7780,7 @@
       "symbolName": "TestConnection",
       "qualifiedName": "global::SqlController.TestConnection",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs",
-      "lineNumber": 135,
+      "lineNumber": 91,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027TestConnection\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7780,7 +7798,7 @@
       "symbolName": "ExecuteQuery",
       "qualifiedName": "global::SqlController.ExecuteQuery",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs",
-      "lineNumber": 171,
+      "lineNumber": 127,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ExecuteQuery\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7798,7 +7816,7 @@
       "symbolName": "ExecuteStressTest",
       "qualifiedName": "global::SqlController.ExecuteStressTest",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs",
-      "lineNumber": 177,
+      "lineNumber": 133,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ExecuteStressTest\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7852,7 +7870,7 @@
       "symbolName": "ValidateQueryRequest",
       "qualifiedName": "global::QueryRequestValidator.ValidateQueryRequest",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/QueryRequestValidator.cs",
-      "lineNumber": 23,
+      "lineNumber": 24,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ValidateQueryRequest\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7870,7 +7888,7 @@
       "symbolName": "ValidateStressTestRequest",
       "qualifiedName": "global::QueryRequestValidator.ValidateStressTestRequest",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/QueryRequestValidator.cs",
-      "lineNumber": 103,
+      "lineNumber": 104,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ValidateStressTestRequest\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7924,7 +7942,7 @@
       "symbolName": "BuildResultDataJson",
       "qualifiedName": "global::QueryResultSerializer.BuildResultDataJson",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/QueryResultSerializer.cs",
-      "lineNumber": 15,
+      "lineNumber": 16,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027BuildResultDataJson\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7942,7 +7960,7 @@
       "symbolName": "EscapeJsonString",
       "qualifiedName": "global::QueryResultSerializer.EscapeJsonString",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/QueryResultSerializer.cs",
-      "lineNumber": 106,
+      "lineNumber": 107,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027EscapeJsonString\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7960,7 +7978,7 @@
       "symbolName": "StartSessionAsync",
       "qualifiedName": "global::ExtendedEventsReader.StartSessionAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs",
-      "lineNumber": 65,
+      "lineNumber": 34,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027StartSessionAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7978,7 +7996,7 @@
       "symbolName": "StopSessionAsync",
       "qualifiedName": "global::ExtendedEventsReader.StopSessionAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs",
-      "lineNumber": 71,
+      "lineNumber": 40,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027StopSessionAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -7996,7 +8014,7 @@
       "symbolName": "StartReadingAsync",
       "qualifiedName": "global::ExtendedEventsReader.StartReadingAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs",
-      "lineNumber": 76,
+      "lineNumber": 45,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027StartReadingAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8014,7 +8032,7 @@
       "symbolName": "Dispose",
       "qualifiedName": "global::ExtendedEventsReader.Dispose",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs",
-      "lineNumber": 84,
+      "lineNumber": 53,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027Dispose\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8032,7 +8050,7 @@
       "symbolName": "Dispose",
       "qualifiedName": "global::ExtendedEventsReader.Dispose",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs",
-      "lineNumber": 90,
+      "lineNumber": 59,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027Dispose\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8050,7 +8068,7 @@
       "symbolName": "TestConnectionAsync",
       "qualifiedName": "global::ConnectionTester.TestConnectionAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionTester.cs",
-      "lineNumber": 52,
+      "lineNumber": 39,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027TestConnectionAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8068,7 +8086,7 @@
       "symbolName": "TestConnectionWithDetailsAsync",
       "qualifiedName": "global::ConnectionTester.TestConnectionWithDetailsAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionTester.cs",
-      "lineNumber": 76,
+      "lineNumber": 63,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027TestConnectionWithDetailsAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8086,7 +8104,7 @@
       "symbolName": "HandleConnectedAsync",
       "qualifiedName": "global::ConnectionLifecycleHandler.HandleConnectedAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionLifecycleHandler.cs",
-      "lineNumber": 34,
+      "lineNumber": 35,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027HandleConnectedAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8105,7 +8123,7 @@
       "symbolName": "HandleDisconnectedAsync",
       "qualifiedName": "global::ConnectionLifecycleHandler.HandleDisconnectedAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionLifecycleHandler.cs",
-      "lineNumber": 166,
+      "lineNumber": 167,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027HandleDisconnectedAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8124,7 +8142,7 @@
       "symbolName": "SendHeartbeatAsync",
       "qualifiedName": "global::HeartbeatSender.SendHeartbeatAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/HeartbeatSender.cs",
-      "lineNumber": 26,
+      "lineNumber": 27,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027SendHeartbeatAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8142,7 +8160,7 @@
       "symbolName": "ProcessEvent",
       "qualifiedName": "global::ExtendedEventsProcessor.ProcessEvent",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsProcessor.cs",
-      "lineNumber": 36,
+      "lineNumber": 37,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027ProcessEvent\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8160,7 +8178,7 @@
       "symbolName": "CreateGuidFromExecutionNumber",
       "qualifiedName": "global::ExtendedEventsProcessor.CreateGuidFromExecutionNumber",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsProcessor.cs",
-      "lineNumber": 125,
+      "lineNumber": 126,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027CreateGuidFromExecutionNumber\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8244,6 +8262,24 @@
         "Test GetAuthenticatedUserAsync with valid inputs",
         "Test GetAuthenticatedUserAsync with edge cases",
         "Test GetAuthenticatedUserAsync null parameter handling"
+      ]
+    },
+    {
+      "symbolName": "Create",
+      "qualifiedName": "global::ExtendedEventsReaderFactory.Create",
+      "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReaderFactory.cs",
+      "lineNumber": 27,
+      "kind": "Method",
+      "priority": "Critical",
+      "recommendation": "[CRITICAL Priority] Method \u0027Create\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
+      "testabilityComplexity": "Simple",
+      "isPublic": true,
+      "isCoreLogic": false,
+      "isErrorHandling": false,
+      "suggestedTestScenarios": [
+        "Test Create with valid inputs",
+        "Test Create with edge cases",
+        "Test Create null parameter handling"
       ]
     },
     {
@@ -8484,7 +8520,7 @@
       "symbolName": "RequestSaveConnection",
       "qualifiedName": "global::StorageRequestHandler.RequestSaveConnection",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 23,
+      "lineNumber": 24,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestSaveConnection\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8502,7 +8538,7 @@
       "symbolName": "RequestLoadConnections",
       "qualifiedName": "global::StorageRequestHandler.RequestLoadConnections",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 55,
+      "lineNumber": 56,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestLoadConnections\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8520,7 +8556,7 @@
       "symbolName": "RequestUpdateConnection",
       "qualifiedName": "global::StorageRequestHandler.RequestUpdateConnection",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 85,
+      "lineNumber": 86,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestUpdateConnection\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8538,7 +8574,7 @@
       "symbolName": "RequestDeleteConnection",
       "qualifiedName": "global::StorageRequestHandler.RequestDeleteConnection",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 116,
+      "lineNumber": 117,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestDeleteConnection\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8556,7 +8592,7 @@
       "symbolName": "RequestSaveQueryResult",
       "qualifiedName": "global::StorageRequestHandler.RequestSaveQueryResult",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 147,
+      "lineNumber": 148,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestSaveQueryResult\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8574,7 +8610,7 @@
       "symbolName": "RequestLoadQueryResults",
       "qualifiedName": "global::StorageRequestHandler.RequestLoadQueryResults",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 179,
+      "lineNumber": 180,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestLoadQueryResults\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8592,7 +8628,7 @@
       "symbolName": "RequestSavePerformanceMetrics",
       "qualifiedName": "global::StorageRequestHandler.RequestSavePerformanceMetrics",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 211,
+      "lineNumber": 212,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestSavePerformanceMetrics\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8610,7 +8646,7 @@
       "symbolName": "RequestLoadPerformanceMetrics",
       "qualifiedName": "global::StorageRequestHandler.RequestLoadPerformanceMetrics",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 243,
+      "lineNumber": 244,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027RequestLoadPerformanceMetrics\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8628,7 +8664,7 @@
       "symbolName": "HandleConnectionSavedNotification",
       "qualifiedName": "global::StorageRequestHandler.HandleConnectionSavedNotification",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs",
-      "lineNumber": 275,
+      "lineNumber": 276,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027HandleConnectionSavedNotification\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8755,7 +8791,7 @@
       "symbolName": "StartSessionAsync",
       "qualifiedName": "global::ExtendedEventsSessionManager.StartSessionAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsSessionManager.cs",
-      "lineNumber": 32,
+      "lineNumber": 33,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027StartSessionAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",
@@ -8773,7 +8809,7 @@
       "symbolName": "StopSessionAsync",
       "qualifiedName": "global::ExtendedEventsSessionManager.StopSessionAsync",
       "filePath": "/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsSessionManager.cs",
-      "lineNumber": 122,
+      "lineNumber": 123,
       "kind": "Method",
       "priority": "Critical",
       "recommendation": "[CRITICAL Priority] Method \u0027StopSessionAsync\u0027 is not covered by tests. This is a public API that should be tested. Testing this code is straightforward to test.",

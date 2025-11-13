@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.SqlServer.XEvent.XELite;
+using SQLStressTest.Service.Interfaces;
 
 namespace SQLStressTest.Service.Services;
 
@@ -7,11 +8,11 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for reading Extended Events from the stream.
 /// Single Responsibility: Event reading only.
 /// </summary>
-public class ExtendedEventsReaderService
+public class ExtendedEventsReaderService : IExtendedEventsReaderService
 {
     private readonly string _streamerConnectionString;
     private readonly string _sessionName;
-    private readonly ExtendedEventsProcessor _eventProcessor;
+    private readonly IExtendedEventsProcessor _eventProcessor;
     private readonly CancellationToken _cancellationToken;
     private readonly ILogger<ExtendedEventsReaderService>? _logger;
     private XELiveEventStreamer? _reader;
@@ -19,7 +20,7 @@ public class ExtendedEventsReaderService
     public ExtendedEventsReaderService(
         string streamerConnectionString,
         string sessionName,
-        ExtendedEventsProcessor eventProcessor,
+        IExtendedEventsProcessor eventProcessor,
         CancellationToken cancellationToken,
         ILogger<ExtendedEventsReaderService>? logger = null)
     {

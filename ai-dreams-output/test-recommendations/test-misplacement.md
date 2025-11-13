@@ -11,7 +11,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 314ms
+- **Duration:** 257ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -22,7 +22,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 358ms
+- **Duration:** 339ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -33,7 +33,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 314ms
+- **Duration:** 243ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -44,7 +44,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 336ms
+- **Duration:** 243ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -55,7 +55,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 355ms
+- **Duration:** 257ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -66,7 +66,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 426ms
+- **Duration:** 243ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -77,7 +77,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 441ms
+- **Duration:** 243ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -88,7 +88,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 314ms
+- **Duration:** 243ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -99,7 +99,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 314ms
+- **Duration:** 328ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -110,7 +110,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 314ms
+- **Duration:** 243ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -121,7 +121,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 313ms
+- **Duration:** 292ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -132,7 +132,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 312ms
+- **Duration:** 196ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -143,7 +143,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 297ms
+- **Duration:** 222ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -154,7 +154,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 330ms
+- **Duration:** 293ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -165,7 +165,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 359ms
+- **Duration:** 210ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -176,7 +176,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 345ms
+- **Duration:** 173ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -187,7 +187,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 187ms
+- **Duration:** 280ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -198,7 +198,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 297ms
+- **Duration:** 196ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -209,7 +209,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 312ms
+- **Duration:** 203ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -220,7 +220,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 294ms
+- **Duration:** 202ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -231,7 +231,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 315ms
+- **Duration:** 225ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -242,7 +242,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 294ms
+- **Duration:** 203ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -253,7 +253,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 230ms
+- **Duration:** 145ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -262,9 +262,9 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Test Project:** `extension`
 - **Expected Type:** Integration
 - **Actual Type (inferred):** Unit
-- **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 230ms
+- **Reason:** Test appears to be a unit test (in integration test project). Indicators: Fast execution (97ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
+- **Indicators:** Fast execution (97ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
+- **Duration:** 97ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -275,7 +275,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 267ms
+- **Duration:** 215ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -286,7 +286,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 339ms
+- **Duration:** 283ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -297,7 +297,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 339ms
+- **Duration:** 190ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -308,7 +308,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 323ms
+- **Duration:** 202ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -319,7 +319,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 354ms
+- **Duration:** 236ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -330,7 +330,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 329ms
+- **Duration:** 259ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -341,7 +341,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 274ms
+- **Duration:** 189ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -352,7 +352,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 305ms
+- **Duration:** 212ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -363,7 +363,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 336ms
+- **Duration:** 272ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -374,7 +374,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 350ms
+- **Duration:** 224ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -385,7 +385,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 205ms
+- **Duration:** 269ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -396,7 +396,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 237ms
+- **Duration:** 221ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -407,7 +407,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 283ms
+- **Duration:** 202ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -418,7 +418,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 312ms
+- **Duration:** 186ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -429,7 +429,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 393ms
+- **Duration:** 156ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -440,7 +440,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 450ms
+- **Duration:** 187ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -451,7 +451,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 372ms
+- **Duration:** 267ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -462,7 +462,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 516ms
+- **Duration:** 267ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -473,7 +473,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 559ms
+- **Duration:** 292ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -484,7 +484,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 573ms
+- **Duration:** 125ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -495,7 +495,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 502ms
+- **Duration:** 105ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -506,7 +506,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 524ms
+- **Duration:** 234ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -517,7 +517,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 417ms
+- **Duration:** 222ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -528,7 +528,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 388ms
+- **Duration:** 304ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -539,7 +539,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 372ms
+- **Duration:** 152ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -550,7 +550,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 276ms
+- **Duration:** 140ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -561,7 +561,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 302ms
+- **Duration:** 211ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -572,7 +572,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 377ms
+- **Duration:** 189ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -583,7 +583,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 260ms
+- **Duration:** 236ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -594,7 +594,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 260ms
+- **Duration:** 169ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -605,7 +605,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 259ms
+- **Duration:** 230ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -616,7 +616,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 357ms
+- **Duration:** 217ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -627,7 +627,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 260ms
+- **Duration:** 217ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -638,7 +638,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 214ms
+- **Duration:** 195ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -649,7 +649,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 260ms
+- **Duration:** 146ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -660,7 +660,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 430ms
+- **Duration:** 239ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -671,7 +671,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 323ms
+- **Duration:** 239ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -682,7 +682,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 323ms
+- **Duration:** 241ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -693,7 +693,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 338ms
+- **Duration:** 302ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -704,7 +704,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 292ms
+- **Duration:** 121ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -715,7 +715,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 172ms
+- **Duration:** 289ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -726,7 +726,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 290ms
+- **Duration:** 228ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -737,7 +737,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 304ms
+- **Duration:** 217ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -748,7 +748,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 171ms
+- **Duration:** 217ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -759,7 +759,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 239ms
+- **Duration:** 109ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -770,7 +770,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 256ms
+- **Duration:** 230ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -781,7 +781,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 193ms
+- **Duration:** 207ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -792,7 +792,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 320ms
+- **Duration:** 218ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -803,7 +803,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 335ms
+- **Duration:** 111ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -814,7 +814,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 275ms
+- **Duration:** 260ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -825,7 +825,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 241ms
+- **Duration:** 248ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -836,7 +836,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 294ms
+- **Duration:** 214ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -847,7 +847,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 203ms
+- **Duration:** 191ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -858,7 +858,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 168ms
+- **Duration:** 202ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -869,7 +869,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 322ms
+- **Duration:** 203ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -880,7 +880,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 383ms
+- **Duration:** 155ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -891,7 +891,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 415ms
+- **Duration:** 214ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -902,7 +902,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 240ms
+- **Duration:** 284ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -913,7 +913,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 240ms
+- **Duration:** 216ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -924,7 +924,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 240ms
+- **Duration:** 145ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -935,7 +935,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 379ms
+- **Duration:** 145ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -946,7 +946,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 242ms
+- **Duration:** 179ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -957,7 +957,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 240ms
+- **Duration:** 207ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -968,7 +968,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 290ms
+- **Duration:** 179ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -979,7 +979,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 262ms
+- **Duration:** 179ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -990,7 +990,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 257ms
+- **Duration:** 119ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1001,7 +1001,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 243ms
+- **Duration:** 270ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1012,7 +1012,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 257ms
+- **Duration:** 181ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1023,7 +1023,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 286ms
+- **Duration:** 295ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1034,7 +1034,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 272ms
+- **Duration:** 201ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1045,7 +1045,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 258ms
+- **Duration:** 238ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1056,7 +1056,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 348ms
+- **Duration:** 172ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1067,7 +1067,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 348ms
+- **Duration:** 271ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1078,7 +1078,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 226ms
+- **Duration:** 210ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1089,7 +1089,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 260ms
+- **Duration:** 208ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1100,7 +1100,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 279ms
+- **Duration:** 202ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1111,7 +1111,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 294ms
+- **Duration:** 208ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1122,7 +1122,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 229ms
+- **Duration:** 209ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1133,7 +1133,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 217ms
+- **Duration:** 171ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1144,7 +1144,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 275ms
+- **Duration:** 221ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1155,7 +1155,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 202ms
+- **Duration:** 236ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1166,7 +1166,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 315ms
+- **Duration:** 209ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1177,7 +1177,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 314ms
+- **Duration:** 175ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1188,7 +1188,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 268ms
+- **Duration:** 149ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1199,7 +1199,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 268ms
+- **Duration:** 218ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1210,7 +1210,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 390ms
+- **Duration:** 195ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1221,7 +1221,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 222ms
+- **Duration:** 196ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1232,7 +1232,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 250ms
+- **Duration:** 213ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1243,7 +1243,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 271ms
+- **Duration:** 229ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1254,7 +1254,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 365ms
+- **Duration:** 213ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1265,7 +1265,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 355ms
+- **Duration:** 242ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1276,7 +1276,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 229ms
+- **Duration:** 147ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1287,7 +1287,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 248ms
+- **Duration:** 184ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1298,7 +1298,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 233ms
+- **Duration:** 279ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1309,7 +1309,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 157ms
+- **Duration:** 257ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1320,7 +1320,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 262ms
+- **Duration:** 268ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1331,7 +1331,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 235ms
+- **Duration:** 229ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1342,7 +1342,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 363ms
+- **Duration:** 217ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1353,7 +1353,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 392ms
+- **Duration:** 162ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1364,7 +1364,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 267ms
+- **Duration:** 240ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1375,7 +1375,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 208ms
+- **Duration:** 229ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1386,7 +1386,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 316ms
+- **Duration:** 144ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1397,7 +1397,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 227ms
+- **Duration:** 235ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1408,7 +1408,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 389ms
+- **Duration:** 234ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1419,7 +1419,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 273ms
+- **Duration:** 173ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1430,7 +1430,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 273ms
+- **Duration:** 173ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1441,7 +1441,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 195ms
+- **Duration:** 293ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1452,7 +1452,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 244ms
+- **Duration:** 239ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1463,7 +1463,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 334ms
+- **Duration:** 239ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1474,7 +1474,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 303ms
+- **Duration:** 204ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1485,7 +1485,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 226ms
+- **Duration:** 175ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1496,7 +1496,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 256ms
+- **Duration:** 282ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1507,7 +1507,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 256ms
+- **Duration:** 242ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1518,7 +1518,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 293ms
+- **Duration:** 217ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1529,7 +1529,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 168ms
+- **Duration:** 217ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1540,7 +1540,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 275ms
+- **Duration:** 217ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1551,7 +1551,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 215ms
+- **Duration:** 159ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1562,7 +1562,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 172ms
+- **Duration:** 171ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1573,7 +1573,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 163ms
+- **Duration:** 157ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1584,7 +1584,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 149ms
+- **Duration:** 159ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1595,7 +1595,7 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Actual Type (inferred):** Unit
 - **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
 - **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 140ms
+- **Duration:** 107ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1605,9 +1605,9 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Test Project:** `has-tostringtag`
 - **Expected Type:** Integration
 - **Actual Type (inferred):** Unit
-- **Reason:** Test appears to be a unit test (in integration test project). Indicators: Fast execution (53ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Indicators:** Fast execution (53ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 53ms
+- **Reason:** Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
+- **Indicators:** Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
+- **Duration:** 107ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1617,9 +1617,9 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Test Project:** `has-symbols`
 - **Expected Type:** Integration
 - **Actual Type (inferred):** Unit
-- **Reason:** Test appears to be a unit test (in integration test project). Indicators: Fast execution (56ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Indicators:** Fast execution (56ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 56ms
+- **Reason:** Test appears to be a unit test (in integration test project). Indicators: Fast execution (55ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
+- **Indicators:** Fast execution (55ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
+- **Duration:** 55ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 
@@ -1629,9 +1629,9 @@ Tests that appear to be in the wrong project type (Unit vs Integration).
 - **Test Project:** `fastq`
 - **Expected Type:** Integration
 - **Actual Type (inferred):** Unit
-- **Reason:** Test appears to be a unit test (in integration test project). Indicators: Fast execution (55ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Indicators:** Fast execution (55ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
-- **Duration:** 55ms
+- **Reason:** Test appears to be a unit test (in integration test project). Indicators: Fast execution (60ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
+- **Indicators:** Fast execution (60ms <= 100ms threshold), Simple method coverage (0 methods <= 3 threshold), Simple line coverage (0 lines <= 50 threshold)
+- **Duration:** 60ms
 - **Methods Covered:** 0
 - **Lines Covered:** 0
 

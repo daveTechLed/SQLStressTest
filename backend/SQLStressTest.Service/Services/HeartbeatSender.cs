@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
+using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 
 namespace SQLStressTest.Service.Services;
@@ -8,7 +9,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for sending heartbeat messages to SignalR clients.
 /// Single Responsibility: Heartbeat messaging only.
 /// </summary>
-public class HeartbeatSender
+public class HeartbeatSender : IHeartbeatSender
 {
     private readonly ILogger<HeartbeatSender>? _logger;
 

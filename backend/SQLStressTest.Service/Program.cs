@@ -155,22 +155,115 @@ builder.Services.AddSingleton<ISqlConnectionFactory, SqlConnectionFactory>();
 
 // Register extracted services for StressTestService
 builder.Services.AddSingleton<DataSizeCalculator>();
+builder.Services.AddScoped<ContextInfoSetter>();
+builder.Services.AddScoped<QueryDataSizeCalculator>();
 builder.Services.AddScoped<QueryExecutor>();
 // ExtendedEventConverter has no dependencies, can be singleton
 builder.Services.AddSingleton<ExtendedEventConverter>();
 // SignalRMessageSender only needs IHubContext (singleton), can be singleton for hosted service
 builder.Services.AddSingleton<SignalRMessageSender>();
+builder.Services.AddScoped<EventLookupService>();
+builder.Services.AddScoped<EventStreamingService>(sp =>
+{
+    var eventConverter = sp.GetRequiredService<ExtendedEventConverter>();
+    var messageSender = sp.GetRequiredService<SignalRMessageSender>();
+    var logger = sp.GetRequiredService<ILogger<EventStreamingService>>();
+    return new EventStreamingService(eventConverter, messageSender, logger);
+});
 builder.Services.AddScoped<ExtendedEventProcessor>();
 // ExtendedEventsStore holds the shared events dictionary for ExtendedEventsService and StressTestService
 builder.Services.AddSingleton<ExtendedEventsStore>();
 
+// Register services for dependency injection (replacing 'new' statements)
+// Simple services with no dependencies - can be singleton
+builder.Services.AddSingleton<IQueryResultSerializer, QueryResultSerializer>();
+builder.Services.AddSingleton<IHeartbeatSender, HeartbeatSender>();
+builder.Services.AddSingleton<IServerVersionRetriever, ServerVersionRetriever>();
+builder.Services.AddSingleton<IUserInfoRetriever, UserInfoRetriever>();
+builder.Services.AddSingleton<IDatabaseListRetriever, DatabaseListRetriever>();
+
+// Services with dependencies - scoped for per-request instances
+builder.Services.AddScoped<IQueryRequestValidator, QueryRequestValidator>();
+builder.Services.AddScoped<IQueryRunner, QueryRunner>();
+builder.Services.AddScoped<IQueryResultStorageHandler, QueryResultStorageHandler>();
+builder.Services.AddScoped<IConnectionTester, ConnectionTester>();
+builder.Services.AddScoped<IStorageRequestHandler, StorageRequestHandler>();
+
+// Singleton services that maintain state
+builder.Services.AddSingleton<IConnectionCacheService, ConnectionCacheService>(sp =>
+{
+    var storageService = sp.GetService<IStorageService>();
+    var logger = sp.GetService<ILogger<ConnectionCacheService>>();
+    return new ConnectionCacheService(storageService, logger);
+});
+
+// Scoped services for orchestrators
+builder.Services.AddScoped<IQueryExecutionOrchestrator, QueryExecutionOrchestrator>(sp =>
+{
+    var sqlConnectionService = sp.GetRequiredService<ISqlConnectionService>();
+    var connectionCacheService = sp.GetRequiredService<IConnectionCacheService>();
+    var requestValidator = sp.GetRequiredService<IQueryRequestValidator>();
+    var logger = sp.GetRequiredService<ILogger<QueryExecutionOrchestrator>>();
+    return new QueryExecutionOrchestrator(sqlConnectionService, connectionCacheService, requestValidator, logger);
+});
+
+builder.Services.AddScoped<IStressTestOrchestrator, StressTestOrchestrator>(sp =>
+{
+    var stressTestService = sp.GetRequiredService<IStressTestService>();
+    var connectionCacheService = sp.GetRequiredService<IConnectionCacheService>();
+    var requestValidator = sp.GetRequiredService<IQueryRequestValidator>();
+    var logger = sp.GetRequiredService<ILogger<StressTestOrchestrator>>();
+    return new StressTestOrchestrator(stressTestService, connectionCacheService, requestValidator, logger);
+});
+
+// Scoped service for connection lifecycle
+builder.Services.AddScoped<IConnectionLifecycleHandler, ConnectionLifecycleHandler>(sp =>
+{
+    var logger = sp.GetRequiredService<ILogger<ConnectionLifecycleHandler>>();
+    var heartbeatSender = sp.GetRequiredService<IHeartbeatSender>();
+    var connectionCacheService = sp.GetRequiredService<IConnectionCacheService>();
+    var storageService = sp.GetService<IStorageService>();
+    return new ConnectionLifecycleHandler(logger, heartbeatSender, connectionCacheService, storageService);
+});
+
+// Extended Events services - these need special handling due to constructor parameters
+// Use factory pattern with interfaces for proper dependency inversion
+builder.Services.AddSingleton<IExtendedEventsSessionManagerFactory, ExtendedEventsSessionManagerFactory>(sp =>
+{
+    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+    return new ExtendedEventsSessionManagerFactory(loggerFactory);
+});
+
+builder.Services.AddSingleton<IExtendedEventsProcessorFactory, ExtendedEventsProcessorFactory>(sp =>
+{
+    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+    var messageSender = sp.GetService<SignalRMessageSender>();
+    var eventConverter = sp.GetService<ExtendedEventConverter>();
+    return new ExtendedEventsProcessorFactory(loggerFactory, messageSender, eventConverter);
+});
+
+builder.Services.AddSingleton<IExtendedEventsReaderServiceFactory, ExtendedEventsReaderServiceFactory>(sp =>
+{
+    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+    return new ExtendedEventsReaderServiceFactory(loggerFactory);
+});
+
+builder.Services.AddSingleton<IExtendedEventsReaderFactory, ExtendedEventsReaderFactory>(sp =>
+{
+    var sessionManagerFactory = sp.GetRequiredService<IExtendedEventsSessionManagerFactory>();
+    var processorFactory = sp.GetRequiredService<IExtendedEventsProcessorFactory>();
+    var readerServiceFactory = sp.GetRequiredService<IExtendedEventsReaderServiceFactory>();
+    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+    return new ExtendedEventsReaderFactory(sessionManagerFactory, processorFactory, readerServiceFactory, loggerFactory);
+});
+
 builder.Services.AddScoped<ISqlConnectionService, SqlConnectionService>(sp =>
 {
-    var connectionStringBuilder = sp.GetRequiredService<IConnectionStringBuilder>();
-    var connectionFactory = sp.GetRequiredService<ISqlConnectionFactory>();
-    var storageService = sp.GetService<IStorageService>();
-    var logger = sp.GetService<ILogger<SqlConnectionService>>();
-    return new SqlConnectionService(connectionStringBuilder, connectionFactory, storageService, logger);
+    var connectionTester = sp.GetRequiredService<IConnectionTester>();
+    var queryRunner = sp.GetRequiredService<IQueryRunner>();
+    var resultSerializer = sp.GetRequiredService<IQueryResultSerializer>();
+    var storageHandler = sp.GetRequiredService<IQueryResultStorageHandler>();
+    return new SqlConnectionService(connectionTester, queryRunner, resultSerializer, storageHandler);
 });
 builder.Services.AddSingleton<IPerformanceService, PerformanceService>(sp =>
 {
@@ -198,11 +291,9 @@ builder.Services.AddSingleton<ExtendedEventsService>(sp =>
     var connectionStringBuilder = sp.GetRequiredService<IConnectionStringBuilder>();
     var storageService = sp.GetService<IStorageService>();
     var logger = sp.GetRequiredService<ILogger<ExtendedEventsService>>();
-    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+    var readerFactory = sp.GetRequiredService<IExtendedEventsReaderFactory>();
     var eventsStore = sp.GetRequiredService<ExtendedEventsStore>();
-    var messageSender = sp.GetService<SignalRMessageSender>();
-    var eventConverter = sp.GetService<ExtendedEventConverter>();
-    return new ExtendedEventsService(connectionStringBuilder, storageService, logger, loggerFactory, eventsStore, messageSender, eventConverter);
+    return new ExtendedEventsService(connectionStringBuilder, storageService, logger, readerFactory, eventsStore);
 });
 builder.Services.AddHostedService(sp => sp.GetRequiredService<ExtendedEventsService>());
 
@@ -215,6 +306,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Use CORS middleware FIRST to handle preflight OPTIONS requests
+// This is critical for SignalR negotiation to work properly
+// CORS must be before any other middleware that might process the request
+app.UseCors();
+
 // Enable request buffering for body reading
 app.Use(async (context, next) =>
 {
@@ -223,7 +319,7 @@ app.Use(async (context, next) =>
     await next();
 });
 
-// Add request logging middleware before CORS
+// Add request logging middleware
 app.Use(async (context, next) =>
 {
     var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
@@ -351,10 +447,6 @@ app.Use(async (context, next) =>
             string.Join(" | ", headerStrings403));
     }
 });
-
-// Use CORS middleware BEFORE routing to handle preflight OPTIONS requests
-// This is critical for SignalR negotiation to work properly
-app.UseCors();
 
 app.UseRouting();
 

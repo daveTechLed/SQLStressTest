@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 using Moq;
 using SQLStressTest.Service.Hubs;
+using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 using SQLStressTest.Service.Services;
 using System;
@@ -54,7 +55,18 @@ public class SqlHubTests
         _mockContext.Setup(x => x.Features).Returns(featureCollection);
         // GetHttpContext() will return null, and the code handles this with ?? "No context"
 
-        _hub = new SqlHub(_mockLogger.Object, _loggerFactory, _storageService);
+        var mockHeartbeatSender = new Mock<IHeartbeatSender>();
+        var mockConnectionCacheService = new Mock<IConnectionCacheService>();
+        mockConnectionCacheService.Setup(x => x.GetCacheLock()).Returns(new object());
+        mockConnectionCacheService.Setup(x => x.GetCachedConnections()).Returns((List<ConnectionConfigDto>?)null);
+        var mockStorageRequestHandler = new Mock<IStorageRequestHandler>();
+        var mockLifecycleLogger = new Mock<ILogger<ConnectionLifecycleHandler>>();
+        var lifecycleHandler = new ConnectionLifecycleHandler(
+            mockLifecycleLogger.Object,
+            mockHeartbeatSender.Object,
+            mockConnectionCacheService.Object,
+            _storageService);
+        _hub = new SqlHub(_mockLogger.Object, _storageService, lifecycleHandler, mockStorageRequestHandler.Object);
         
         // Use reflection to set private context and clients
         var hubType = typeof(Hub);
@@ -256,15 +268,15 @@ public class SqlHubTests
         var connectionId = $"conn_cache_test_{uniqueTestId}";
         var testConnectionId = $"test-connection-id-{uniqueTestId}";
         
-        // Arrange - Clear cache first and set up static storage service
+        // Arrange - Clear cache first and set up static connection cache service
         var controllerType = typeof(SQLStressTest.Service.Controllers.SqlController);
-        var staticStorageServiceField = controllerType.GetField("_staticStorageService", 
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-        var staticLoggerField = controllerType.GetField("_staticLogger", 
+        var staticConnectionCacheServiceField = controllerType.GetField("_staticConnectionCacheService", 
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
         
-        var originalStorageService = staticStorageServiceField?.GetValue(null);
-        var originalLogger = staticLoggerField?.GetValue(null);
+        // Create a ConnectionCacheService with the storage service
+        var connectionCacheService = new ConnectionCacheService(_storageService, null);
+        
+        var originalCacheService = staticConnectionCacheServiceField?.GetValue(null);
         
         try
         {
@@ -276,15 +288,8 @@ public class SqlHubTests
                 cacheField?.SetValue(null, null);
             }
 
-            // Set the static storage service BEFORE setting up mocks
-            // This ensures ReloadConnectionsStaticAsync will use our storage service
-            staticStorageServiceField?.SetValue(null, _storageService);
-            // Don't set logger - it's optional and Moq proxies cause type conversion issues
-
-            // Verify the static storage service is set correctly
-            var currentStorageService = staticStorageServiceField?.GetValue(null);
-            Assert.True(ReferenceEquals(currentStorageService, _storageService), 
-                "Static storage service should be set to our test storage service");
+            // Set the static connection cache service
+            staticConnectionCacheServiceField?.SetValue(null, connectionCacheService);
 
             var mockHubClients = new Mock<IHubClients>();
             var mockSingleClient = new Mock<ISingleClientProxy>();
@@ -324,12 +329,12 @@ public class SqlHubTests
             {
                 await Task.Delay(retryDelay);
                 
-                // Verify static storage service is still set (another test might have overwritten it)
-                var currentService = staticStorageServiceField?.GetValue(null);
-                if (!ReferenceEquals(currentService, _storageService))
+                // Verify static connection cache service is still set (another test might have overwritten it)
+                var currentService = staticConnectionCacheServiceField?.GetValue(null);
+                if (!ReferenceEquals(currentService, connectionCacheService))
                 {
                     // Another test overwrote it, restore it
-                    staticStorageServiceField?.SetValue(null, _storageService);
+                    staticConnectionCacheServiceField?.SetValue(null, connectionCacheService);
                 }
                 
                 lock (SQLStressTest.Service.Controllers.SqlController.GetCacheLock())
@@ -351,12 +356,11 @@ public class SqlHubTests
             // If we still didn't find it, try one more reload to ensure it's there
             if (!foundExpectedConnection)
             {
-                // Ensure static storage service is still set
-                staticStorageServiceField?.SetValue(null, _storageService);
+                // Ensure static connection cache service is still set
+                staticConnectionCacheServiceField?.SetValue(null, connectionCacheService);
                 _storageService.SetConnectionId(testConnectionId);
                 
                 // Manually trigger reload to ensure cache is populated
-                // Use proper DI - pass the storage service instead of relying on static field
                 await SQLStressTest.Service.Controllers.SqlController.ReloadConnectionsStaticAsync(_storageService, testConnectionId);
                 await Task.Delay(300);
             }
@@ -376,9 +380,8 @@ public class SqlHubTests
         }
         finally
         {
-            // Restore original values
-            staticStorageServiceField?.SetValue(null, originalStorageService);
-            staticLoggerField?.SetValue(null, originalLogger);
+            // Restore original value
+            staticConnectionCacheServiceField?.SetValue(null, originalCacheService);
         }
     }
 
@@ -404,20 +407,19 @@ public class SqlHubTests
             cacheField?.SetValue(null, null);
         }
 
-        // Set the static storage service so ReloadConnectionsStaticAsync can use it
+        // Set the static connection cache service so ReloadConnectionsStaticAsync can use it
         var controllerType = typeof(SQLStressTest.Service.Controllers.SqlController);
-        var staticStorageServiceField = controllerType.GetField("_staticStorageService", 
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-        var staticLoggerField = controllerType.GetField("_staticLogger", 
+        var staticConnectionCacheServiceField = controllerType.GetField("_staticConnectionCacheService", 
             System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
         
-        var originalStorageService = staticStorageServiceField?.GetValue(null);
-        var originalLogger = staticLoggerField?.GetValue(null);
+        // Create a ConnectionCacheService with the storage service
+        var connectionCacheService = new ConnectionCacheService(_storageService, null);
+        
+        var originalCacheService = staticConnectionCacheServiceField?.GetValue(null);
         
         try
         {
-            staticStorageServiceField?.SetValue(null, _storageService);
-            // Don't set logger - it's optional and Moq proxies cause type conversion issues
+            staticConnectionCacheServiceField?.SetValue(null, connectionCacheService);
             var testConnections = new List<ConnectionConfigDto>
             {
                 new ConnectionConfigDto
@@ -456,12 +458,12 @@ public class SqlHubTests
             {
                 await Task.Delay(retryDelay);
                 
-                // Verify static storage service is still set (another test might have overwritten it)
-                var currentService = staticStorageServiceField?.GetValue(null);
-                if (!ReferenceEquals(currentService, _storageService))
+                // Verify static connection cache service is still set (another test might have overwritten it)
+                var currentService = staticConnectionCacheServiceField?.GetValue(null);
+                if (!ReferenceEquals(currentService, connectionCacheService))
                 {
                     // Another test overwrote it, restore it
-                    staticStorageServiceField?.SetValue(null, _storageService);
+                    staticConnectionCacheServiceField?.SetValue(null, connectionCacheService);
                 }
                 
                 lock (SQLStressTest.Service.Controllers.SqlController.GetCacheLock())
@@ -483,12 +485,11 @@ public class SqlHubTests
             // If we still didn't find it, try one more reload to ensure it's there
             if (!foundExpectedConnection)
             {
-                // Ensure static storage service is still set
-                staticStorageServiceField?.SetValue(null, _storageService);
+                // Ensure static connection cache service is still set
+                staticConnectionCacheServiceField?.SetValue(null, connectionCacheService);
                 _storageService.SetConnectionId(testConnectionId);
                 
                 // Manually trigger reload to ensure cache is populated
-                // Use proper DI - pass the storage service instead of relying on static field
                 await SQLStressTest.Service.Controllers.SqlController.ReloadConnectionsStaticAsync(_storageService, testConnectionId);
                 await Task.Delay(300);
             }
@@ -509,9 +510,8 @@ public class SqlHubTests
         }
         finally
         {
-            // Restore original values
-            staticStorageServiceField?.SetValue(null, originalStorageService);
-            staticLoggerField?.SetValue(null, originalLogger);
+            // Restore original value
+            staticConnectionCacheServiceField?.SetValue(null, originalCacheService);
         }
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
+using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 
 namespace SQLStressTest.Service.Services;
@@ -8,7 +9,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for handling storage operation requests from backend to frontend via SignalR.
 /// Single Responsibility: Storage request handling only.
 /// </summary>
-public class StorageRequestHandler
+public class StorageRequestHandler : IStorageRequestHandler
 {
     private readonly ILogger<StorageRequestHandler> _logger;
 
@@ -275,7 +276,7 @@ public class StorageRequestHandler
     public async Task HandleConnectionSavedNotification(
         string connectionId,
         string hubConnectionId,
-        ConnectionCacheService connectionCacheService,
+        IConnectionCacheService connectionCacheService,
         IStorageService? storageService)
     {
         try

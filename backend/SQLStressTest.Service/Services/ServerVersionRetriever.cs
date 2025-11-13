@@ -7,7 +7,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for retrieving SQL Server version information.
 /// Single Responsibility: Server version retrieval only.
 /// </summary>
-public class ServerVersionRetriever
+public class ServerVersionRetriever : IServerVersionRetriever
 {
     private readonly ILogger<ServerVersionRetriever>? _logger;
 

@@ -1,4 +1,5 @@
 using System.Text;
+using SQLStressTest.Service.Interfaces;
 
 namespace SQLStressTest.Service.Services;
 
@@ -6,7 +7,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for serializing query results to JSON.
 /// Single Responsibility: JSON serialization only.
 /// </summary>
-public class QueryResultSerializer
+public class QueryResultSerializer : IQueryResultSerializer
 {
     /// <summary>
     /// Manually builds JSON string from columns and rows to avoid reflection-based serialization issues.

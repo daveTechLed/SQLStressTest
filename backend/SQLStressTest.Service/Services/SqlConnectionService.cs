@@ -10,34 +10,21 @@ namespace SQLStressTest.Service.Services;
 /// </summary>
 public class SqlConnectionService : ISqlConnectionService
 {
-    private readonly ConnectionTester _connectionTester;
-    private readonly QueryRunner _queryRunner;
-    private readonly QueryResultSerializer _resultSerializer;
-    private readonly QueryResultStorageHandler _storageHandler;
+    private readonly IConnectionTester _connectionTester;
+    private readonly IQueryRunner _queryRunner;
+    private readonly IQueryResultSerializer _resultSerializer;
+    private readonly IQueryResultStorageHandler _storageHandler;
 
     public SqlConnectionService(
-        IConnectionStringBuilder connectionStringBuilder,
-        ISqlConnectionFactory connectionFactory,
-        IStorageService? storageService = null,
-        ILogger<SqlConnectionService>? logger = null)
+        IConnectionTester connectionTester,
+        IQueryRunner queryRunner,
+        IQueryResultSerializer resultSerializer,
+        IQueryResultStorageHandler storageHandler)
     {
-        // Create loggers using a factory if logger is provided
-        ILogger<ConnectionTester>? connectionTesterLogger = null;
-        ILogger<QueryRunner>? queryRunnerLogger = null;
-        ILogger<QueryResultStorageHandler>? storageHandlerLogger = null;
-
-        if (logger != null)
-        {
-            var loggerFactory = Microsoft.Extensions.Logging.LoggerFactory.Create(builder => builder.AddConsole());
-            connectionTesterLogger = loggerFactory.CreateLogger<ConnectionTester>();
-            queryRunnerLogger = loggerFactory.CreateLogger<QueryRunner>();
-            storageHandlerLogger = loggerFactory.CreateLogger<QueryResultStorageHandler>();
-        }
-
-        _connectionTester = new ConnectionTester(connectionStringBuilder, connectionFactory, connectionTesterLogger);
-        _queryRunner = new QueryRunner(connectionStringBuilder, connectionFactory, queryRunnerLogger);
-        _resultSerializer = new QueryResultSerializer();
-        _storageHandler = new QueryResultStorageHandler(storageService, storageHandlerLogger);
+        _connectionTester = connectionTester ?? throw new ArgumentNullException(nameof(connectionTester));
+        _queryRunner = queryRunner ?? throw new ArgumentNullException(nameof(queryRunner));
+        _resultSerializer = resultSerializer ?? throw new ArgumentNullException(nameof(resultSerializer));
+        _storageHandler = storageHandler ?? throw new ArgumentNullException(nameof(storageHandler));
     }
 
     public async Task<bool> TestConnectionAsync(ConnectionConfig config)

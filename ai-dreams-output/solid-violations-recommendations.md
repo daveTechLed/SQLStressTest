@@ -42,11 +42,11 @@ This analysis identified **35 violations** of SOLID principles that should be ad
 - **Fix**: Review and refactor
 
 **Medium** - Duplicate method 'Dispose' in same class
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs:84`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs:53`
 - **Fix**: Review and refactor
 
 **Medium** - Duplicate method 'Dispose' in same class
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs:90`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ExtendedEventsReader.cs:59`
 - **Fix**: Review and refactor
 
 **Medium** - Duplicate method 'InvokeStorageOperationAsync' in same class
@@ -74,19 +74,19 @@ This analysis identified **35 violations** of SOLID principles that should be ad
 ### SRP_GodMethod Violations (14 found)
 
 **Medium** - Method 'OnConnectedAsync' has high complexity (score: 12), indicating multiple responsibilities
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs:40`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs:28`
 - **Fix**: Review and refactor
 
 **Medium** - Method 'OnDisconnectedAsync' has high complexity (score: 12), indicating multiple responsibilities
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs:54`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Hubs/SqlHub.cs:42`
 - **Fix**: Review and refactor
 
 **Medium** - Method 'ExecuteQuery' has high complexity (score: 12), indicating multiple responsibilities
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs:171`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs:127`
 - **Fix**: Review and refactor
 
 **Medium** - Method 'ExecuteStressTest' has high complexity (score: 12), indicating multiple responsibilities
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs:177`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Controllers/SqlController.cs:133`
 - **Fix**: Review and refactor
 
 **Medium** - Method 'ProcessAndStreamEventsAsync' has high complexity (score: 17), indicating multiple responsibilities
@@ -98,15 +98,15 @@ This analysis identified **35 violations** of SOLID principles that should be ad
 - **Fix**: Review and refactor
 
 **Medium** - Method 'TestConnectionWithDetailsAsync' has high complexity (score: 14), indicating multiple responsibilities
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionTester.cs:76`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionTester.cs:63`
 - **Fix**: Review and refactor
 
 **Medium** - Method 'HandleConnectedAsync' has high complexity (score: 12), indicating multiple responsibilities
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionLifecycleHandler.cs:34`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionLifecycleHandler.cs:35`
 - **Fix**: Review and refactor
 
 **Medium** - Method 'HandleDisconnectedAsync' has high complexity (score: 14), indicating multiple responsibilities
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionLifecycleHandler.cs:166`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionLifecycleHandler.cs:167`
 - **Fix**: Review and refactor
 
 **Medium** - Method 'CalculateDataSizeAsync' has high complexity (score: 11), indicating multiple responsibilities
@@ -118,11 +118,11 @@ This analysis identified **35 violations** of SOLID principles that should be ad
 - **Fix**: Review and refactor
 
 **Medium** - Method 'TestConnectionWithDetailsAsync' has high complexity (score: 14), indicating multiple responsibilities
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/SqlConnectionService.cs:48`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/SqlConnectionService.cs:35`
 - **Fix**: Review and refactor
 
 **Medium** - Method 'HandleConnectionSavedNotification' has high complexity (score: 15), indicating multiple responsibilities
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs:275`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs:276`
 - **Fix**: Review and refactor
 
 **Medium** - Method 'ExecuteStressTestAsync' has high complexity (score: 11), indicating multiple responsibilities
@@ -132,11 +132,11 @@ This analysis identified **35 violations** of SOLID principles that should be ad
 ### SRP_MassiveGodClass Violations (8 found)
 
 **Critical** - Class 'ConnectionCacheService' is a MASSIVE God Class with 6 members and ~344 lines - CRITICAL SRP violation
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionCacheService.cs:10`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/ConnectionCacheService.cs:11`
 - **Fix**: Review and refactor
 
 **Critical** - Class 'StorageRequestHandler' is a MASSIVE God Class with 9 members and ~335 lines - CRITICAL SRP violation
-- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs:11`
+- **File**: `/Users/dave/repos/SQLStressTest/backend/SQLStressTest.Service/Services/StorageRequestHandler.cs:12`
 - **Fix**: Review and refactor
 
 **Critical** - Class 'EEReaderStatusView' is a MASSIVE God Class with 17 members and ~512 lines - CRITICAL SRP violation
@@ -426,4 +426,4 @@ This analysis identified **35 violations** of SOLID principles that should be ad
 - [ ] Code reviews focus on SOLID principles
 - [ ] Architecture decisions are documented
 
-Generated on: 2025-11-13 14:00:48
+Generated on: 2025-11-13 15:14:44

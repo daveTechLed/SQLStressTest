@@ -1,5 +1,6 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
+using SQLStressTest.Service.Interfaces;
 
 namespace SQLStressTest.Service.Services;
 
@@ -7,7 +8,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for managing Extended Events session lifecycle.
 /// Single Responsibility: Session management (create, start, stop, drop) only.
 /// </summary>
-public class ExtendedEventsSessionManager
+public class ExtendedEventsSessionManager : IExtendedEventsSessionManager
 {
     private readonly string _connectionString;
     private readonly string _sessionName;

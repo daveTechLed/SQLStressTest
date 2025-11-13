@@ -7,7 +7,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for retrieving authenticated user information from SQL Server.
 /// Single Responsibility: User information retrieval only.
 /// </summary>
-public class UserInfoRetriever
+public class UserInfoRetriever : IUserInfoRetriever
 {
     private readonly ILogger<UserInfoRetriever>? _logger;
 

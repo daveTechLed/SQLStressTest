@@ -11,78 +11,34 @@ public class SqlController : ControllerBase
 {
     private readonly ISqlConnectionService _sqlConnectionService;
     private readonly ILogger<SqlController> _logger;
-    private readonly QueryExecutionOrchestrator _queryExecutionOrchestrator;
-    private readonly StressTestOrchestrator _stressTestOrchestrator;
-    private readonly ConnectionCacheService _connectionCacheService;
+    private readonly IQueryExecutionOrchestrator _queryExecutionOrchestrator;
+    private readonly IStressTestOrchestrator _stressTestOrchestrator;
+    private readonly IConnectionCacheService _connectionCacheService;
     
     // Static reference for backward compatibility with SqlHub and ExtendedEventsService
-    private static ConnectionCacheService? _staticConnectionCacheService;
+    private static IConnectionCacheService? _staticConnectionCacheService;
     private static ILogger<SqlController>? _staticLogger;
 
     public SqlController(
         ISqlConnectionService sqlConnectionService,
-        IConnectionStringBuilder connectionStringBuilder,
-        ILogger<SqlController> logger,
-        IStressTestService stressTestService,
-        IStorageService? storageService = null,
-        ConnectionCacheService? connectionCacheService = null,
-        QueryExecutionOrchestrator? queryExecutionOrchestrator = null,
-        StressTestOrchestrator? stressTestOrchestrator = null)
+        IConnectionCacheService connectionCacheService,
+        IQueryExecutionOrchestrator queryExecutionOrchestrator,
+        IStressTestOrchestrator stressTestOrchestrator,
+        ILogger<SqlController> logger)
     {
         _sqlConnectionService = sqlConnectionService ?? throw new ArgumentNullException(nameof(sqlConnectionService));
+        _connectionCacheService = connectionCacheService ?? throw new ArgumentNullException(nameof(connectionCacheService));
+        _queryExecutionOrchestrator = queryExecutionOrchestrator ?? throw new ArgumentNullException(nameof(queryExecutionOrchestrator));
+        _stressTestOrchestrator = stressTestOrchestrator ?? throw new ArgumentNullException(nameof(stressTestOrchestrator));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         
-        // Create loggers for services
-        ILogger<ConnectionCacheService>? cacheLogger = null;
-        ILogger<QueryRequestValidator>? validatorLogger = null;
-        ILogger<QueryExecutionOrchestrator>? queryOrchestratorLogger = null;
-        ILogger<StressTestOrchestrator>? stressOrchestratorLogger = null;
-        if (logger != null)
-        {
-            var loggerFactory = Microsoft.Extensions.Logging.LoggerFactory.Create(builder => builder.AddConsole());
-            cacheLogger = loggerFactory.CreateLogger<ConnectionCacheService>();
-            validatorLogger = loggerFactory.CreateLogger<QueryRequestValidator>();
-            queryOrchestratorLogger = loggerFactory.CreateLogger<QueryExecutionOrchestrator>();
-            stressOrchestratorLogger = loggerFactory.CreateLogger<StressTestOrchestrator>();
-        }
-        
-        // Create ConnectionCacheService if not provided
-        _connectionCacheService = connectionCacheService ?? new ConnectionCacheService(storageService, cacheLogger);
+        // Set static reference for backward compatibility
         _staticConnectionCacheService = _connectionCacheService;
         _staticLogger = logger;
         
-        // Create orchestrators if not provided
-        var requestValidator = queryExecutionOrchestrator == null && stressTestOrchestrator == null 
-            ? new QueryRequestValidator(validatorLogger)
-            : null;
-        _queryExecutionOrchestrator = queryExecutionOrchestrator ?? new QueryExecutionOrchestrator(
-            sqlConnectionService,
-            _connectionCacheService,
-            requestValidator ?? new QueryRequestValidator(validatorLogger),
-            queryOrchestratorLogger ?? throw new InvalidOperationException("Logger required"));
-        _stressTestOrchestrator = stressTestOrchestrator ?? new StressTestOrchestrator(
-            stressTestService,
-            _connectionCacheService,
-            requestValidator ?? new QueryRequestValidator(validatorLogger),
-            stressOrchestratorLogger ?? throw new InvalidOperationException("Logger required"));
-        
         // Load connections on first request (lazy loading)
-        if (storageService != null)
-        {
-            _logger.LogDebug("SqlController constructor: Triggering lazy load of connections");
-            _ = Task.Run(async () => await _connectionCacheService.LoadConnectionsAsync());
-        }
-        else
-        {
-            lock (_connectionCacheService.GetCacheLock())
-            {
-                var cached = _connectionCacheService.GetCachedConnections();
-                var cacheState = cached == null ? "null" : 
-                    cached.Count == 0 ? "empty" : $"{cached.Count} items";
-                _logger.LogDebug("SqlController constructor: Skipping lazy load. Cache state: {CacheState}, StorageService: {StorageServiceState}", 
-                    cacheState, storageService == null ? "null" : "available");
-            }
-        }
+        _logger.LogDebug("SqlController constructor: Triggering lazy load of connections");
+        _ = Task.Run(async () => await _connectionCacheService.LoadConnectionsAsync());
     }
 
     /// <summary>

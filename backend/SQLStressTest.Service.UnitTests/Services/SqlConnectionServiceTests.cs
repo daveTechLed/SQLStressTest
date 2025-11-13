@@ -9,36 +9,48 @@ namespace SQLStressTest.Service.Tests.Services;
 
 public class SqlConnectionServiceTests : TestBase
 {
-    private readonly Mock<IConnectionStringBuilder> _mockConnectionStringBuilder;
-    private readonly Mock<ISqlConnectionFactory> _mockConnectionFactory;
+    private readonly Mock<IConnectionTester> _mockConnectionTester;
+    private readonly Mock<IQueryRunner> _mockQueryRunner;
+    private readonly Mock<IQueryResultSerializer> _mockResultSerializer;
+    private readonly Mock<IQueryResultStorageHandler> _mockStorageHandler;
     private readonly SqlConnectionService _service;
 
     public SqlConnectionServiceTests()
     {
-        _mockConnectionStringBuilder = new Mock<IConnectionStringBuilder>();
-        _mockConnectionFactory = new Mock<ISqlConnectionFactory>();
-        _service = new SqlConnectionService(_mockConnectionStringBuilder.Object, _mockConnectionFactory.Object);
+        _mockConnectionTester = new Mock<IConnectionTester>();
+        _mockQueryRunner = new Mock<IQueryRunner>();
+        _mockResultSerializer = new Mock<IQueryResultSerializer>();
+        _mockStorageHandler = new Mock<IQueryResultStorageHandler>();
+        _service = new SqlConnectionService(
+            _mockConnectionTester.Object,
+            _mockQueryRunner.Object,
+            _mockResultSerializer.Object,
+            _mockStorageHandler.Object);
     }
 
     [Fact]
-    public void Constructor_ThrowsArgumentNullException_WhenConnectionStringBuilderIsNull()
+    public void Constructor_ThrowsArgumentNullException_WhenConnectionTesterIsNull()
     {
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() => 
-            new SqlConnectionService(null!, _mockConnectionFactory.Object));
+            new SqlConnectionService(null!, _mockQueryRunner.Object, _mockResultSerializer.Object, _mockStorageHandler.Object));
     }
 
     [Fact]
-    public void Constructor_ThrowsArgumentNullException_WhenConnectionFactoryIsNull()
+    public void Constructor_ThrowsArgumentNullException_WhenQueryRunnerIsNull()
     {
         // Act & Assert
         Assert.Throws<ArgumentNullException>(() => 
-            new SqlConnectionService(_mockConnectionStringBuilder.Object, null!));
+            new SqlConnectionService(_mockConnectionTester.Object, null!, _mockResultSerializer.Object, _mockStorageHandler.Object));
     }
 
     [Fact]
     public async Task TestConnectionAsync_ThrowsArgumentNullException_WhenConfigIsNull()
     {
+        // Arrange
+        _mockConnectionTester.Setup(x => x.TestConnectionAsync(null!))
+            .ThrowsAsync(new ArgumentNullException(nameof(ConnectionConfig)));
+
         // Act & Assert
         await Assert.ThrowsAsync<ArgumentNullException>(() => _service.TestConnectionAsync(null!));
     }
@@ -46,6 +58,10 @@ public class SqlConnectionServiceTests : TestBase
     [Fact]
     public async Task ExecuteQueryAsync_ThrowsArgumentNullException_WhenConfigIsNull()
     {
+        // Arrange
+        _mockQueryRunner.Setup(x => x.ExecuteQueryAsync(null!, It.IsAny<string>()))
+            .ThrowsAsync(new ArgumentNullException(nameof(ConnectionConfig)));
+
         // Act & Assert
         await Assert.ThrowsAsync<ArgumentNullException>(() => 
             _service.ExecuteQueryAsync(null!, "SELECT 1"));
@@ -56,8 +72,8 @@ public class SqlConnectionServiceTests : TestBase
     {
         // Arrange
         var config = CreateTestConnectionConfig();
-        _mockConnectionStringBuilder.Setup(x => x.Build(It.IsAny<ConnectionConfig>()))
-            .Returns("Server=localhost;Database=master;Integrated Security=true;");
+        _mockQueryRunner.Setup(x => x.ExecuteQueryAsync(It.IsAny<ConnectionConfig>(), It.IsAny<string>()))
+            .ThrowsAsync(new ArgumentException("Query cannot be null or empty"));
 
         // Act & Assert
         await Assert.ThrowsAsync<ArgumentException>(() => 
@@ -69,26 +85,18 @@ public class SqlConnectionServiceTests : TestBase
     }
 
     [Fact]
-    public async Task TestConnectionAsync_CallsConnectionStringBuilder()
+    public async Task TestConnectionAsync_CallsConnectionTester()
     {
         // Arrange
         var config = CreateTestConnectionConfig();
-        var connectionString = "Server=localhost;Database=master;Integrated Security=true;";
-        _mockConnectionStringBuilder.Setup(x => x.Build(It.IsAny<ConnectionConfig>()))
-            .Returns(connectionString);
-        
-        var mockConnection = new Mock<ISqlConnectionWrapper>();
-        mockConnection.Setup(x => x.OpenAsync()).Returns(Task.CompletedTask);
-        _mockConnectionFactory.Setup(x => x.CreateConnection(connectionString))
-            .Returns(mockConnection.Object);
+        _mockConnectionTester.Setup(x => x.TestConnectionAsync(config))
+            .ReturnsAsync(true);
 
         // Act
         var result = await _service.TestConnectionAsync(config);
 
         // Assert
-        _mockConnectionStringBuilder.Verify(x => x.Build(config), Times.Once);
-        _mockConnectionFactory.Verify(x => x.CreateConnection(connectionString), Times.Once);
-        mockConnection.Verify(x => x.OpenAsync(), Times.Once);
+        _mockConnectionTester.Verify(x => x.TestConnectionAsync(config), Times.Once);
         Assert.True(result);
     }
 
@@ -97,14 +105,8 @@ public class SqlConnectionServiceTests : TestBase
     {
         // Arrange
         var config = CreateTestConnectionConfig();
-        var connectionString = "Server=localhost;Database=master;Integrated Security=true;";
-        _mockConnectionStringBuilder.Setup(x => x.Build(It.IsAny<ConnectionConfig>()))
-            .Returns(connectionString);
-        
-        var mockConnection = new Mock<ISqlConnectionWrapper>();
-        mockConnection.Setup(x => x.OpenAsync()).ThrowsAsync(new Exception("Connection failed"));
-        _mockConnectionFactory.Setup(x => x.CreateConnection(connectionString))
-            .Returns(mockConnection.Object);
+        _mockConnectionTester.Setup(x => x.TestConnectionAsync(config))
+            .ReturnsAsync(false);
 
         // Act
         var result = await _service.TestConnectionAsync(config);
@@ -114,38 +116,22 @@ public class SqlConnectionServiceTests : TestBase
     }
 
     [Fact]
-    public async Task ExecuteQueryAsync_CallsConnectionStringBuilder()
+    public async Task ExecuteQueryAsync_CallsQueryRunner()
     {
         // Arrange
         var config = CreateTestConnectionConfig();
-        var connectionString = "Server=localhost;Database=master;Integrated Security=true;";
-        _mockConnectionStringBuilder.Setup(x => x.Build(It.IsAny<ConnectionConfig>()))
-            .Returns(connectionString);
-        
-        var mockConnection = new Mock<ISqlConnectionWrapper>();
-        var mockCommand = new Mock<ISqlCommandWrapper>();
-        var mockReader = new Mock<ISqlDataReaderWrapper>();
-        
-        mockConnection.Setup(x => x.OpenAsync()).Returns(Task.CompletedTask);
-        mockConnection.Setup(x => x.CreateCommand("SELECT 1")).Returns(mockCommand.Object);
-        mockCommand.Setup(x => x.ExecuteReaderAsync())
-            .ReturnsAsync(mockReader.Object);
-        
-        mockReader.Setup(x => x.FieldCount).Returns(1);
-        mockReader.Setup(x => x.GetName(0)).Returns("Column1");
-        mockReader.Setup(x => x.ReadAsync()).ReturnsAsync(false);
-        
-        _mockConnectionFactory.Setup(x => x.CreateConnection(connectionString))
-            .Returns(mockConnection.Object);
+        var query = "SELECT 1";
+        var queryResponse = new QueryResponse { Success = true, Columns = new List<string> { "Column1" }, Rows = new List<List<object?>>() };
+        _mockQueryRunner.Setup(x => x.ExecuteQueryAsync(config, query))
+            .ReturnsAsync(queryResponse);
+        _mockResultSerializer.Setup(x => x.BuildResultDataJson(It.IsAny<List<string>>(), It.IsAny<List<List<object?>>>()))
+            .Returns("{\"columns\":[\"Column1\"],\"rows\":[]}");
 
         // Act
-        var result = await _service.ExecuteQueryAsync(config, "SELECT 1");
+        var result = await _service.ExecuteQueryAsync(config, query);
 
         // Assert
-        _mockConnectionStringBuilder.Verify(x => x.Build(config), Times.Once);
-        _mockConnectionFactory.Verify(x => x.CreateConnection(connectionString), Times.Once);
-        mockConnection.Verify(x => x.OpenAsync(), Times.Once);
-        mockConnection.Verify(x => x.CreateCommand("SELECT 1"), Times.Once);
+        _mockQueryRunner.Verify(x => x.ExecuteQueryAsync(config, query), Times.Once);
         Assert.True(result.Success);
     }
 
@@ -154,47 +140,22 @@ public class SqlConnectionServiceTests : TestBase
     {
         // Arrange
         var config = CreateTestConnectionConfig();
-        var connectionString = "Server=localhost;Database=master;Integrated Security=true;";
-        _mockConnectionStringBuilder.Setup(x => x.Build(It.IsAny<ConnectionConfig>()))
-            .Returns(connectionString);
-        
-        var mockConnection = new Mock<ISqlConnectionWrapper>();
-        var mockVersionCommand = new Mock<ISqlCommandWrapper>();
-        var mockUserCommand = new Mock<ISqlCommandWrapper>();
-        var mockUserReader = new Mock<ISqlDataReaderWrapper>();
-        var mockDbCommand = new Mock<ISqlCommandWrapper>();
-        var mockDbReader = new Mock<ISqlDataReaderWrapper>();
-        
-        mockConnection.Setup(x => x.OpenAsync()).Returns(Task.CompletedTask);
-        mockConnection.Setup(x => x.DataSource).Returns("localhost");
-        mockConnection.Setup(x => x.CreateCommand("SELECT @@VERSION")).Returns(mockVersionCommand.Object);
-        mockConnection.Setup(x => x.CreateCommand("SELECT SUSER_SNAME(), SYSTEM_USER, USER_NAME()")).Returns(mockUserCommand.Object);
-        mockConnection.Setup(x => x.CreateCommand("SELECT name FROM sys.databases WHERE state = 0 ORDER BY name")).Returns(mockDbCommand.Object);
-        
-        mockVersionCommand.Setup(x => x.ExecuteScalarAsync()).ReturnsAsync("Microsoft SQL Server 2022");
-        
-        mockUserCommand.Setup(x => x.ExecuteReaderAsync()).ReturnsAsync(mockUserReader.Object);
-        mockUserReader.Setup(x => x.ReadAsync()).ReturnsAsync(true);
-        mockUserReader.Setup(x => x.IsDBNull(0)).Returns(false);
-        mockUserReader.Setup(x => x.GetValue(0)).Returns("DOMAIN\\user");
-        
-        mockDbCommand.Setup(x => x.ExecuteReaderAsync()).ReturnsAsync(mockDbReader.Object);
-        mockDbReader.SetupSequence(x => x.ReadAsync())
-            .ReturnsAsync(true)
-            .ReturnsAsync(true)
-            .ReturnsAsync(false);
-        mockDbReader.Setup(x => x.IsDBNull(0)).Returns(false);
-        mockDbReader.SetupSequence(x => x.GetValue(0))
-            .Returns("master")
-            .Returns("tempdb");
-        
-        _mockConnectionFactory.Setup(x => x.CreateConnection(connectionString))
-            .Returns(mockConnection.Object);
+        var testResponse = new TestConnectionResponse
+        {
+            Success = true,
+            ServerVersion = "Microsoft SQL Server 2022",
+            ServerName = "localhost",
+            AuthenticatedUser = "DOMAIN\\user",
+            Databases = new List<string> { "master", "tempdb" }
+        };
+        _mockConnectionTester.Setup(x => x.TestConnectionWithDetailsAsync(config))
+            .ReturnsAsync(testResponse);
 
         // Act
         var result = await _service.TestConnectionWithDetailsAsync(config);
 
         // Assert
+        _mockConnectionTester.Verify(x => x.TestConnectionWithDetailsAsync(config), Times.Once);
         Assert.True(result.Success);
         Assert.Equal("Microsoft SQL Server 2022", result.ServerVersion);
         Assert.Equal("localhost", result.ServerName);
@@ -210,38 +171,13 @@ public class SqlConnectionServiceTests : TestBase
     {
         // Arrange
         var config = CreateTestConnectionConfig(integratedSecurity: true);
-        var connectionString = "Server=localhost;Database=master;Integrated Security=true;";
-        _mockConnectionStringBuilder.Setup(x => x.Build(It.IsAny<ConnectionConfig>()))
-            .Returns(connectionString);
-        
-        var mockConnection = new Mock<ISqlConnectionWrapper>();
-        var mockVersionCommand = new Mock<ISqlCommandWrapper>();
-        var mockUserCommand = new Mock<ISqlCommandWrapper>();
-        var mockUserReader = new Mock<ISqlDataReaderWrapper>();
-        var mockDbCommand = new Mock<ISqlCommandWrapper>();
-        var mockDbReader = new Mock<ISqlDataReaderWrapper>();
-        
-        mockConnection.Setup(x => x.OpenAsync()).Returns(Task.CompletedTask);
-        mockConnection.Setup(x => x.DataSource).Returns("localhost");
-        mockConnection.Setup(x => x.CreateCommand(It.IsAny<string>())).Returns((string query) =>
+        var testResponse = new TestConnectionResponse
         {
-            if (query.Contains("@@VERSION")) return mockVersionCommand.Object;
-            if (query.Contains("SUSER_SNAME")) return mockUserCommand.Object;
-            return mockDbCommand.Object;
-        });
-        
-        mockVersionCommand.Setup(x => x.ExecuteScalarAsync()).ReturnsAsync("Microsoft SQL Server 2022");
-        
-        mockUserCommand.Setup(x => x.ExecuteReaderAsync()).ReturnsAsync(mockUserReader.Object);
-        mockUserReader.Setup(x => x.ReadAsync()).ReturnsAsync(true);
-        mockUserReader.Setup(x => x.IsDBNull(0)).Returns(false);
-        mockUserReader.Setup(x => x.GetValue(0)).Returns("DOMAIN\\currentuser");
-        
-        mockDbCommand.Setup(x => x.ExecuteReaderAsync()).ReturnsAsync(mockDbReader.Object);
-        mockDbReader.Setup(x => x.ReadAsync()).ReturnsAsync(false);
-        
-        _mockConnectionFactory.Setup(x => x.CreateConnection(connectionString))
-            .Returns(mockConnection.Object);
+            Success = true,
+            AuthenticatedUser = "DOMAIN\\currentuser"
+        };
+        _mockConnectionTester.Setup(x => x.TestConnectionWithDetailsAsync(config))
+            .ReturnsAsync(testResponse);
 
         // Act
         var result = await _service.TestConnectionWithDetailsAsync(config);
@@ -257,15 +193,13 @@ public class SqlConnectionServiceTests : TestBase
     {
         // Arrange
         var config = CreateTestConnectionConfig(integratedSecurity: false);
-        var connectionString = "Server=localhost;Database=master;User ID=sa;Password=wrong;";
-        _mockConnectionStringBuilder.Setup(x => x.Build(It.IsAny<ConnectionConfig>()))
-            .Returns(connectionString);
-        
-        var mockConnection = new Mock<ISqlConnectionWrapper>();
-        mockConnection.Setup(x => x.OpenAsync()).ThrowsAsync(new Exception("Login failed for user 'sa'."));
-        
-        _mockConnectionFactory.Setup(x => x.CreateConnection(connectionString))
-            .Returns(mockConnection.Object);
+        var testResponse = new TestConnectionResponse
+        {
+            Success = false,
+            Error = "Login failed for user 'sa'."
+        };
+        _mockConnectionTester.Setup(x => x.TestConnectionWithDetailsAsync(config))
+            .ReturnsAsync(testResponse);
 
         // Act
         var result = await _service.TestConnectionWithDetailsAsync(config);

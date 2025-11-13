@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 
 namespace SQLStressTest.Service.Services;
@@ -7,7 +8,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for managing the connection configuration cache.
 /// Single Responsibility: Connection cache management only.
 /// </summary>
-public class ConnectionCacheService
+public class ConnectionCacheService : IConnectionCacheService
 {
     private readonly IStorageService? _storageService;
     private readonly ILogger<ConnectionCacheService>? _logger;

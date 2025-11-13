@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 
 namespace SQLStressTest.Service.Services;
@@ -8,7 +9,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for validating query and stress test requests.
 /// Single Responsibility: Request validation only.
 /// </summary>
-public class QueryRequestValidator
+public class QueryRequestValidator : IQueryRequestValidator
 {
     private readonly ILogger<QueryRequestValidator>? _logger;
 

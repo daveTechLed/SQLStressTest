@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
+using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 using SQLStressTest.Service.Services;
 
@@ -8,33 +9,20 @@ namespace SQLStressTest.Service.Hubs;
 public class SqlHub : Hub
 {
     private readonly ILogger<SqlHub> _logger;
-    private readonly ILoggerFactory _loggerFactory;
     private readonly VSCodeStorageService? _storageService;
-    private readonly ConnectionLifecycleHandler _lifecycleHandler;
-    private readonly StorageRequestHandler _storageRequestHandler;
+    private readonly IConnectionLifecycleHandler _lifecycleHandler;
+    private readonly IStorageRequestHandler _storageRequestHandler;
 
     public SqlHub(
         ILogger<SqlHub> logger,
-        ILoggerFactory loggerFactory,
         VSCodeStorageService? storageService = null,
-        ConnectionLifecycleHandler? lifecycleHandler = null,
-        StorageRequestHandler? storageRequestHandler = null,
-        ConnectionCacheService? connectionCacheService = null,
-        HeartbeatSender? heartbeatSender = null)
+        IConnectionLifecycleHandler? lifecycleHandler = null,
+        IStorageRequestHandler? storageRequestHandler = null)
     {
-        _logger = logger;
-        _loggerFactory = loggerFactory;
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _storageService = storageService;
-        
-        // Create services if not provided
-        heartbeatSender = heartbeatSender ?? new HeartbeatSender(_loggerFactory.CreateLogger<HeartbeatSender>());
-        connectionCacheService = connectionCacheService ?? new ConnectionCacheService(storageService, _loggerFactory.CreateLogger<ConnectionCacheService>());
-        _lifecycleHandler = lifecycleHandler ?? new ConnectionLifecycleHandler(
-            _loggerFactory.CreateLogger<ConnectionLifecycleHandler>(),
-            heartbeatSender,
-            connectionCacheService,
-            storageService);
-        _storageRequestHandler = storageRequestHandler ?? new StorageRequestHandler(_loggerFactory.CreateLogger<StorageRequestHandler>());
+        _lifecycleHandler = lifecycleHandler ?? throw new ArgumentNullException(nameof(lifecycleHandler));
+        _storageRequestHandler = storageRequestHandler ?? throw new ArgumentNullException(nameof(storageRequestHandler));
     }
 
     public override async Task OnConnectedAsync()
@@ -117,7 +105,6 @@ public class SqlHub : Hub
         {
             var currentHubConnectionId = Context.ConnectionId;
             var connectionCacheService = _lifecycleHandler.GetConnectionCacheService();
-            
             _ = Task.Run(async () =>
             {
                 await _storageRequestHandler.HandleConnectionSavedNotification(

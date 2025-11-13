@@ -1,6 +1,7 @@
 using System.Collections.Concurrent;
 using Microsoft.Extensions.Logging;
 using Microsoft.SqlServer.XEvent.XELite;
+using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 
 namespace SQLStressTest.Service.Services;
@@ -9,56 +10,24 @@ namespace SQLStressTest.Service.Services;
 /// Orchestrates Extended Events reading using specialized services.
 /// Single Responsibility: Coordination and orchestration only.
 /// </summary>
-public class ExtendedEventsReader : IDisposable
+public class ExtendedEventsReader : IExtendedEventsReader
 {
-    private readonly ExtendedEventsSessionManager _sessionManager;
-    private readonly ExtendedEventsProcessor _eventProcessor;
-    private readonly ExtendedEventsReaderService _readerService;
+    private readonly IExtendedEventsSessionManager _sessionManager;
+    private readonly IExtendedEventsProcessor _eventProcessor;
+    private readonly IExtendedEventsReaderService _readerService;
     private readonly ILogger<ExtendedEventsReader>? _logger;
     private bool _isDisposed;
     private Task? _readTask;
 
     public ExtendedEventsReader(
-        string connectionString, 
-        string streamerConnectionString,
-        CancellationToken cancellationToken,
-        ConcurrentDictionary<string, List<IXEvent>> events,
-        ILogger<ExtendedEventsReader>? logger = null,
-        string? sessionName = null,
-        bool isPersistentSession = false,
-        SignalRMessageSender? messageSender = null,
-        ExtendedEventConverter? eventConverter = null)
+        IExtendedEventsSessionManager sessionManager,
+        IExtendedEventsProcessor eventProcessor,
+        IExtendedEventsReaderService readerService,
+        ILogger<ExtendedEventsReader>? logger = null)
     {
-        var sessionNameValue = sessionName ?? $"SQLStressTest_{DateTime.Now:yyyyMMddHHmmss}";
-        
-        // Create loggers for sub-services
-        ILogger<ExtendedEventsSessionManager>? sessionManagerLogger = null;
-        ILogger<ExtendedEventsProcessor>? eventProcessorLogger = null;
-        ILogger<ExtendedEventsReaderService>? readerServiceLogger = null;
-
-        if (logger != null)
-        {
-            var loggerFactory = Microsoft.Extensions.Logging.LoggerFactory.Create(builder => builder.AddConsole());
-            sessionManagerLogger = loggerFactory.CreateLogger<ExtendedEventsSessionManager>();
-            eventProcessorLogger = loggerFactory.CreateLogger<ExtendedEventsProcessor>();
-            readerServiceLogger = loggerFactory.CreateLogger<ExtendedEventsReaderService>();
-        }
-
-        _sessionManager = new ExtendedEventsSessionManager(
-            connectionString, 
-            sessionNameValue, 
-            isPersistentSession, 
-            sessionManagerLogger);
-        
-        _eventProcessor = new ExtendedEventsProcessor(events, eventProcessorLogger, messageSender, eventConverter);
-        
-        _readerService = new ExtendedEventsReaderService(
-            streamerConnectionString,
-            sessionNameValue,
-            _eventProcessor,
-            cancellationToken,
-            readerServiceLogger);
-        
+        _sessionManager = sessionManager ?? throw new ArgumentNullException(nameof(sessionManager));
+        _eventProcessor = eventProcessor ?? throw new ArgumentNullException(nameof(eventProcessor));
+        _readerService = readerService ?? throw new ArgumentNullException(nameof(readerService));
         _logger = logger;
     }
 

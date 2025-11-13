@@ -8,42 +8,29 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for testing database connections.
 /// Single Responsibility: Connection testing orchestration only.
 /// </summary>
-public class ConnectionTester
+public class ConnectionTester : IConnectionTester
 {
     private readonly IConnectionStringBuilder _connectionStringBuilder;
     private readonly ISqlConnectionFactory _connectionFactory;
-    private readonly ServerVersionRetriever _serverVersionRetriever;
-    private readonly UserInfoRetriever _userInfoRetriever;
-    private readonly DatabaseListRetriever _databaseListRetriever;
+    private readonly IServerVersionRetriever _serverVersionRetriever;
+    private readonly IUserInfoRetriever _userInfoRetriever;
+    private readonly IDatabaseListRetriever _databaseListRetriever;
     private readonly ILogger<ConnectionTester>? _logger;
 
     public ConnectionTester(
         IConnectionStringBuilder connectionStringBuilder,
         ISqlConnectionFactory connectionFactory,
-        ILogger<ConnectionTester>? logger = null,
-        ServerVersionRetriever? serverVersionRetriever = null,
-        UserInfoRetriever? userInfoRetriever = null,
-        DatabaseListRetriever? databaseListRetriever = null)
+        IServerVersionRetriever serverVersionRetriever,
+        IUserInfoRetriever userInfoRetriever,
+        IDatabaseListRetriever databaseListRetriever,
+        ILogger<ConnectionTester>? logger = null)
     {
         _connectionStringBuilder = connectionStringBuilder ?? throw new ArgumentNullException(nameof(connectionStringBuilder));
         _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
+        _serverVersionRetriever = serverVersionRetriever ?? throw new ArgumentNullException(nameof(serverVersionRetriever));
+        _userInfoRetriever = userInfoRetriever ?? throw new ArgumentNullException(nameof(userInfoRetriever));
+        _databaseListRetriever = databaseListRetriever ?? throw new ArgumentNullException(nameof(databaseListRetriever));
         _logger = logger;
-        
-        // Create services if not provided
-        ILogger<ServerVersionRetriever>? versionLogger = null;
-        ILogger<UserInfoRetriever>? userLogger = null;
-        ILogger<DatabaseListRetriever>? dbLogger = null;
-        if (logger != null)
-        {
-            var loggerFactory = Microsoft.Extensions.Logging.LoggerFactory.Create(builder => builder.AddConsole());
-            versionLogger = loggerFactory.CreateLogger<ServerVersionRetriever>();
-            userLogger = loggerFactory.CreateLogger<UserInfoRetriever>();
-            dbLogger = loggerFactory.CreateLogger<DatabaseListRetriever>();
-        }
-        
-        _serverVersionRetriever = serverVersionRetriever ?? new ServerVersionRetriever(versionLogger);
-        _userInfoRetriever = userInfoRetriever ?? new UserInfoRetriever(userLogger);
-        _databaseListRetriever = databaseListRetriever ?? new DatabaseListRetriever(dbLogger);
     }
 
     /// <summary>

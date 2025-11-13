@@ -7,7 +7,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for retrieving the list of databases from SQL Server.
 /// Single Responsibility: Database list retrieval only.
 /// </summary>
-public class DatabaseListRetriever
+public class DatabaseListRetriever : IDatabaseListRetriever
 {
     private readonly ILogger<DatabaseListRetriever>? _logger;
 

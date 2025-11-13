@@ -8,7 +8,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for handling storage of query results.
 /// Single Responsibility: Storage operations only.
 /// </summary>
-public class QueryResultStorageHandler
+public class QueryResultStorageHandler : IQueryResultStorageHandler
 {
     private readonly IStorageService? _storageService;
     private readonly ILogger<QueryResultStorageHandler>? _logger;

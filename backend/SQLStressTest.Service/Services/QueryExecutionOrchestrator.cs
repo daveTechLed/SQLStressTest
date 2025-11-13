@@ -9,17 +9,17 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for orchestrating query execution requests.
 /// Single Responsibility: Query execution orchestration only.
 /// </summary>
-public class QueryExecutionOrchestrator
+public class QueryExecutionOrchestrator : IQueryExecutionOrchestrator
 {
     private readonly ISqlConnectionService _sqlConnectionService;
-    private readonly ConnectionCacheService _connectionCacheService;
-    private readonly QueryRequestValidator _requestValidator;
+    private readonly IConnectionCacheService _connectionCacheService;
+    private readonly IQueryRequestValidator _requestValidator;
     private readonly ILogger<QueryExecutionOrchestrator> _logger;
 
     public QueryExecutionOrchestrator(
         ISqlConnectionService sqlConnectionService,
-        ConnectionCacheService connectionCacheService,
-        QueryRequestValidator requestValidator,
+        IConnectionCacheService connectionCacheService,
+        IQueryRequestValidator requestValidator,
         ILogger<QueryExecutionOrchestrator> logger)
     {
         _sqlConnectionService = sqlConnectionService ?? throw new ArgumentNullException(nameof(sqlConnectionService));

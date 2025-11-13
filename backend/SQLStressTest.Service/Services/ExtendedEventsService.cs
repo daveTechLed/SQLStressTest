@@ -17,12 +17,10 @@ public class ExtendedEventsService : IHostedService, IDisposable
     private readonly IConnectionStringBuilder _connectionStringBuilder;
     private readonly IStorageService? _storageService;
     private readonly ILogger<ExtendedEventsService> _logger;
-    private readonly ILoggerFactory _loggerFactory;
-    private readonly SignalRMessageSender? _messageSender;
-    private readonly ExtendedEventConverter? _eventConverter;
+    private readonly IExtendedEventsReaderFactory _readerFactory;
     private readonly ExtendedEventsStore _eventsStore;
     private readonly CancellationTokenSource _cancellationTokenSource = new();
-    private ExtendedEventsReader? _eventsReader;
+    private IExtendedEventsReader? _eventsReader;
     private Task? _monitoringTask;
     private bool _isDisposed;
 
@@ -30,18 +28,14 @@ public class ExtendedEventsService : IHostedService, IDisposable
         IConnectionStringBuilder connectionStringBuilder,
         IStorageService? storageService,
         ILogger<ExtendedEventsService> logger,
-        ILoggerFactory loggerFactory,
-        ExtendedEventsStore eventsStore,
-        SignalRMessageSender? messageSender = null,
-        ExtendedEventConverter? eventConverter = null)
+        IExtendedEventsReaderFactory readerFactory,
+        ExtendedEventsStore eventsStore)
     {
         _connectionStringBuilder = connectionStringBuilder ?? throw new ArgumentNullException(nameof(connectionStringBuilder));
         _storageService = storageService;
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        _loggerFactory = loggerFactory ?? throw new ArgumentNullException(nameof(loggerFactory));
+        _readerFactory = readerFactory ?? throw new ArgumentNullException(nameof(readerFactory));
         _eventsStore = eventsStore ?? throw new ArgumentNullException(nameof(eventsStore));
-        _messageSender = messageSender;
-        _eventConverter = eventConverter;
     }
 
     public Task StartAsync(CancellationToken cancellationToken)
@@ -197,22 +191,16 @@ public class ExtendedEventsService : IHostedService, IDisposable
             // Use shared events dictionary from ExtendedEventsStore
             var events = _eventsStore.Events;
             
-            // Create logger for ExtendedEventsReader
-            var eventsReaderLogger = _loggerFactory.CreateLogger<ExtendedEventsReader>();
-            
             // Create and start the Extended Events reader with a persistent session
             // Use a fixed session name so it persists across restarts
             const string persistentSessionName = "SQLStressTest_Persistent";
-            _eventsReader = new ExtendedEventsReader(
+            _eventsReader = _readerFactory.Create(
                 connectionString,
                 extendedEventsConnectionString,
                 cancellationToken,
                 events,
-                eventsReaderLogger,
                 sessionName: persistentSessionName,
-                isPersistentSession: true,
-                messageSender: _messageSender,
-                eventConverter: _eventConverter);
+                isPersistentSession: true);
             
             await _eventsReader.StartSessionAsync();
             

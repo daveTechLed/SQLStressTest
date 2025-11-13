@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 using SQLStressTest.Service.Hubs;
+using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 
 namespace SQLStressTest.Service.Services;
@@ -9,17 +10,17 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for handling SignalR connection lifecycle events.
 /// Single Responsibility: Connection lifecycle management only.
 /// </summary>
-public class ConnectionLifecycleHandler
+public class ConnectionLifecycleHandler : IConnectionLifecycleHandler
 {
     private readonly ILogger<ConnectionLifecycleHandler> _logger;
-    private readonly HeartbeatSender _heartbeatSender;
-    private readonly ConnectionCacheService _connectionCacheService;
+    private readonly IHeartbeatSender _heartbeatSender;
+    private readonly IConnectionCacheService _connectionCacheService;
     private readonly IStorageService? _storageService;
 
     public ConnectionLifecycleHandler(
         ILogger<ConnectionLifecycleHandler> logger,
-        HeartbeatSender heartbeatSender,
-        ConnectionCacheService connectionCacheService,
+        IHeartbeatSender heartbeatSender,
+        IConnectionCacheService connectionCacheService,
         IStorageService? storageService = null)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -190,7 +191,7 @@ public class ConnectionLifecycleHandler
     /// <summary>
     /// Gets the connection cache service instance.
     /// </summary>
-    public ConnectionCacheService GetConnectionCacheService()
+    public IConnectionCacheService GetConnectionCacheService()
     {
         return _connectionCacheService;
     }

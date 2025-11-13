@@ -1,6 +1,6 @@
 ﻿{
-  "projectId": "e00642ef-bae2-4377-80aa-a1bea50da7af",
-  "generatedAt": "2025-11-13T14:00:48.423672Z",
+  "projectId": "250fce2c-9a71-4386-a10e-0d21e789d2e8",
+  "generatedAt": "2025-11-13T15:14:44.306943Z",
   "itemCount": 148,
   "items": [
     {
@@ -16,7 +16,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 314.3775,
+        "duration": 257.3279,
         "coveredMethodsCount": 0
       }
     },
@@ -33,7 +33,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 357.9886,
+        "duration": 339.3012,
         "coveredMethodsCount": 0
       }
     },
@@ -50,7 +50,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 314.3691,
+        "duration": 242.6522,
         "coveredMethodsCount": 0
       }
     },
@@ -67,7 +67,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 336.2808,
+        "duration": 242.586,
         "coveredMethodsCount": 0
       }
     },
@@ -84,7 +84,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 355.0827,
+        "duration": 257.3761,
         "coveredMethodsCount": 0
       }
     },
@@ -101,7 +101,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 426.2947,
+        "duration": 242.6526,
         "coveredMethodsCount": 0
       }
     },
@@ -118,7 +118,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 440.8482,
+        "duration": 242.6053,
         "coveredMethodsCount": 0
       }
     },
@@ -135,7 +135,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 314.2775,
+        "duration": 242.6728,
         "coveredMethodsCount": 0
       }
     },
@@ -152,7 +152,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 314.2887,
+        "duration": 328.0911,
         "coveredMethodsCount": 0
       }
     },
@@ -169,7 +169,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 314.3348,
+        "duration": 242.622,
         "coveredMethodsCount": 0
       }
     },
@@ -186,7 +186,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 312.6242,
+        "duration": 291.9705,
         "coveredMethodsCount": 0
       }
     },
@@ -203,7 +203,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 312.2817,
+        "duration": 196.3007,
         "coveredMethodsCount": 0
       }
     },
@@ -220,7 +220,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 296.6955,
+        "duration": 221.9758,
         "coveredMethodsCount": 0
       }
     },
@@ -237,7 +237,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 329.8876,
+        "duration": 293.4425,
         "coveredMethodsCount": 0
       }
     },
@@ -254,7 +254,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 359.4148,
+        "duration": 209.6474,
         "coveredMethodsCount": 0
       }
     },
@@ -271,7 +271,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 344.8054,
+        "duration": 173.0152,
         "coveredMethodsCount": 0
       }
     },
@@ -288,7 +288,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 187.2468,
+        "duration": 280.0965,
         "coveredMethodsCount": 0
       }
     },
@@ -305,7 +305,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 296.6882,
+        "duration": 196.3058,
         "coveredMethodsCount": 0
       }
     },
@@ -322,7 +322,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 312.1768,
+        "duration": 203.4379,
         "coveredMethodsCount": 0
       }
     },
@@ -339,7 +339,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 294.4336,
+        "duration": 201.9608,
         "coveredMethodsCount": 0
       }
     },
@@ -356,7 +356,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 315.3014,
+        "duration": 224.9857,
         "coveredMethodsCount": 0
       }
     },
@@ -373,7 +373,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 293.8443,
+        "duration": 203.1006,
         "coveredMethodsCount": 0
       }
     },
@@ -390,7 +390,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 229.7151,
+        "duration": 145.1742,
         "coveredMethodsCount": 0
       }
     },
@@ -402,12 +402,13 @@
         "testProjectName": "extension",
         "expectedType": "Integration",
         "actualType": "Unit",
-        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (97ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
         "indicators": [
+          "Fast execution (97ms \u003C= 100ms threshold)",
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 229.598,
+        "duration": 97.0743,
         "coveredMethodsCount": 0
       }
     },
@@ -424,7 +425,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 266.9602,
+        "duration": 214.7273,
         "coveredMethodsCount": 0
       }
     },
@@ -441,7 +442,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 338.5615,
+        "duration": 282.5111,
         "coveredMethodsCount": 0
       }
     },
@@ -458,7 +459,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 338.5971,
+        "duration": 190.1334,
         "coveredMethodsCount": 0
       }
     },
@@ -475,7 +476,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 323.1174,
+        "duration": 201.6107,
         "coveredMethodsCount": 0
       }
     },
@@ -492,7 +493,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 354.3852,
+        "duration": 236.404,
         "coveredMethodsCount": 0
       }
     },
@@ -509,7 +510,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 328.8419,
+        "duration": 259.4262,
         "coveredMethodsCount": 0
       }
     },
@@ -526,7 +527,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 273.9092,
+        "duration": 189.2595,
         "coveredMethodsCount": 0
       }
     },
@@ -543,7 +544,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 304.8856,
+        "duration": 211.9497,
         "coveredMethodsCount": 0
       }
     },
@@ -560,7 +561,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 335.7248,
+        "duration": 271.5144,
         "coveredMethodsCount": 0
       }
     },
@@ -577,7 +578,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 350.4563,
+        "duration": 224.0305,
         "coveredMethodsCount": 0
       }
     },
@@ -594,7 +595,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 205.2352,
+        "duration": 269.078,
         "coveredMethodsCount": 0
       }
     },
@@ -611,7 +612,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 237.421,
+        "duration": 221.3263,
         "coveredMethodsCount": 0
       }
     },
@@ -628,7 +629,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 283.0367,
+        "duration": 202.3876,
         "coveredMethodsCount": 0
       }
     },
@@ -645,7 +646,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 312.43,
+        "duration": 186.425,
         "coveredMethodsCount": 0
       }
     },
@@ -662,7 +663,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 393.0569,
+        "duration": 155.9029,
         "coveredMethodsCount": 0
       }
     },
@@ -679,7 +680,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 450.3629,
+        "duration": 186.7895,
         "coveredMethodsCount": 0
       }
     },
@@ -696,7 +697,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 371.8527,
+        "duration": 266.6478,
         "coveredMethodsCount": 0
       }
     },
@@ -713,7 +714,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 515.6868,
+        "duration": 266.6605,
         "coveredMethodsCount": 0
       }
     },
@@ -730,7 +731,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 558.5609,
+        "duration": 292.38,
         "coveredMethodsCount": 0
       }
     },
@@ -747,7 +748,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 573.2545,
+        "duration": 125.343,
         "coveredMethodsCount": 0
       }
     },
@@ -764,7 +765,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 501.6133,
+        "duration": 105.4081,
         "coveredMethodsCount": 0
       }
     },
@@ -781,7 +782,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 523.6689,
+        "duration": 234.0866,
         "coveredMethodsCount": 0
       }
     },
@@ -798,7 +799,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 417.0867,
+        "duration": 222.4391,
         "coveredMethodsCount": 0
       }
     },
@@ -815,7 +816,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 387.7456,
+        "duration": 304.0498,
         "coveredMethodsCount": 0
       }
     },
@@ -832,7 +833,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 372.2234,
+        "duration": 151.6496,
         "coveredMethodsCount": 0
       }
     },
@@ -849,7 +850,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 275.5711,
+        "duration": 140.0188,
         "coveredMethodsCount": 0
       }
     },
@@ -866,7 +867,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 302.073,
+        "duration": 210.7005,
         "coveredMethodsCount": 0
       }
     },
@@ -883,7 +884,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 377.0459,
+        "duration": 188.7016,
         "coveredMethodsCount": 0
       }
     },
@@ -900,7 +901,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 259.9942,
+        "duration": 236.179,
         "coveredMethodsCount": 0
       }
     },
@@ -917,7 +918,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 260.4137,
+        "duration": 168.5617,
         "coveredMethodsCount": 0
       }
     },
@@ -934,7 +935,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 258.7967,
+        "duration": 229.6096,
         "coveredMethodsCount": 0
       }
     },
@@ -951,7 +952,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 356.9358,
+        "duration": 216.8944,
         "coveredMethodsCount": 0
       }
     },
@@ -968,7 +969,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 260.3914,
+        "duration": 216.715,
         "coveredMethodsCount": 0
       }
     },
@@ -985,7 +986,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 214.4752,
+        "duration": 195.0578,
         "coveredMethodsCount": 0
       }
     },
@@ -1002,7 +1003,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 260.2999,
+        "duration": 146.2905,
         "coveredMethodsCount": 0
       }
     },
@@ -1019,7 +1020,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 429.5652,
+        "duration": 239.0253,
         "coveredMethodsCount": 0
       }
     },
@@ -1036,7 +1037,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 323.4735,
+        "duration": 238.9464,
         "coveredMethodsCount": 0
       }
     },
@@ -1053,7 +1054,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 323.1452,
+        "duration": 240.6657,
         "coveredMethodsCount": 0
       }
     },
@@ -1070,7 +1071,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 337.7825,
+        "duration": 301.8325,
         "coveredMethodsCount": 0
       }
     },
@@ -1087,7 +1088,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 292.2308,
+        "duration": 120.8281,
         "coveredMethodsCount": 0
       }
     },
@@ -1104,7 +1105,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 171.8322,
+        "duration": 289.0983,
         "coveredMethodsCount": 0
       }
     },
@@ -1121,7 +1122,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 290.383,
+        "duration": 227.6443,
         "coveredMethodsCount": 0
       }
     },
@@ -1138,7 +1139,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 304.4037,
+        "duration": 216.8039,
         "coveredMethodsCount": 0
       }
     },
@@ -1155,7 +1156,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 170.907,
+        "duration": 216.8618,
         "coveredMethodsCount": 0
       }
     },
@@ -1172,7 +1173,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 239.2293,
+        "duration": 109.4917,
         "coveredMethodsCount": 0
       }
     },
@@ -1189,7 +1190,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 256.1626,
+        "duration": 230.0143,
         "coveredMethodsCount": 0
       }
     },
@@ -1206,7 +1207,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 192.576,
+        "duration": 206.5765,
         "coveredMethodsCount": 0
       }
     },
@@ -1223,7 +1224,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 320.2006,
+        "duration": 217.6642,
         "coveredMethodsCount": 0
       }
     },
@@ -1240,7 +1241,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 334.9368,
+        "duration": 110.7202,
         "coveredMethodsCount": 0
       }
     },
@@ -1257,7 +1258,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 275.1103,
+        "duration": 260.2906,
         "coveredMethodsCount": 0
       }
     },
@@ -1274,7 +1275,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 240.5343,
+        "duration": 248.0994,
         "coveredMethodsCount": 0
       }
     },
@@ -1291,7 +1292,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 294.2691,
+        "duration": 213.9218,
         "coveredMethodsCount": 0
       }
     },
@@ -1308,7 +1309,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 202.9288,
+        "duration": 190.7413,
         "coveredMethodsCount": 0
       }
     },
@@ -1325,7 +1326,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 168.4598,
+        "duration": 202.1339,
         "coveredMethodsCount": 0
       }
     },
@@ -1342,7 +1343,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 321.8537,
+        "duration": 202.8745,
         "coveredMethodsCount": 0
       }
     },
@@ -1359,7 +1360,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 382.6265,
+        "duration": 155.2285,
         "coveredMethodsCount": 0
       }
     },
@@ -1376,7 +1377,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 415.2478,
+        "duration": 214.1595,
         "coveredMethodsCount": 0
       }
     },
@@ -1393,7 +1394,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 240.4617,
+        "duration": 283.92,
         "coveredMethodsCount": 0
       }
     },
@@ -1410,7 +1411,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 240.3847,
+        "duration": 215.659,
         "coveredMethodsCount": 0
       }
     },
@@ -1427,7 +1428,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 240.2836,
+        "duration": 144.888,
         "coveredMethodsCount": 0
       }
     },
@@ -1444,7 +1445,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 378.9101,
+        "duration": 144.8198,
         "coveredMethodsCount": 0
       }
     },
@@ -1461,7 +1462,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 241.8577,
+        "duration": 179.0535,
         "coveredMethodsCount": 0
       }
     },
@@ -1478,7 +1479,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 240.285,
+        "duration": 206.9901,
         "coveredMethodsCount": 0
       }
     },
@@ -1495,7 +1496,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 289.715,
+        "duration": 179.0375,
         "coveredMethodsCount": 0
       }
     },
@@ -1512,7 +1513,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 261.5883,
+        "duration": 179.0702,
         "coveredMethodsCount": 0
       }
     },
@@ -1529,7 +1530,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 257.0375,
+        "duration": 119.4151,
         "coveredMethodsCount": 0
       }
     },
@@ -1546,7 +1547,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 242.5051,
+        "duration": 270.1136,
         "coveredMethodsCount": 0
       }
     },
@@ -1563,7 +1564,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 257.0082,
+        "duration": 180.6138,
         "coveredMethodsCount": 0
       }
     },
@@ -1580,7 +1581,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 286.3628,
+        "duration": 295.0563,
         "coveredMethodsCount": 0
       }
     },
@@ -1597,7 +1598,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 272.336,
+        "duration": 200.6743,
         "coveredMethodsCount": 0
       }
     },
@@ -1614,7 +1615,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 257.8653,
+        "duration": 237.7514,
         "coveredMethodsCount": 0
       }
     },
@@ -1631,7 +1632,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 348.2467,
+        "duration": 172.3632,
         "coveredMethodsCount": 0
       }
     },
@@ -1648,7 +1649,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 348.234,
+        "duration": 270.6874,
         "coveredMethodsCount": 0
       }
     },
@@ -1665,7 +1666,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 226.0138,
+        "duration": 209.5192,
         "coveredMethodsCount": 0
       }
     },
@@ -1682,7 +1683,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 260.0172,
+        "duration": 207.9825,
         "coveredMethodsCount": 0
       }
     },
@@ -1699,7 +1700,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 278.6303,
+        "duration": 202.49,
         "coveredMethodsCount": 0
       }
     },
@@ -1716,7 +1717,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 293.7639,
+        "duration": 208.2022,
         "coveredMethodsCount": 0
       }
     },
@@ -1733,7 +1734,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 229.3836,
+        "duration": 208.5837,
         "coveredMethodsCount": 0
       }
     },
@@ -1750,7 +1751,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 217.4076,
+        "duration": 171.1348,
         "coveredMethodsCount": 0
       }
     },
@@ -1767,7 +1768,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 274.9609,
+        "duration": 221.3846,
         "coveredMethodsCount": 0
       }
     },
@@ -1784,7 +1785,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 202.0496,
+        "duration": 235.7522,
         "coveredMethodsCount": 0
       }
     },
@@ -1801,7 +1802,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 314.8381,
+        "duration": 209.3334,
         "coveredMethodsCount": 0
       }
     },
@@ -1818,7 +1819,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 313.5444,
+        "duration": 175.3611,
         "coveredMethodsCount": 0
       }
     },
@@ -1835,7 +1836,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 267.5293,
+        "duration": 149.264,
         "coveredMethodsCount": 0
       }
     },
@@ -1852,7 +1853,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 267.5642,
+        "duration": 217.783,
         "coveredMethodsCount": 0
       }
     },
@@ -1869,7 +1870,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 389.6536,
+        "duration": 195.2689,
         "coveredMethodsCount": 0
       }
     },
@@ -1886,7 +1887,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 221.5085,
+        "duration": 196.4002,
         "coveredMethodsCount": 0
       }
     },
@@ -1903,7 +1904,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 250.3056,
+        "duration": 212.6072,
         "coveredMethodsCount": 0
       }
     },
@@ -1920,7 +1921,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 271.2572,
+        "duration": 228.7482,
         "coveredMethodsCount": 0
       }
     },
@@ -1937,7 +1938,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 365.252,
+        "duration": 212.5123,
         "coveredMethodsCount": 0
       }
     },
@@ -1954,7 +1955,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 355.2678,
+        "duration": 242.1975,
         "coveredMethodsCount": 0
       }
     },
@@ -1971,7 +1972,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 229.2891,
+        "duration": 146.5077,
         "coveredMethodsCount": 0
       }
     },
@@ -1988,7 +1989,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 247.609,
+        "duration": 183.6732,
         "coveredMethodsCount": 0
       }
     },
@@ -2005,7 +2006,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 232.5952,
+        "duration": 279.1776,
         "coveredMethodsCount": 0
       }
     },
@@ -2022,7 +2023,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 157.1357,
+        "duration": 256.534,
         "coveredMethodsCount": 0
       }
     },
@@ -2039,7 +2040,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 262.3865,
+        "duration": 267.9986,
         "coveredMethodsCount": 0
       }
     },
@@ -2056,7 +2057,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 234.9327,
+        "duration": 229.3186,
         "coveredMethodsCount": 0
       }
     },
@@ -2073,7 +2074,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 362.5635,
+        "duration": 216.561,
         "coveredMethodsCount": 0
       }
     },
@@ -2090,7 +2091,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 392.4688,
+        "duration": 161.5216,
         "coveredMethodsCount": 0
       }
     },
@@ -2107,7 +2108,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 266.8791,
+        "duration": 240.2314,
         "coveredMethodsCount": 0
       }
     },
@@ -2124,7 +2125,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 207.9662,
+        "duration": 228.5226,
         "coveredMethodsCount": 0
       }
     },
@@ -2141,7 +2142,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 315.7622,
+        "duration": 144.4642,
         "coveredMethodsCount": 0
       }
     },
@@ -2158,7 +2159,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 226.9208,
+        "duration": 235.0846,
         "coveredMethodsCount": 0
       }
     },
@@ -2175,7 +2176,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 389.1614,
+        "duration": 233.908,
         "coveredMethodsCount": 0
       }
     },
@@ -2192,7 +2193,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 272.8928,
+        "duration": 173.4377,
         "coveredMethodsCount": 0
       }
     },
@@ -2209,7 +2210,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 272.8857,
+        "duration": 173.3647,
         "coveredMethodsCount": 0
       }
     },
@@ -2226,7 +2227,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 195.2325,
+        "duration": 293.0818,
         "coveredMethodsCount": 0
       }
     },
@@ -2243,7 +2244,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 244.1655,
+        "duration": 239.2987,
         "coveredMethodsCount": 0
       }
     },
@@ -2260,7 +2261,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 334.4548,
+        "duration": 239.0961,
         "coveredMethodsCount": 0
       }
     },
@@ -2277,7 +2278,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 303.0225,
+        "duration": 204.2938,
         "coveredMethodsCount": 0
       }
     },
@@ -2294,7 +2295,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 225.6367,
+        "duration": 174.799,
         "coveredMethodsCount": 0
       }
     },
@@ -2311,7 +2312,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 255.8157,
+        "duration": 282.14,
         "coveredMethodsCount": 0
       }
     },
@@ -2328,7 +2329,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 255.9369,
+        "duration": 241.7191,
         "coveredMethodsCount": 0
       }
     },
@@ -2345,7 +2346,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 292.8241,
+        "duration": 216.7622,
         "coveredMethodsCount": 0
       }
     },
@@ -2362,7 +2363,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 168.3832,
+        "duration": 216.8736,
         "coveredMethodsCount": 0
       }
     },
@@ -2379,7 +2380,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 275.2752,
+        "duration": 216.7552,
         "coveredMethodsCount": 0
       }
     },
@@ -2396,7 +2397,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 215.2904,
+        "duration": 159.2278,
         "coveredMethodsCount": 0
       }
     },
@@ -2413,7 +2414,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 171.7565,
+        "duration": 170.9012,
         "coveredMethodsCount": 0
       }
     },
@@ -2430,7 +2431,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 162.5051,
+        "duration": 156.9687,
         "coveredMethodsCount": 0
       }
     },
@@ -2447,7 +2448,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 149.4813,
+        "duration": 158.594,
         "coveredMethodsCount": 0
       }
     },
@@ -2464,7 +2465,7 @@
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 139.954,
+        "duration": 106.724,
         "coveredMethodsCount": 0
       }
     },
@@ -2476,13 +2477,12 @@
         "testProjectName": "has-tostringtag",
         "expectedType": "Integration",
         "actualType": "Unit",
-        "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (53ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
         "indicators": [
-          "Fast execution (53ms \u003C= 100ms threshold)",
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 53.468,
+        "duration": 107.3866,
         "coveredMethodsCount": 0
       }
     },
@@ -2494,13 +2494,13 @@
         "testProjectName": "has-symbols",
         "expectedType": "Integration",
         "actualType": "Unit",
-        "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (56ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (55ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
         "indicators": [
-          "Fast execution (56ms \u003C= 100ms threshold)",
+          "Fast execution (55ms \u003C= 100ms threshold)",
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 56.0769,
+        "duration": 55.4534,
         "coveredMethodsCount": 0
       }
     },
@@ -2512,13 +2512,13 @@
         "testProjectName": "fastq",
         "expectedType": "Integration",
         "actualType": "Unit",
-        "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (55ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
+        "reason": "Test appears to be a unit test (in integration test project). Indicators: Fast execution (60ms \u003C= 100ms threshold), Simple method coverage (0 methods \u003C= 3 threshold), Simple line coverage (0 lines \u003C= 50 threshold)",
         "indicators": [
-          "Fast execution (55ms \u003C= 100ms threshold)",
+          "Fast execution (60ms \u003C= 100ms threshold)",
           "Simple method coverage (0 methods \u003C= 3 threshold)",
           "Simple line coverage (0 lines \u003C= 50 threshold)"
         ],
-        "duration": 55.0681,
+        "duration": 60.1744,
         "coveredMethodsCount": 0
       }
     }

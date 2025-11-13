@@ -2,6 +2,7 @@ using System.Collections.Concurrent;
 using System.Text;
 using Microsoft.Extensions.Logging;
 using Microsoft.SqlServer.XEvent.XELite;
+using SQLStressTest.Service.Interfaces;
 using SQLStressTest.Service.Models;
 
 namespace SQLStressTest.Service.Services;
@@ -10,7 +11,7 @@ namespace SQLStressTest.Service.Services;
 /// Service responsible for processing Extended Events and storing them.
 /// Single Responsibility: Event processing and storage only.
 /// </summary>
-public class ExtendedEventsProcessor
+public class ExtendedEventsProcessor : IExtendedEventsProcessor
 {
     private readonly ConcurrentDictionary<string, List<IXEvent>> _events;
     private readonly ILogger<ExtendedEventsProcessor>? _logger;
